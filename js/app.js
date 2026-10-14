@@ -62,7 +62,7 @@ const inquiryPrompts = {
 function updateInquiry() {
   if (!inquiryType || !inquiryMail) return;
   const [subject, body] = inquiryPrompts[inquiryType.value] || inquiryPrompts.course;
-  inquiryMail.href = 'mailto:kcli@k-cli.kr?subject=' + encodeURIComponent('[KCLI] ' + subject) + '&body=' + encodeURIComponent(body);
+  inquiryMail.href = 'mailto:roknaoms@naver.com?subject=' + encodeURIComponent('[KCLI] ' + subject) + '&body=' + encodeURIComponent(body);
 }
 inquiryType?.addEventListener('change', updateInquiry);
 updateInquiry();
@@ -72,10 +72,10 @@ if (copyEmail) {
   copyEmail.addEventListener('click', async () => {
     const status = document.getElementById('inquiry-status');
     try {
-      await navigator.clipboard.writeText('kcli@k-cli.kr');
-      status.textContent = '이메일 주소를 복사했습니다: kcli@k-cli.kr';
+      await navigator.clipboard.writeText('roknaoms@naver.com');
+      status.textContent = '이메일 주소를 복사했습니다: roknaoms@naver.com';
     } catch {
-      status.textContent = '자동 복사를 사용할 수 없습니다. 주소를 직접 복사해 주세요: kcli@k-cli.kr';
+      status.textContent = '자동 복사를 사용할 수 없습니다. 주소를 직접 복사해 주세요: roknaoms@naver.com';
     }
   });
 }
