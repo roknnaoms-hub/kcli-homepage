@@ -55,16 +55,26 @@ document.addEventListener('keydown', (event) => {
 const inquiryType = document.getElementById('inquiry-type');
 const inquiryMail = document.getElementById('inquiry-mail');
 const inquiryPrompts = {
-  course: ['ISO 42001 교육 문의', '관심 과정: ISO/IEC 42001 인증심사원 교육\n현재 업무 또는 경력: \n희망 일정: \n문의사항: '],
   organization: ['기업·기관 교육 협력 문의', '기관명: \n희망 교육 주제: \n참여 대상·인원: \n희망 일정·방식: \n기대 결과: '],
   knowledge: ['AI·지식정보 분야 협력 문의', '기관명: \n협력 주제: \n현재 업무 현안: \n희망 일정: \n문의사항: ']
 };
 function updateInquiry() {
   if (!inquiryType || !inquiryMail) return;
-  const [subject, body] = inquiryPrompts[inquiryType.value] || inquiryPrompts.course;
+  const standard = inquiryType.selectedOptions[0]?.dataset.standard;
+  const [subject, body] = inquiryPrompts[inquiryType.value] ?? [
+    `${standard ?? 'ISO 심사원'} 교육 문의`,
+    `관심 규격: ${standard ?? ''}\n현재 업무 또는 경력: \n희망 일정: \n문의사항: `
+  ];
   inquiryMail.href = 'mailto:roknaoms@naver.com?subject=' + encodeURIComponent('[KCLI] ' + subject) + '&body=' + encodeURIComponent(body);
 }
 inquiryType?.addEventListener('change', updateInquiry);
+document.querySelectorAll('a[data-course]').forEach((link) => {
+  link.addEventListener('click', () => {
+    if (!inquiryType) return;
+    inquiryType.value = link.dataset.course;
+    updateInquiry();
+  });
+});
 updateInquiry();
 const copyEmail = document.getElementById('copy-email');
 if (copyEmail) {
