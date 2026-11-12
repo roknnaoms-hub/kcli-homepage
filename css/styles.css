@@ -301,6 +301,31 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   word-break: keep-all;
 }
 .auditor-steps li::marker { color: #0876a5; }
+
+.auditor-information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.auditor-information-grid > div {
+  padding: clamp(15px, 2.6vw, 24px);
+  border: 1px solid var(--line);
+  border-top: 2px solid #356587;
+  background: #fff;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+.auditor-information-grid h4 { margin: 0 0 10px; font-size: 1.1rem; line-height: 1.45; }
+.auditor-information-grid ul,
+.auditor-information-grid ol { margin: 0; padding-inline-start: 1.25em; color: var(--muted); }
+.auditor-information-grid li + li { margin-top: 7px; }
+.auditor-information-grid li strong { color: var(--ink); }
+.auditor-information-grid > div p { margin: 0; }
+
+@media (max-width: 760px) {
+  .auditor-information-grid { grid-template-columns: minmax(0, 1fr); }
+}
 .auditor-fee-table { width: 100%; margin: 14px 0 0; border-collapse: collapse; background: #fff; }
 .auditor-fee-table caption { padding-bottom: 8px; text-align: left; font-weight: 700; }
 .auditor-fee-table th,

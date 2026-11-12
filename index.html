@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f6f5f0">
   <title>한국사이버리터러시연구원 | KCLI</title>
-  <link rel="stylesheet" href="./css/styles.css?v=e1e33f87">
+  <link rel="stylesheet" href="./css/styles.css?v=ca305f35">
   <script src="./js/app.js?v=07f741c0" defer></script>
 </head>
 <body>
@@ -253,23 +253,117 @@
         <div><h2 id="auditor-registration-title">IQCS 심사원 등록 안내</h2></div>
         <p>KCLI는 교육과정을 안내하고 IQCS는 심사원 자격 심사와 등록을 진행합니다. 신청하려는 규격과 등급의 요건을 먼저 확인하세요.</p>
       </div>
-      <p class="auditor-jumps"><a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/php/service/auditor.php">IQCS 등록 가능 규격</a><a class="auditor-inline-link" href="#auditor-fees">등록 비용 바로가기</a></p>
+      <nav class="auditor-jumps" aria-label="심사원 등록 안내 목차">
+        <a class="auditor-inline-link" href="#auditor-process">등록 프로세스</a>
+        <a class="auditor-inline-link" href="#auditor-documents">제출서류</a>
+        <a class="auditor-inline-link" href="#auditor-requirements">세부안내</a>
+        <a class="auditor-inline-link" href="#auditor-fees">등록 비용</a>
+        <a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/php/service/auditor.php">IQCS 등록 가능 규격</a>
+      </nav>
 
       <section id="auditor-process" class="auditor-guide" aria-labelledby="auditor-process-title">
-        <h3 id="auditor-process-title">심사원 등록 절차</h3>
+        <h3 id="auditor-process-title">심사원 등록 프로세스</h3>
         <ol class="auditor-steps">
-          <li>온라인 신청 접수</li>
+          <li>신청서 접수</li>
           <li>등록 서류 제출</li>
           <li>제출 서류 검토</li>
-          <li>필요시 서류 보완</li>
+          <li>보완 서류 요청·접수</li>
           <li>고객 검증</li>
           <li>등록 승인</li>
           <li>연회비 청구</li>
           <li>자격증·카드 발송</li>
         </ol>
-        <p>최초 심사원보 등록에는 등록신청서와 교육합격증이 필요합니다. 심사원·선임심사원은 등급과 신청 방식에 따라 심사 이력, 직무기술서, 학력 증빙이나 검증심사 자료를 준비합니다.</p>
-        <p>심사 이력으로 신청하는 QB 방식과 검증심사를 받는 VB 방식의 요건은 IQCS에서 확인할 수 있습니다.</p>
-        <a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/html/iso/process.htm">IQCS 등록 요건·제출서류 확인</a>
+        <p><a class="auditor-inline-link" href="#auditor-documents">신청 유형별 제출서류</a>를 준비하고 IQCS에 로그인해 등록을 신청하세요.</p>
+        <a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/php/aappli/aappli_entry.php">IQCS 온라인 등록 신청</a>
+      </section>
+
+      <section id="auditor-documents" class="auditor-guide" aria-labelledby="auditor-documents-title">
+        <h3 id="auditor-documents-title">심사원 등록 제출서류</h3>
+        <div class="auditor-information-grid">
+          <div>
+            <h4>최초 등록 · 심사원보</h4>
+            <ul>
+              <li>심사원 등록 신청서</li>
+              <li>심사원 교육 합격증</li>
+            </ul>
+          </div>
+          <div>
+            <h4>최초 등록 · 심사원 및 선임심사원</h4>
+            <ul>
+              <li>심사원 등록 신청서</li>
+              <li>심사원 교육 합격증</li>
+              <li>직무기술서(이력서)</li>
+              <li>최종학력 졸업증명서</li>
+              <li>신청 등급에 맞는 심사로그(QB 방식)</li>
+              <li>검증심사 보고서(VB 방식)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>등급 상향</h4>
+            <ul>
+              <li>심사원 등록 신청서</li>
+              <li>자격 카드 또는 등록증 사본</li>
+              <li>신청 등급에 맞는 심사로그</li>
+            </ul>
+          </div>
+          <div>
+            <h4>등록기관 변경</h4>
+            <ul>
+              <li>심사원 등록 신청서</li>
+              <li>자격 카드 또는 등록증 사본</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="auditor-requirements" class="auditor-guide" aria-labelledby="auditor-requirements-title">
+        <h3 id="auditor-requirements-title">심사원 등록 세부안내</h3>
+        <div class="auditor-information-grid">
+          <div>
+            <h4>학력 및 업무 경력</h4>
+            <ul>
+              <li>고등학교 졸업 이상</li>
+              <li>업무 경력 4년 중 신청 규격에 관련된 업무 2년 이상</li>
+            </ul>
+          </div>
+          <div>
+            <h4>QB 방식 · 심사 이력</h4>
+            <ul>
+              <li><strong>심사원</strong>은 최근 3년간 3회 이상, 총 7일 이상 심사에 참여해야 합니다.</li>
+              <li><strong>선임심사원</strong>은 최근 3년간 4회 이상, 총 11일 이상 심사를 수행하고 그중 4일 이상을 심사팀장으로 수행해야 합니다.</li>
+              <li>두 등급 모두 최초 또는 갱신 심사 경험을 1회 이상 포함해야 합니다.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>VB 방식 · 검증심사</h4>
+            <ol>
+              <li>심사원 신청자는 IQCS에 VB 신청서, 심사 일정표, 연수기관 교육 합격증, 직무기술서, 졸업증명서를 제출합니다.</li>
+              <li>검증심사를 진행할 업체가 선정되면 검증심사원의 평가를 받습니다.</li>
+              <li>검증심사에 합격하면 심사원으로 등록됩니다.</li>
+            </ol>
+          </div>
+          <div>
+            <h4>등급 상향</h4>
+            <ul>
+              <li><strong>심사원 → 선임심사원</strong>은 최근 3년간 심사팀장으로 2회 이상, 총 4일 이상 심사를 수행해야 합니다. 최초 또는 갱신 심사를 1회 이상 포함합니다.</li>
+              <li><strong>선임심사원 → 검증심사원</strong>은 선임심사원으로서 1년간 2회 이상, 총 5일 이상 심사를 수행해야 합니다. 그중 최초 또는 갱신 심사를 1회 이상 총괄해야 합니다.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>자격 갱신과 CPD</h4>
+            <ul>
+              <li>심사원보를 제외한 등록 등급은 3년마다 갱신합니다.</li>
+              <li>IQCS 등록 안내는 최근 3년간 기술개발활동(CPD) 30시간을 제시하며, 그중 15시간 이상을 해당 경영시스템 관련 활동으로 채우도록 안내합니다.</li>
+              <li><a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/php/board/board_show.php?no=19&amp;page=1&amp;tab=notice&amp;total=10">IQCS 갱신 공지(2025.02.14)</a>는 2025년부터 갱신 대상 규격의 CPD 활동 30시간을 기록한 로그만 제출하도록 안내합니다.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>등록기관 변경</h4>
+            <p>등록 신청서와 자격 카드 또는 등록증 사본을 제출합니다.</p>
+          </div>
+        </div>
+        <p>IQCS는 1자·2자·3자 심사 이력을 모두 심사 경력으로 인정합니다.</p>
+        <a class="auditor-inline-link" href="https://www.iqcsplus.co.kr/site/korean/html/iso/process.htm">IQCS 공식 등록 프로세스 및 요건 확인</a>
       </section>
 
       <section id="auditor-fees" class="auditor-guide" aria-labelledby="auditor-fees-title">
