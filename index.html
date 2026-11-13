@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f6f5f0">
   <title>한국사이버리터러시연구원 | KCLI</title>
-  <link rel="stylesheet" href="./css/styles.css?v=35770e69">
+  <link rel="stylesheet" href="./css/styles.css?v=91d6545c">
   <script src="./js/app.js?v=07f741c0" defer></script>
 </head>
 <body>
@@ -29,6 +29,7 @@
     <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
       <a href="#about">연구원 소개</a>
       <a href="#education">교육과정</a>
+      <a href="#iso-clauses">ISO 조항 목록</a>
       <a href="#approach">협력 방식</a>
       <a href="#records">교육성과</a>
       <a href="#faq">자주 묻는 질문</a>
@@ -160,7 +161,7 @@
 
       <ul class="course-catalog" aria-label="KCLI 교육 가능 ISO 규격">
         <li>
-          <h3><span>ISO 9001</span>품질경영시스템</h3>
+          <h3><span>ISO 9001:2026</span> 품질경영시스템</h3>
           <p>고객 요구사항을 충족하기 위한 프로세스 관리, 성과 평가와 지속적 개선을 다룹니다.</p>
           <div class="catalog-card-actions">
             <a class="text-link" href="#contact" data-course="iso-9001" aria-label="ISO 9001 교육 문의">교육 문의 <b aria-hidden="true">→</b></a>
@@ -168,10 +169,11 @@
           </div>
         </li>
         <li>
-          <h3><span>ISO 14001</span>환경경영시스템</h3>
+          <h3><span>ISO 14001:2026</span> 환경경영시스템</h3>
           <p>환경 측면과 영향을 파악하고 준수 의무와 환경성과를 관리하는 방법을 다룹니다.</p>
           <div class="catalog-card-actions">
             <a class="text-link" href="#contact" data-course="iso-14001" aria-label="ISO 14001 교육 문의">교육 문의 <b aria-hidden="true">→</b></a>
+            <a class="text-link" href="#iso-14001-clauses" aria-label="ISO 14001:2026 요구사항 목록">요구사항 목록 <b aria-hidden="true">↓</b></a>
           </div>
         </li>
         <li>
@@ -258,19 +260,20 @@
   <section id="iso-clauses" class="section iso-index" aria-labelledby="iso-clauses-title">
     <div class="container">
       <div class="section-heading">
-        <div><h2 id="iso-clauses-title">ISO 표준 조항 목록</h2></div>
-        <p>장 제목을 선택하면 세부 조항이 펼쳐집니다. 국문 항목명은 교육용 표기입니다.</p>
+        <div><h2 id="iso-clauses-title">ISO 조항 목록</h2></div>
+        <p>KCLI 연수교육이 가능한 8개 표준입니다. 표준을 선택한 뒤 장 제목을 누르면 조항 번호와 교육용 국문 항목명이 펼쳐집니다.</p>
       </div>
-      <nav class="iso-index-jumps" aria-label="ISO 표준 바로가기">
-        <a href="#iso-9001-clauses">ISO 9001</a>
-        <a href="#iso-19011-clauses">ISO 19011</a>
-        <a href="#iso-22301-clauses">ISO 22301</a>
-        <a href="#iso-27001-clauses">ISO/IEC 27001</a>
-        <a href="#iso-27701-clauses">ISO/IEC 27701</a>
-        <a href="#iso-42001-clauses">ISO/IEC 42001</a>
-        <a href="#iso-45001-clauses">ISO 45001</a>
-        <a href="#iso-53001-clauses">ISO/UNDP 53001</a>
+      <nav class="iso-index-jumps" aria-label="연수교육 표준 바로가기">
+        <a href="#iso-9001-clauses"><strong>ISO 9001</strong><span>품질</span></a>
+        <a href="#iso-14001-clauses"><strong>ISO 14001</strong><span>환경</span></a>
+        <a href="#iso-45001-clauses"><strong>ISO 45001</strong><span>안전보건</span></a>
+        <a href="#iso-22301-clauses"><strong>ISO 22301</strong><span>업무연속성</span></a>
+        <a href="#iso-27001-clauses"><strong>ISO/IEC 27001</strong><span>정보보안</span></a>
+        <a href="#iso-27701-clauses"><strong>ISO/IEC 27701</strong><span>개인정보보호</span></a>
+        <a href="#iso-42001-clauses"><strong>ISO/IEC 42001</strong><span>인공지능</span></a>
+        <a href="#iso-53001-clauses"><strong>ISO/UNDP 53001</strong><span>지속가능발전목표</span></a>
       </nav>
+      <p class="iso-index-reference-link"><a class="auditor-inline-link" href="#iso-19011-clauses">심사 참고자료 ISO 19011:2026 <span aria-hidden="true">↓</span></a></p>
       <div class="iso-index-grid">
         <section id="iso-9001-clauses" class="iso-index-standard" aria-labelledby="iso-9001-title">
           <h3 id="iso-9001-title">ISO 9001:2026</h3>
@@ -463,11 +466,11 @@
             </li>
           </ul>
         </section>
-        <section id="iso-19011-clauses" class="iso-index-standard audit" aria-labelledby="iso-19011-title">
-          <h3 id="iso-19011-title">ISO 19011:2026</h3>
-          <p class="iso-index-subtitle">경영시스템 심사 지침</p>
-          <p class="iso-index-meta">4판 · 2026년 5월 발행 · 본문 1~7장 · 번호 106개</p>
-          <a class="iso-index-source" href="https://www.iso.org/standard/19011" aria-label="ISO 19011:2026 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
+        <section id="iso-14001-clauses" class="iso-index-standard" aria-labelledby="iso-14001-title">
+          <h3 id="iso-14001-title">ISO 14001:2026</h3>
+          <p class="iso-index-subtitle">환경경영시스템 요구사항 및 사용 지침</p>
+          <p class="iso-index-meta">제4판 · 2026년 4월 발행 · 본문 1~10장 · 번호 88개</p>
+          <a class="iso-index-source" href="https://www.iso.org/standard/14001" aria-label="ISO 14001:2026 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
           <ul class="iso-chapters">
             <li><p class="iso-chapter-title"><span class="iso-clause-number">1</span> 적용범위</p></li>
             <li><p class="iso-chapter-title"><span class="iso-clause-number">2</span> 인용표준</p></li>
@@ -475,152 +478,375 @@
               <details>
                 <summary class="iso-chapter-title"><span class="iso-clause-number">3</span> 용어와 정의</summary>
                 <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 19011:2026 3장 세부 조항</caption>
+                  <caption class="sr-only">ISO 14001:2026 3장 세부 조항</caption>
                   <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">3.1</th><td>심사</td></tr>
-                    <tr><th scope="row">3.2</th><td>결합심사</td></tr>
-                    <tr><th scope="row">3.3</th><td>합동심사</td></tr>
-                    <tr><th scope="row">3.4</th><td>원격 심사 방법</td></tr>
-                    <tr><th scope="row">3.5</th><td>심사 프로그램</td></tr>
-                    <tr><th scope="row">3.6</th><td>심사 범위</td></tr>
-                    <tr><th scope="row">3.7</th><td>심사 계획</td></tr>
-                    <tr><th scope="row">3.8</th><td>심사 기준</td></tr>
-                    <tr><th scope="row">3.9</th><td>객관적 증거</td></tr>
-                    <tr><th scope="row">3.10</th><td>심사 증거</td></tr>
-                    <tr><th scope="row">3.11</th><td>심사 발견사항</td></tr>
-                    <tr><th scope="row">3.12</th><td>심사 결론</td></tr>
-                    <tr><th scope="row">3.13</th><td>심사 의뢰자</td></tr>
-                    <tr><th scope="row">3.14</th><td>피심사조직</td></tr>
-                    <tr><th scope="row">3.15</th><td>심사팀</td></tr>
-                    <tr><th scope="row">3.16</th><td>심사원</td></tr>
-                    <tr><th scope="row">3.17</th><td>기술 전문가</td></tr>
-                    <tr><th scope="row">3.18</th><td>참관인</td></tr>
-                    <tr><th scope="row">3.19</th><td>경영시스템</td></tr>
+                    <tr><th scope="row">3.1</th><td>조직과 리더십 관련 용어</td></tr>
+                    <tr><th scope="row">3.1.1</th><td>경영시스템</td></tr>
+                    <tr><th scope="row">3.1.2</th><td>환경경영시스템</td></tr>
+                    <tr><th scope="row">3.1.3</th><td>방침</td></tr>
+                    <tr><th scope="row">3.1.4</th><td>환경방침</td></tr>
+                    <tr><th scope="row">3.1.5</th><td>조직</td></tr>
+                    <tr><th scope="row">3.1.6</th><td>최고경영자</td></tr>
+                    <tr><th scope="row">3.1.7</th><td>이해관계자</td></tr>
+                    <tr><th scope="row">3.2</th><td>기획 관련 용어</td></tr>
+                    <tr><th scope="row">3.2.1</th><td>환경</td></tr>
+                    <tr><th scope="row">3.2.2</th><td>환경측면</td></tr>
+                    <tr><th scope="row">3.2.3</th><td>환경 상태</td></tr>
+                    <tr><th scope="row">3.2.4</th><td>환경영향</td></tr>
+                    <tr><th scope="row">3.2.5</th><td>목표</td></tr>
+                    <tr><th scope="row">3.2.6</th><td>환경목표</td></tr>
+                    <tr><th scope="row">3.2.7</th><td>오염 예방</td></tr>
+                    <tr><th scope="row">3.2.8</th><td>요구사항</td></tr>
+                    <tr><th scope="row">3.2.9</th><td>준수의무사항</td></tr>
+                    <tr><th scope="row">3.2.10</th><td>리스크와 기회</td></tr>
+                    <tr><th scope="row">3.3</th><td>지원과 운용 관련 용어</td></tr>
+                    <tr><th scope="row">3.3.1</th><td>역량</td></tr>
+                    <tr><th scope="row">3.3.2</th><td>문서화된 정보</td></tr>
+                    <tr><th scope="row">3.3.3</th><td>전과정</td></tr>
+                    <tr><th scope="row">3.3.4</th><td>프로세스</td></tr>
+                    <tr><th scope="row">3.4</th><td>성과 평가와 개선 관련 용어</td></tr>
+                    <tr><th scope="row">3.4.1</th><td>심사</td></tr>
+                    <tr><th scope="row">3.4.2</th><td>적합</td></tr>
+                    <tr><th scope="row">3.4.3</th><td>부적합</td></tr>
+                    <tr><th scope="row">3.4.4</th><td>시정조치</td></tr>
+                    <tr><th scope="row">3.4.5</th><td>지속적 개선</td></tr>
+                    <tr><th scope="row">3.4.6</th><td>효과성</td></tr>
+                    <tr><th scope="row">3.4.7</th><td>지표</td></tr>
+                    <tr><th scope="row">3.4.8</th><td>모니터링</td></tr>
+                    <tr><th scope="row">3.4.9</th><td>측정</td></tr>
+                    <tr><th scope="row">3.4.10</th><td>성과</td></tr>
+                    <tr><th scope="row">3.4.11</th><td>환경성과</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">4</span> 조직의 상황</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 4장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">4.1</th><td>조직과 조직의 상황 이해</td></tr>
+                    <tr><th scope="row">4.2</th><td>이해관계자의 니즈와 기대 이해</td></tr>
+                    <tr><th scope="row">4.3</th><td>환경경영시스템 적용범위 결정</td></tr>
+                    <tr><th scope="row">4.4</th><td>환경경영시스템</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">5</span> 리더십</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 5장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">5.1</th><td>리더십과 의지표명</td></tr>
+                    <tr><th scope="row">5.2</th><td>환경방침</td></tr>
+                    <tr><th scope="row">5.3</th><td>역할, 책임 및 권한</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">6</span> 기획</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 6장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">6.1</th><td>리스크와 기회를 다루는 조치</td></tr>
+                    <tr><th scope="row">6.1.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">6.1.2</th><td>환경측면</td></tr>
+                    <tr><th scope="row">6.1.3</th><td>준수의무사항</td></tr>
+                    <tr><th scope="row">6.1.4</th><td>리스크와 기회</td></tr>
+                    <tr><th scope="row">6.1.5</th><td>조치 기획</td></tr>
+                    <tr><th scope="row">6.2</th><td>환경목표 및 달성 기획</td></tr>
+                    <tr><th scope="row">6.2.1</th><td>환경목표</td></tr>
+                    <tr><th scope="row">6.2.2</th><td>환경목표 달성을 위한 조치 기획</td></tr>
+                    <tr><th scope="row">6.3</th><td>변경의 기획</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">7</span> 지원</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 7장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">7.1</th><td>자원</td></tr>
+                    <tr><th scope="row">7.2</th><td>역량</td></tr>
+                    <tr><th scope="row">7.3</th><td>인식</td></tr>
+                    <tr><th scope="row">7.4</th><td>의사소통</td></tr>
+                    <tr><th scope="row">7.4.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.4.2</th><td>내부 의사소통</td></tr>
+                    <tr><th scope="row">7.4.3</th><td>외부 의사소통</td></tr>
+                    <tr><th scope="row">7.5</th><td>문서화된 정보</td></tr>
+                    <tr><th scope="row">7.5.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.5.2</th><td>문서화된 정보의 작성 및 갱신</td></tr>
+                    <tr><th scope="row">7.5.3</th><td>문서화된 정보의 관리</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">8</span> 운용</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 8장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">8.1</th><td>운용 기획 및 관리</td></tr>
+                    <tr><th scope="row">8.2</th><td>비상사태 대비 및 대응</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">9</span> 성과 평가</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 9장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">9.1</th><td>모니터링, 측정, 분석 및 평가</td></tr>
+                    <tr><th scope="row">9.1.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">9.1.2</th><td>준수평가</td></tr>
+                    <tr><th scope="row">9.2</th><td>내부심사</td></tr>
+                    <tr><th scope="row">9.2.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">9.2.2</th><td>내부심사 프로그램</td></tr>
+                    <tr><th scope="row">9.3</th><td>경영검토</td></tr>
+                    <tr><th scope="row">9.3.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">9.3.2</th><td>경영검토 입력사항</td></tr>
+                    <tr><th scope="row">9.3.3</th><td>경영검토 결과</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">10</span> 개선</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 10장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">10.1</th><td>지속적 개선</td></tr>
+                    <tr><th scope="row">10.2</th><td>부적합 및 시정조치</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title">부속서 안내</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 14001:2026 부속서 안내</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">A</th><td>이 표준의 적용 지침 · 참고 부속서</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+          </ul>
+        </section>
+        <section id="iso-45001-clauses" class="iso-index-standard" aria-labelledby="iso-45001-title">
+          <h3 id="iso-45001-title">ISO 45001:2018</h3>
+          <p class="iso-index-subtitle">안전보건 경영시스템 요구사항 및 사용 지침</p>
+          <p class="iso-index-meta">제1판 · 2018년 3월 발행 · Amd 1:2024 반영 · 본문 1~10장 · 번호 96개</p>
+          <div class="iso-index-sources">
+            <a class="iso-index-source" href="https://www.iso.org/standard/45001" aria-label="ISO 45001:2018 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
+            <a class="iso-index-source" href="https://www.iso.org/standard/88428.html" aria-label="ISO 45001:2018 기후변화 추록 Amd 1:2024">기후변화 추록 Amd 1:2024 <span aria-hidden="true">↗</span></a>
+          </div>
+          <ul class="iso-chapters">
+            <li><p class="iso-chapter-title"><span class="iso-clause-number">1</span> 적용범위</p></li>
+            <li><p class="iso-chapter-title"><span class="iso-clause-number">2</span> 인용표준</p></li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">3</span> 용어와 정의</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 45001:2018 3장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">3.1</th><td>조직</td></tr>
+                    <tr><th scope="row">3.2</th><td>이해관계자</td></tr>
+                    <tr><th scope="row">3.3</th><td>근로자</td></tr>
+                    <tr><th scope="row">3.4</th><td>참여</td></tr>
+                    <tr><th scope="row">3.5</th><td>협의</td></tr>
+                    <tr><th scope="row">3.6</th><td>작업장</td></tr>
+                    <tr><th scope="row">3.7</th><td>계약자</td></tr>
+                    <tr><th scope="row">3.8</th><td>요구사항</td></tr>
+                    <tr><th scope="row">3.9</th><td>법적 요구사항 및 기타 요구사항</td></tr>
+                    <tr><th scope="row">3.10</th><td>경영시스템</td></tr>
+                    <tr><th scope="row">3.11</th><td>안전보건 경영시스템</td></tr>
+                    <tr><th scope="row">3.12</th><td>최고경영자</td></tr>
+                    <tr><th scope="row">3.13</th><td>효과성</td></tr>
+                    <tr><th scope="row">3.14</th><td>방침</td></tr>
+                    <tr><th scope="row">3.15</th><td>안전보건 방침</td></tr>
+                    <tr><th scope="row">3.16</th><td>목표</td></tr>
+                    <tr><th scope="row">3.17</th><td>안전보건 목표</td></tr>
+                    <tr><th scope="row">3.18</th><td>부상 및 건강장해</td></tr>
+                    <tr><th scope="row">3.19</th><td>유해·위험요인</td></tr>
                     <tr><th scope="row">3.20</th><td>리스크</td></tr>
-                    <tr><th scope="row">3.21</th><td>적합</td></tr>
-                    <tr><th scope="row">3.22</th><td>부적합</td></tr>
+                    <tr><th scope="row">3.21</th><td>안전보건 리스크</td></tr>
+                    <tr><th scope="row">3.22</th><td>안전보건 기회</td></tr>
                     <tr><th scope="row">3.23</th><td>역량</td></tr>
-                    <tr><th scope="row">3.24</th><td>요구사항</td></tr>
+                    <tr><th scope="row">3.24</th><td>문서화된 정보</td></tr>
                     <tr><th scope="row">3.25</th><td>프로세스</td></tr>
-                    <tr><th scope="row">3.26</th><td>성과</td></tr>
-                    <tr><th scope="row">3.27</th><td>효과성</td></tr>
+                    <tr><th scope="row">3.26</th><td>절차</td></tr>
+                    <tr><th scope="row">3.27</th><td>성과</td></tr>
+                    <tr><th scope="row">3.28</th><td>안전보건 성과</td></tr>
+                    <tr><th scope="row">3.29</th><td>외주 처리</td></tr>
+                    <tr><th scope="row">3.30</th><td>모니터링</td></tr>
+                    <tr><th scope="row">3.31</th><td>측정</td></tr>
+                    <tr><th scope="row">3.32</th><td>심사</td></tr>
+                    <tr><th scope="row">3.33</th><td>적합</td></tr>
+                    <tr><th scope="row">3.34</th><td>부적합</td></tr>
+                    <tr><th scope="row">3.35</th><td>사건</td></tr>
+                    <tr><th scope="row">3.36</th><td>시정조치</td></tr>
+                    <tr><th scope="row">3.37</th><td>지속적 개선</td></tr>
                   </tbody>
                 </table>
               </details>
             </li>
             <li>
               <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">4</span> 심사의 원칙</summary>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">4</span> 조직의 상황</summary>
                 <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 19011:2026 4장 세부 조항</caption>
+                  <caption class="sr-only">ISO 45001:2018 4장 세부 조항</caption>
                   <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">4.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">4.2</th><td>성실성</td></tr>
-                    <tr><th scope="row">4.3</th><td>공정한 보고</td></tr>
-                    <tr><th scope="row">4.4</th><td>전문가로서의 적절한 주의</td></tr>
-                    <tr><th scope="row">4.5</th><td>기밀유지</td></tr>
-                    <tr><th scope="row">4.6</th><td>독립성</td></tr>
-                    <tr><th scope="row">4.7</th><td>증거 기반 접근법</td></tr>
-                    <tr><th scope="row">4.8</th><td>리스크 기반 접근법</td></tr>
+                    <tr><th scope="row">4.1</th><td>조직과 조직의 상황 이해<small class="iso-clause-note">추록 1 요구사항 · 기후변화가 조직의 관련 이슈인지 판단합니다.</small></td></tr>
+                    <tr><th scope="row">4.2</th><td>근로자와 기타 이해관계자의 니즈와 기대 이해<small class="iso-clause-note">추록 1 주석 · 관련 이해관계자에게 기후변화 관련 요구사항이 있을 수 있습니다.</small></td></tr>
+                    <tr><th scope="row">4.3</th><td>안전보건 경영시스템 적용범위 결정</td></tr>
+                    <tr><th scope="row">4.4</th><td>안전보건 경영시스템</td></tr>
                   </tbody>
                 </table>
               </details>
             </li>
             <li>
               <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">5</span> 심사 프로그램 관리</summary>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">5</span> 리더십과 근로자 참여</summary>
                 <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 19011:2026 5장 세부 조항</caption>
+                  <caption class="sr-only">ISO 45001:2018 5장 세부 조항</caption>
                   <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">5.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">5.2</th><td>심사 프로그램 목표 수립</td></tr>
-                    <tr><th scope="row">5.3</th><td>심사 프로그램의 리스크와 기회 파악 및 평가</td></tr>
-                    <tr><th scope="row">5.4</th><td>심사 프로그램 수립</td></tr>
-                    <tr><th scope="row">5.4.1</th><td>심사 프로그램 관리자의 역할 및 책임</td></tr>
-                    <tr><th scope="row">5.4.2</th><td>심사 프로그램 관리자의 역량</td></tr>
-                    <tr><th scope="row">5.4.3</th><td>심사 프로그램의 범위 설정</td></tr>
-                    <tr><th scope="row">5.4.4</th><td>심사 프로그램 자원 결정</td></tr>
-                    <tr><th scope="row">5.5</th><td>심사 프로그램 실행</td></tr>
-                    <tr><th scope="row">5.5.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">5.5.2</th><td>개별 심사의 목적, 범위 및 기준 결정</td></tr>
-                    <tr><th scope="row">5.5.3</th><td>심사 방법의 선정 및 결정</td></tr>
-                    <tr><th scope="row">5.5.4</th><td>심사팀 구성원 선정</td></tr>
-                    <tr><th scope="row">5.5.5</th><td>개별 심사에 대한 책임을 심사팀장에게 부여</td></tr>
-                    <tr><th scope="row">5.5.6</th><td>심사 프로그램 결과 관리</td></tr>
-                    <tr><th scope="row">5.5.7</th><td>심사 관련 기록 관리</td></tr>
-                    <tr><th scope="row">5.6</th><td>심사 프로그램 모니터링</td></tr>
-                    <tr><th scope="row">5.7</th><td>심사 프로그램 검토 및 개선</td></tr>
+                    <tr><th scope="row">5.1</th><td>리더십과 의지표명</td></tr>
+                    <tr><th scope="row">5.2</th><td>안전보건 방침</td></tr>
+                    <tr><th scope="row">5.3</th><td>조직의 역할, 책임 및 권한</td></tr>
+                    <tr><th scope="row">5.4</th><td>근로자 협의 및 참여</td></tr>
                   </tbody>
                 </table>
               </details>
             </li>
             <li>
               <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">6</span> 심사 수행</summary>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">6</span> 기획</summary>
                 <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 19011:2026 6장 세부 조항</caption>
+                  <caption class="sr-only">ISO 45001:2018 6장 세부 조항</caption>
                   <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">6.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">6.2</th><td>심사 개시</td></tr>
-                    <tr><th scope="row">6.2.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">6.2.2</th><td>피심사조직과의 접촉</td></tr>
-                    <tr><th scope="row">6.2.3</th><td>심사 수행 가능성 결정</td></tr>
-                    <tr><th scope="row">6.3</th><td>심사 활동 준비</td></tr>
-                    <tr><th scope="row">6.3.1</th><td>문서화된 정보의 검토 수행</td></tr>
-                    <tr><th scope="row">6.3.2</th><td>심사 계획</td></tr>
-                    <tr><th scope="row">6.3.2.1</th><td>계획 수립에 대한 리스크 기반 접근법</td></tr>
-                    <tr><th scope="row">6.3.2.2</th><td>심사 계획의 세부사항</td></tr>
-                    <tr><th scope="row">6.3.3</th><td>심사팀에 업무 배정</td></tr>
-                    <tr><th scope="row">6.3.4</th><td>심사를 위한 문서화된 정보의 준비</td></tr>
-                    <tr><th scope="row">6.4</th><td>심사 활동 수행</td></tr>
-                    <tr><th scope="row">6.4.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">6.4.2</th><td>안내자와 참관인의 역할 및 책임 부여</td></tr>
-                    <tr><th scope="row">6.4.3</th><td>시작회의 진행</td></tr>
-                    <tr><th scope="row">6.4.4</th><td>심사 중 의사소통</td></tr>
-                    <tr><th scope="row">6.4.5</th><td>심사 정보에 대한 접근 제공</td></tr>
-                    <tr><th scope="row">6.4.6</th><td>심사 수행 중 문서화된 정보 검토</td></tr>
-                    <tr><th scope="row">6.4.7</th><td>정보 수집 및 검증</td></tr>
-                    <tr><th scope="row">6.4.8</th><td>심사 발견사항 도출</td></tr>
-                    <tr><th scope="row">6.4.9</th><td>심사 결론 결정</td></tr>
-                    <tr><th scope="row">6.4.9.1</th><td>종료회의 준비</td></tr>
-                    <tr><th scope="row">6.4.9.2</th><td>심사 결론의 내용 결정</td></tr>
-                    <tr><th scope="row">6.4.10</th><td>종료회의 진행</td></tr>
-                    <tr><th scope="row">6.5</th><td>심사 보고서 작성 및 배포</td></tr>
-                    <tr><th scope="row">6.5.1</th><td>심사 보고서 작성</td></tr>
-                    <tr><th scope="row">6.5.2</th><td>심사 보고서 배포</td></tr>
-                    <tr><th scope="row">6.6</th><td>심사 완료</td></tr>
-                    <tr><th scope="row">6.7</th><td>심사 후속조치 수행</td></tr>
+                    <tr><th scope="row">6.1</th><td>리스크와 기회를 다루는 조치</td></tr>
+                    <tr><th scope="row">6.1.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">6.1.2</th><td>유해·위험요인 식별 및 리스크와 기회 평가</td></tr>
+                    <tr><th scope="row">6.1.2.1</th><td>유해·위험요인 식별</td></tr>
+                    <tr><th scope="row">6.1.2.2</th><td>안전보건 리스크 및 경영시스템의 기타 리스크 평가</td></tr>
+                    <tr><th scope="row">6.1.2.3</th><td>안전보건 기회 및 경영시스템의 기타 기회 평가</td></tr>
+                    <tr><th scope="row">6.1.3</th><td>법적 요구사항 및 기타 요구사항 결정</td></tr>
+                    <tr><th scope="row">6.1.4</th><td>조치 기획</td></tr>
+                    <tr><th scope="row">6.2</th><td>안전보건 목표 및 달성 기획</td></tr>
+                    <tr><th scope="row">6.2.1</th><td>안전보건 목표</td></tr>
+                    <tr><th scope="row">6.2.2</th><td>안전보건 목표 달성 기획</td></tr>
                   </tbody>
                 </table>
               </details>
             </li>
             <li>
               <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">7</span> 심사원의 역량 및 평가</summary>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">7</span> 지원</summary>
                 <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 19011:2026 7장 세부 조항</caption>
+                  <caption class="sr-only">ISO 45001:2018 7장 세부 조항</caption>
                   <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">7.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">7.2</th><td>심사원의 역량 결정</td></tr>
-                    <tr><th scope="row">7.2.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">7.2.2</th><td>개인적 행동</td></tr>
-                    <tr><th scope="row">7.2.3</th><td>지식과 기술</td></tr>
-                    <tr><th scope="row">7.2.3.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">7.2.3.2</th><td>경영시스템 심사원의 일반 지식과 기술</td></tr>
-                    <tr><th scope="row">7.2.3.3</th><td>심사원의 분야별 및 산업 부문별 역량</td></tr>
-                    <tr><th scope="row">7.2.3.4</th><td>심사팀장의 일반 역량</td></tr>
-                    <tr><th scope="row">7.2.3.5</th><td>여러 분야의 심사에 필요한 지식과 기술</td></tr>
-                    <tr><th scope="row">7.2.4</th><td>심사원의 역량 확보</td></tr>
-                    <tr><th scope="row">7.2.5</th><td>심사팀장의 역량 확보</td></tr>
-                    <tr><th scope="row">7.3</th><td>심사원 평가 기준 수립</td></tr>
-                    <tr><th scope="row">7.4</th><td>적절한 심사원 평가 방법 선정</td></tr>
-                    <tr><th scope="row">7.5</th><td>심사원 평가 수행</td></tr>
-                    <tr><th scope="row">7.6</th><td>심사원의 역량 유지 및 향상</td></tr>
+                    <tr><th scope="row">7.1</th><td>자원</td></tr>
+                    <tr><th scope="row">7.2</th><td>역량</td></tr>
+                    <tr><th scope="row">7.3</th><td>인식</td></tr>
+                    <tr><th scope="row">7.4</th><td>의사소통</td></tr>
+                    <tr><th scope="row">7.4.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.4.2</th><td>내부 의사소통</td></tr>
+                    <tr><th scope="row">7.4.3</th><td>외부 의사소통</td></tr>
+                    <tr><th scope="row">7.5</th><td>문서화된 정보</td></tr>
+                    <tr><th scope="row">7.5.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.5.2</th><td>작성 및 갱신</td></tr>
+                    <tr><th scope="row">7.5.3</th><td>문서화된 정보의 관리</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">8</span> 운용</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 45001:2018 8장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">8.1</th><td>운용 기획 및 관리</td></tr>
+                    <tr><th scope="row">8.1.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">8.1.2</th><td>유해·위험요인 제거 및 안전보건 리스크 감소</td></tr>
+                    <tr><th scope="row">8.1.3</th><td>변경 관리</td></tr>
+                    <tr><th scope="row">8.1.4</th><td>조달</td></tr>
+                    <tr><th scope="row">8.1.4.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">8.1.4.2</th><td>계약자</td></tr>
+                    <tr><th scope="row">8.1.4.3</th><td>외주 처리</td></tr>
+                    <tr><th scope="row">8.2</th><td>비상사태 대비 및 대응</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">9</span> 성과 평가</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 45001:2018 9장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">9.1</th><td>모니터링, 측정, 분석 및 성과 평가</td></tr>
+                    <tr><th scope="row">9.1.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">9.1.2</th><td>준수평가</td></tr>
+                    <tr><th scope="row">9.2</th><td>내부심사</td></tr>
+                    <tr><th scope="row">9.2.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">9.2.2</th><td>내부심사 프로그램</td></tr>
+                    <tr><th scope="row">9.3</th><td>경영검토</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">10</span> 개선</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 45001:2018 10장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">10.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">10.2</th><td>사건, 부적합 및 시정조치</td></tr>
+                    <tr><th scope="row">10.3</th><td>지속적 개선</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title">부속서 안내</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 45001:2018 부속서 안내</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">A</th><td>이 표준의 적용 지침 · 참고 부속서</td></tr>
                   </tbody>
                 </table>
               </details>
@@ -1308,205 +1534,6 @@
             </li>
           </ul>
         </section>
-        <section id="iso-45001-clauses" class="iso-index-standard" aria-labelledby="iso-45001-title">
-          <h3 id="iso-45001-title">ISO 45001:2018</h3>
-          <p class="iso-index-subtitle">안전보건 경영시스템 요구사항 및 사용 지침</p>
-          <p class="iso-index-meta">제1판 · 2018년 3월 발행 · Amd 1:2024 반영 · 본문 1~10장 · 번호 96개</p>
-          <div class="iso-index-sources">
-            <a class="iso-index-source" href="https://www.iso.org/standard/45001" aria-label="ISO 45001:2018 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
-            <a class="iso-index-source" href="https://www.iso.org/standard/88428.html" aria-label="ISO 45001:2018 기후변화 추록 Amd 1:2024">기후변화 추록 Amd 1:2024 <span aria-hidden="true">↗</span></a>
-          </div>
-          <ul class="iso-chapters">
-            <li><p class="iso-chapter-title"><span class="iso-clause-number">1</span> 적용범위</p></li>
-            <li><p class="iso-chapter-title"><span class="iso-clause-number">2</span> 인용표준</p></li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">3</span> 용어와 정의</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 3장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">3.1</th><td>조직</td></tr>
-                    <tr><th scope="row">3.2</th><td>이해관계자</td></tr>
-                    <tr><th scope="row">3.3</th><td>근로자</td></tr>
-                    <tr><th scope="row">3.4</th><td>참여</td></tr>
-                    <tr><th scope="row">3.5</th><td>협의</td></tr>
-                    <tr><th scope="row">3.6</th><td>작업장</td></tr>
-                    <tr><th scope="row">3.7</th><td>계약자</td></tr>
-                    <tr><th scope="row">3.8</th><td>요구사항</td></tr>
-                    <tr><th scope="row">3.9</th><td>법적 요구사항 및 기타 요구사항</td></tr>
-                    <tr><th scope="row">3.10</th><td>경영시스템</td></tr>
-                    <tr><th scope="row">3.11</th><td>안전보건 경영시스템</td></tr>
-                    <tr><th scope="row">3.12</th><td>최고경영자</td></tr>
-                    <tr><th scope="row">3.13</th><td>효과성</td></tr>
-                    <tr><th scope="row">3.14</th><td>방침</td></tr>
-                    <tr><th scope="row">3.15</th><td>안전보건 방침</td></tr>
-                    <tr><th scope="row">3.16</th><td>목표</td></tr>
-                    <tr><th scope="row">3.17</th><td>안전보건 목표</td></tr>
-                    <tr><th scope="row">3.18</th><td>부상 및 건강장해</td></tr>
-                    <tr><th scope="row">3.19</th><td>유해·위험요인</td></tr>
-                    <tr><th scope="row">3.20</th><td>리스크</td></tr>
-                    <tr><th scope="row">3.21</th><td>안전보건 리스크</td></tr>
-                    <tr><th scope="row">3.22</th><td>안전보건 기회</td></tr>
-                    <tr><th scope="row">3.23</th><td>역량</td></tr>
-                    <tr><th scope="row">3.24</th><td>문서화된 정보</td></tr>
-                    <tr><th scope="row">3.25</th><td>프로세스</td></tr>
-                    <tr><th scope="row">3.26</th><td>절차</td></tr>
-                    <tr><th scope="row">3.27</th><td>성과</td></tr>
-                    <tr><th scope="row">3.28</th><td>안전보건 성과</td></tr>
-                    <tr><th scope="row">3.29</th><td>외주 처리</td></tr>
-                    <tr><th scope="row">3.30</th><td>모니터링</td></tr>
-                    <tr><th scope="row">3.31</th><td>측정</td></tr>
-                    <tr><th scope="row">3.32</th><td>심사</td></tr>
-                    <tr><th scope="row">3.33</th><td>적합</td></tr>
-                    <tr><th scope="row">3.34</th><td>부적합</td></tr>
-                    <tr><th scope="row">3.35</th><td>사건</td></tr>
-                    <tr><th scope="row">3.36</th><td>시정조치</td></tr>
-                    <tr><th scope="row">3.37</th><td>지속적 개선</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">4</span> 조직의 상황</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 4장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">4.1</th><td>조직과 조직의 상황 이해<small class="iso-clause-note">추록 1 요구사항 · 기후변화가 조직의 관련 이슈인지 판단합니다.</small></td></tr>
-                    <tr><th scope="row">4.2</th><td>근로자와 기타 이해관계자의 니즈와 기대 이해<small class="iso-clause-note">추록 1 주석 · 관련 이해관계자에게 기후변화 관련 요구사항이 있을 수 있습니다.</small></td></tr>
-                    <tr><th scope="row">4.3</th><td>안전보건 경영시스템 적용범위 결정</td></tr>
-                    <tr><th scope="row">4.4</th><td>안전보건 경영시스템</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">5</span> 리더십과 근로자 참여</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 5장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">5.1</th><td>리더십과 의지표명</td></tr>
-                    <tr><th scope="row">5.2</th><td>안전보건 방침</td></tr>
-                    <tr><th scope="row">5.3</th><td>조직의 역할, 책임 및 권한</td></tr>
-                    <tr><th scope="row">5.4</th><td>근로자 협의 및 참여</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">6</span> 기획</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 6장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">6.1</th><td>리스크와 기회를 다루는 조치</td></tr>
-                    <tr><th scope="row">6.1.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">6.1.2</th><td>유해·위험요인 식별 및 리스크와 기회 평가</td></tr>
-                    <tr><th scope="row">6.1.2.1</th><td>유해·위험요인 식별</td></tr>
-                    <tr><th scope="row">6.1.2.2</th><td>안전보건 리스크 및 경영시스템의 기타 리스크 평가</td></tr>
-                    <tr><th scope="row">6.1.2.3</th><td>안전보건 기회 및 경영시스템의 기타 기회 평가</td></tr>
-                    <tr><th scope="row">6.1.3</th><td>법적 요구사항 및 기타 요구사항 결정</td></tr>
-                    <tr><th scope="row">6.1.4</th><td>조치 기획</td></tr>
-                    <tr><th scope="row">6.2</th><td>안전보건 목표 및 달성 기획</td></tr>
-                    <tr><th scope="row">6.2.1</th><td>안전보건 목표</td></tr>
-                    <tr><th scope="row">6.2.2</th><td>안전보건 목표 달성 기획</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">7</span> 지원</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 7장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">7.1</th><td>자원</td></tr>
-                    <tr><th scope="row">7.2</th><td>역량</td></tr>
-                    <tr><th scope="row">7.3</th><td>인식</td></tr>
-                    <tr><th scope="row">7.4</th><td>의사소통</td></tr>
-                    <tr><th scope="row">7.4.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">7.4.2</th><td>내부 의사소통</td></tr>
-                    <tr><th scope="row">7.4.3</th><td>외부 의사소통</td></tr>
-                    <tr><th scope="row">7.5</th><td>문서화된 정보</td></tr>
-                    <tr><th scope="row">7.5.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">7.5.2</th><td>작성 및 갱신</td></tr>
-                    <tr><th scope="row">7.5.3</th><td>문서화된 정보의 관리</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">8</span> 운용</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 8장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">8.1</th><td>운용 기획 및 관리</td></tr>
-                    <tr><th scope="row">8.1.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">8.1.2</th><td>유해·위험요인 제거 및 안전보건 리스크 감소</td></tr>
-                    <tr><th scope="row">8.1.3</th><td>변경 관리</td></tr>
-                    <tr><th scope="row">8.1.4</th><td>조달</td></tr>
-                    <tr><th scope="row">8.1.4.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">8.1.4.2</th><td>계약자</td></tr>
-                    <tr><th scope="row">8.1.4.3</th><td>외주 처리</td></tr>
-                    <tr><th scope="row">8.2</th><td>비상사태 대비 및 대응</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">9</span> 성과 평가</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 9장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">9.1</th><td>모니터링, 측정, 분석 및 성과 평가</td></tr>
-                    <tr><th scope="row">9.1.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">9.1.2</th><td>준수평가</td></tr>
-                    <tr><th scope="row">9.2</th><td>내부심사</td></tr>
-                    <tr><th scope="row">9.2.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">9.2.2</th><td>내부심사 프로그램</td></tr>
-                    <tr><th scope="row">9.3</th><td>경영검토</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title"><span class="iso-clause-number">10</span> 개선</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 10장 세부 조항</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">10.1</th><td>일반사항</td></tr>
-                    <tr><th scope="row">10.2</th><td>사건, 부적합 및 시정조치</td></tr>
-                    <tr><th scope="row">10.3</th><td>지속적 개선</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary class="iso-chapter-title">부속서 안내</summary>
-                <table class="iso-clause-table">
-                  <caption class="sr-only">ISO 45001:2018 부속서 안내</caption>
-                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row">A</th><td>이 표준의 적용 지침 · 참고 부속서</td></tr>
-                  </tbody>
-                </table>
-              </details>
-            </li>
-          </ul>
-        </section>
         <section id="iso-53001-clauses" class="iso-index-standard" aria-labelledby="iso-53001-title">
           <h3 id="iso-53001-title">ISO/UNDP 53001:2026</h3>
           <p class="iso-index-subtitle">유엔 지속가능발전목표(SDGs) 경영시스템 요구사항</p>
@@ -1704,6 +1731,172 @@
           </ul>
         </section>
       </div>
+      <aside class="iso-index-reference" aria-label="심사 참고자료">
+        <section id="iso-19011-clauses" class="iso-index-standard audit" aria-labelledby="iso-19011-title">
+          <h3 id="iso-19011-title">ISO 19011:2026</h3>
+          <p class="iso-index-subtitle">경영시스템 심사 지침 · 참고자료</p>
+          <p class="iso-index-meta">4판 · 2026년 5월 발행 · 본문 1~7장 · 번호 106개</p>
+          <a class="iso-index-source" href="https://www.iso.org/standard/19011" aria-label="ISO 19011:2026 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
+          <ul class="iso-chapters">
+            <li><p class="iso-chapter-title"><span class="iso-clause-number">1</span> 적용범위</p></li>
+            <li><p class="iso-chapter-title"><span class="iso-clause-number">2</span> 인용표준</p></li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">3</span> 용어와 정의</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 19011:2026 3장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">3.1</th><td>심사</td></tr>
+                    <tr><th scope="row">3.2</th><td>결합심사</td></tr>
+                    <tr><th scope="row">3.3</th><td>합동심사</td></tr>
+                    <tr><th scope="row">3.4</th><td>원격 심사 방법</td></tr>
+                    <tr><th scope="row">3.5</th><td>심사 프로그램</td></tr>
+                    <tr><th scope="row">3.6</th><td>심사 범위</td></tr>
+                    <tr><th scope="row">3.7</th><td>심사 계획</td></tr>
+                    <tr><th scope="row">3.8</th><td>심사 기준</td></tr>
+                    <tr><th scope="row">3.9</th><td>객관적 증거</td></tr>
+                    <tr><th scope="row">3.10</th><td>심사 증거</td></tr>
+                    <tr><th scope="row">3.11</th><td>심사 발견사항</td></tr>
+                    <tr><th scope="row">3.12</th><td>심사 결론</td></tr>
+                    <tr><th scope="row">3.13</th><td>심사 의뢰자</td></tr>
+                    <tr><th scope="row">3.14</th><td>피심사조직</td></tr>
+                    <tr><th scope="row">3.15</th><td>심사팀</td></tr>
+                    <tr><th scope="row">3.16</th><td>심사원</td></tr>
+                    <tr><th scope="row">3.17</th><td>기술 전문가</td></tr>
+                    <tr><th scope="row">3.18</th><td>참관인</td></tr>
+                    <tr><th scope="row">3.19</th><td>경영시스템</td></tr>
+                    <tr><th scope="row">3.20</th><td>리스크</td></tr>
+                    <tr><th scope="row">3.21</th><td>적합</td></tr>
+                    <tr><th scope="row">3.22</th><td>부적합</td></tr>
+                    <tr><th scope="row">3.23</th><td>역량</td></tr>
+                    <tr><th scope="row">3.24</th><td>요구사항</td></tr>
+                    <tr><th scope="row">3.25</th><td>프로세스</td></tr>
+                    <tr><th scope="row">3.26</th><td>성과</td></tr>
+                    <tr><th scope="row">3.27</th><td>효과성</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">4</span> 심사의 원칙</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 19011:2026 4장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">4.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">4.2</th><td>성실성</td></tr>
+                    <tr><th scope="row">4.3</th><td>공정한 보고</td></tr>
+                    <tr><th scope="row">4.4</th><td>전문가로서의 적절한 주의</td></tr>
+                    <tr><th scope="row">4.5</th><td>기밀유지</td></tr>
+                    <tr><th scope="row">4.6</th><td>독립성</td></tr>
+                    <tr><th scope="row">4.7</th><td>증거 기반 접근법</td></tr>
+                    <tr><th scope="row">4.8</th><td>리스크 기반 접근법</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">5</span> 심사 프로그램 관리</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 19011:2026 5장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">5.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">5.2</th><td>심사 프로그램 목표 수립</td></tr>
+                    <tr><th scope="row">5.3</th><td>심사 프로그램의 리스크와 기회 파악 및 평가</td></tr>
+                    <tr><th scope="row">5.4</th><td>심사 프로그램 수립</td></tr>
+                    <tr><th scope="row">5.4.1</th><td>심사 프로그램 관리자의 역할 및 책임</td></tr>
+                    <tr><th scope="row">5.4.2</th><td>심사 프로그램 관리자의 역량</td></tr>
+                    <tr><th scope="row">5.4.3</th><td>심사 프로그램의 범위 설정</td></tr>
+                    <tr><th scope="row">5.4.4</th><td>심사 프로그램 자원 결정</td></tr>
+                    <tr><th scope="row">5.5</th><td>심사 프로그램 실행</td></tr>
+                    <tr><th scope="row">5.5.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">5.5.2</th><td>개별 심사의 목적, 범위 및 기준 결정</td></tr>
+                    <tr><th scope="row">5.5.3</th><td>심사 방법의 선정 및 결정</td></tr>
+                    <tr><th scope="row">5.5.4</th><td>심사팀 구성원 선정</td></tr>
+                    <tr><th scope="row">5.5.5</th><td>개별 심사에 대한 책임을 심사팀장에게 부여</td></tr>
+                    <tr><th scope="row">5.5.6</th><td>심사 프로그램 결과 관리</td></tr>
+                    <tr><th scope="row">5.5.7</th><td>심사 관련 기록 관리</td></tr>
+                    <tr><th scope="row">5.6</th><td>심사 프로그램 모니터링</td></tr>
+                    <tr><th scope="row">5.7</th><td>심사 프로그램 검토 및 개선</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">6</span> 심사 수행</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 19011:2026 6장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">6.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">6.2</th><td>심사 개시</td></tr>
+                    <tr><th scope="row">6.2.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">6.2.2</th><td>피심사조직과의 접촉</td></tr>
+                    <tr><th scope="row">6.2.3</th><td>심사 수행 가능성 결정</td></tr>
+                    <tr><th scope="row">6.3</th><td>심사 활동 준비</td></tr>
+                    <tr><th scope="row">6.3.1</th><td>문서화된 정보의 검토 수행</td></tr>
+                    <tr><th scope="row">6.3.2</th><td>심사 계획</td></tr>
+                    <tr><th scope="row">6.3.2.1</th><td>계획 수립에 대한 리스크 기반 접근법</td></tr>
+                    <tr><th scope="row">6.3.2.2</th><td>심사 계획의 세부사항</td></tr>
+                    <tr><th scope="row">6.3.3</th><td>심사팀에 업무 배정</td></tr>
+                    <tr><th scope="row">6.3.4</th><td>심사를 위한 문서화된 정보의 준비</td></tr>
+                    <tr><th scope="row">6.4</th><td>심사 활동 수행</td></tr>
+                    <tr><th scope="row">6.4.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">6.4.2</th><td>안내자와 참관인의 역할 및 책임 부여</td></tr>
+                    <tr><th scope="row">6.4.3</th><td>시작회의 진행</td></tr>
+                    <tr><th scope="row">6.4.4</th><td>심사 중 의사소통</td></tr>
+                    <tr><th scope="row">6.4.5</th><td>심사 정보에 대한 접근 제공</td></tr>
+                    <tr><th scope="row">6.4.6</th><td>심사 수행 중 문서화된 정보 검토</td></tr>
+                    <tr><th scope="row">6.4.7</th><td>정보 수집 및 검증</td></tr>
+                    <tr><th scope="row">6.4.8</th><td>심사 발견사항 도출</td></tr>
+                    <tr><th scope="row">6.4.9</th><td>심사 결론 결정</td></tr>
+                    <tr><th scope="row">6.4.9.1</th><td>종료회의 준비</td></tr>
+                    <tr><th scope="row">6.4.9.2</th><td>심사 결론의 내용 결정</td></tr>
+                    <tr><th scope="row">6.4.10</th><td>종료회의 진행</td></tr>
+                    <tr><th scope="row">6.5</th><td>심사 보고서 작성 및 배포</td></tr>
+                    <tr><th scope="row">6.5.1</th><td>심사 보고서 작성</td></tr>
+                    <tr><th scope="row">6.5.2</th><td>심사 보고서 배포</td></tr>
+                    <tr><th scope="row">6.6</th><td>심사 완료</td></tr>
+                    <tr><th scope="row">6.7</th><td>심사 후속조치 수행</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="iso-chapter-title"><span class="iso-clause-number">7</span> 심사원의 역량 및 평가</summary>
+                <table class="iso-clause-table">
+                  <caption class="sr-only">ISO 19011:2026 7장 세부 조항</caption>
+                  <thead><tr><th scope="col">번호</th><th scope="col">항목명</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">7.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.2</th><td>심사원의 역량 결정</td></tr>
+                    <tr><th scope="row">7.2.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.2.2</th><td>개인적 행동</td></tr>
+                    <tr><th scope="row">7.2.3</th><td>지식과 기술</td></tr>
+                    <tr><th scope="row">7.2.3.1</th><td>일반사항</td></tr>
+                    <tr><th scope="row">7.2.3.2</th><td>경영시스템 심사원의 일반 지식과 기술</td></tr>
+                    <tr><th scope="row">7.2.3.3</th><td>심사원의 분야별 및 산업 부문별 역량</td></tr>
+                    <tr><th scope="row">7.2.3.4</th><td>심사팀장의 일반 역량</td></tr>
+                    <tr><th scope="row">7.2.3.5</th><td>여러 분야의 심사에 필요한 지식과 기술</td></tr>
+                    <tr><th scope="row">7.2.4</th><td>심사원의 역량 확보</td></tr>
+                    <tr><th scope="row">7.2.5</th><td>심사팀장의 역량 확보</td></tr>
+                    <tr><th scope="row">7.3</th><td>심사원 평가 기준 수립</td></tr>
+                    <tr><th scope="row">7.4</th><td>적절한 심사원 평가 방법 선정</td></tr>
+                    <tr><th scope="row">7.5</th><td>심사원 평가 수행</td></tr>
+                    <tr><th scope="row">7.6</th><td>심사원의 역량 유지 및 향상</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </li>
+          </ul>
+        </section>
+      </aside>
     </div>
   </section>
 
