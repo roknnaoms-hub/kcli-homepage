@@ -280,6 +280,20 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 
 .iso-index { background: #eaf0f5; }
 .iso-index .section-heading { margin-bottom: clamp(24px, 4vw, 42px); }
+.iso-index-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.iso-index-jumps a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid #bdcbd7;
+  background: var(--white);
+  color: var(--navy-2);
+  font-size: .88rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.iso-index-jumps a:hover { background: #dce8f1; }
 .iso-index-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -297,6 +311,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 .iso-index-standard h3 { margin: 0; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; }
 .iso-index-subtitle { margin: 5px 0; font-weight: 700; }
 .iso-index-meta { margin: 0; color: var(--muted); font-size: .88rem; }
+.iso-index-sources { display: flex; flex-wrap: wrap; gap: 0 16px; }
+.iso-index-note { margin: 10px 0 0; color: var(--muted); font-size: .88rem; word-break: keep-all; overflow-wrap: anywhere; }
 .iso-index-source {
   display: inline-block;
   margin-top: 12px;
@@ -341,6 +357,7 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
 .iso-clause-table tbody th { color: var(--standard-accent); font-weight: 600; }
 .iso-clause-table th:first-child { width: 6em; white-space: nowrap; }
 .iso-clause-table td { word-break: keep-all; overflow-wrap: anywhere; }
+.iso-clause-note { display: block; margin-top: 4px; color: var(--muted); font-size: .88em; }
 @media (max-width: 840px) {
   .iso-index-grid { grid-template-columns: minmax(0, 1fr); }
 }
