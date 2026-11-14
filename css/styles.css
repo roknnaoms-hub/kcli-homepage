@@ -609,7 +609,12 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
 .course-comparison a { font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
 .guide-courses .guide-course-edition { margin-bottom: 0; font-size: .88rem; font-weight: 700; }
 #iqcs-designation .designation-copy { min-width: 0; overflow-wrap: anywhere; }
-#iqcs-designation .document-note { margin-top: 12px; font-size: .87rem; }
+.designation-copy h2 { line-height: 1.28; word-break: keep-all; }
+.designation-copy h3 { margin: 0; font-size: .95rem; }
+.designation-standards { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.designation-standards a { display: block; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; background: #f6f5f0; font-size: .84rem; font-weight: 750; white-space: nowrap; }
+.designation-standards a:hover, .designation-standards a:focus-visible { text-decoration: underline; text-underline-offset: .19em; }
+#iqcs-designation dl { flex-direction: row; flex-wrap: wrap; gap: 12px clamp(20px, 5vw, 60px); margin: 23px 0 16px; }
 
 @media (max-width: 950px) {
   .training-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -618,6 +623,7 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .guide-courses { grid-template-columns: 1fr; }
   .training-methods li { padding: 15px; }
   .course-comparison { font-size: .83rem; }
+  .designation-copy h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
 }
 @media (max-width: 360px) {
   .training-methods { grid-template-columns: 1fr; }
