@@ -378,6 +378,9 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   border-top: 3px solid var(--standard-accent);
   background: var(--white);
 }
+/* Land on the selected standard without an animation during page load. */
+:root:has(.iso-index-standard:target) { scroll-behavior: auto; }
+.iso-index-standard:target { grid-column: 1 / -1; border-color: var(--standard-accent); }
 .iso-index-standard.audit { --standard-accent: #1c6057; }
 .iso-index-standard h3 { margin: 0; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; }
 .iso-index-subtitle { margin: 5px 0; font-weight: 700; }
