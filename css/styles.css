@@ -423,6 +423,30 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   .ai-audit-grid { grid-template-columns: 1fr; }
 }
 
+.audit-guide { background: #f6f5f0; word-break: keep-all; overflow-wrap: anywhere; }
+.audit-guide .section-heading { margin-bottom: 18px; }
+.audit-guide .container > section + section { margin-top: 36px; }
+.audit-guide h3 { margin: 0 0 12px; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; }
+.audit-guide h4 { margin: 0 0 8px; font-size: 1.07rem; line-height: 1.45; }
+.audit-guide :is(p, dd) { color: var(--muted); }
+.audit-guide-links { margin: 16px 0; color: var(--navy-2); }
+.audit-guide-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.audit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.audit-panel { padding: clamp(16px, 2.5vw, 24px); border: 1px solid var(--line); border-top: 2px solid var(--navy-2); background: var(--white); }
+.audit-panel p, .audit-highlight p { margin: 0; }
+.audit-clause { color: var(--navy-2); font-size: .85rem; font-weight: 750; white-space: nowrap; }
+.audit-steps { margin: 14px 0 0; padding: 0; list-style: none; }
+.audit-highlight { margin-top: 16px; padding: clamp(16px, 2.5vw, 24px); border: 1px solid var(--line); background: #eef4f8; }
+.audit-rows { margin: 10px 0; }
+.audit-rows > div { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 8px; padding: 8px 0; border-top: 1px solid var(--line); }
+.audit-rows > div:last-child { border-bottom: 1px solid var(--line); }
+.audit-rows dt { color: var(--ink); font-weight: 750; }
+.audit-rows dd { margin: 0; }
+.audit-findings-notes { margin-top: 14px; }
+@media (max-width: 680px) {
+  .audit-grid { grid-template-columns: 1fr; }
+}
+
 .iso-index { background: #eaf0f5; }
 .iso-index .section-heading { margin-bottom: clamp(24px, 4vw, 42px); }
 .iso-index-jumps { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
@@ -439,7 +463,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 }
 .iso-index-jumps span { color: var(--muted); font-size: .86rem; }
 .iso-index-jumps a:hover { background: #dce8f1; }
-.iso-index-reference-link { margin: 14px 0 24px; color: var(--navy-2); font-size: .9rem; }
+.iso-index-reference-link { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 14px 0 24px; color: var(--navy-2); font-size: .9rem; }
 .iso-index-reference { margin-top: 32px; }
 .iso-index-grid {
   display: grid;
