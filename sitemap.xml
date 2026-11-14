@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/</loc></url>
-  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/iso-auditor-training/</loc></url>
-  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/iqcs-auditor-registration/</loc></url>
+  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/iso-auditor-training/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/iqcs-auditor-registration/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://roknnaoms-hub.github.io/kcli-homepage/en/</loc><lastmod>2026-11-14</lastmod></url>
 </urlset>

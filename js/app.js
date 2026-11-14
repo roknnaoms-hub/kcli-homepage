@@ -2,6 +2,8 @@ document.documentElement.classList.add('js');
 
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-button');
+const menuLabel = menuButton?.querySelector('.sr-only');
+const menuOpenLabel = menuLabel?.textContent;
 
 const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 18);
 updateHeader();
@@ -10,14 +12,13 @@ window.addEventListener('scroll', updateHeader, { passive: true });
 menuButton?.addEventListener('click', () => {
   const open = header.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.querySelector('.sr-only').textContent = open ? '메뉴 닫기' : '메뉴 열기';
+  if (menuLabel) menuLabel.textContent = open ? (menuButton.dataset.closeLabel || '메뉴 닫기') : menuOpenLabel;
 });
 
 document.querySelectorAll('.site-nav a').forEach((link) => link.addEventListener('click', () => {
   header?.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
-  const label = menuButton?.querySelector('.sr-only');
-  if (label) label.textContent = '메뉴 열기';
+  if (menuLabel) menuLabel.textContent = menuOpenLabel;
 }));
 
 const revealElements = document.querySelectorAll('.reveal');
@@ -48,12 +49,18 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && header?.classList.contains('open')) {
     header.classList.remove('open');
     menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.querySelector('.sr-only').textContent = '메뉴 열기';
+    if (menuLabel) menuLabel.textContent = menuOpenLabel;
     menuButton.focus();
   }
 });
 const inquiryType = document.getElementById('inquiry-type');
 const inquiryMail = document.getElementById('inquiry-mail');
+if (inquiryType) {
+  const selectedCourse = new URLSearchParams(location.search).get('course');
+  if (Array.from(inquiryType.options).some((option) => option.dataset.standard && option.value === selectedCourse)) {
+    inquiryType.value = selectedCourse;
+  }
+}
 const inquiryPrompts = {
   organization: ['기업·기관 교육 협력 문의', '기관명: \n희망 교육 주제: \n참여 대상·인원: \n희망 일정·방식: \n기대 결과: '],
   knowledge: ['AI·지식정보 분야 협력 문의', '기관명: \n협력 주제: \n현재 업무 현안: \n희망 일정: \n문의사항: ']

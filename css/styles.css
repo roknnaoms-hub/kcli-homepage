@@ -585,8 +585,8 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   padding: 0;
   list-style: none;
 }
-.guide-courses > li { padding: clamp(16px, 3vw, 28px); min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
-.guide-courses h3 { margin: 0; scroll-margin-top: 98px; font-size: 1.14rem; line-height: 1.45; }
+.guide-courses > li { padding: clamp(16px, 3vw, 28px); min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: #fff; scroll-margin-top: 98px; }
+.guide-courses h3 { margin: 0; font-size: 1.14rem; line-height: 1.45; }
 .guide-courses p { margin: 8px 0 11px; }
 .guide-courses a { display: inline-block; margin: 5px 10px 0 0; }
 .guide-body { max-width: 55rem; }
@@ -598,12 +598,26 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
 .registration-grades dt { font-weight: 750; }
 .registration-grades dd { margin: 3px 0 0; color: var(--muted); }
 
+.comparison-section { margin-bottom: clamp(36px, 6vw, 68px); }
+.course-comparison { width: 100%; margin-block: 20px 14px; border-collapse: collapse; background: #fff; }
+.course-comparison th, .course-comparison td { padding: 12px clamp(7px, 1.5vw, 18px); border: 1px solid var(--line); text-align: start; vertical-align: top; }
+.course-comparison thead th { color: #fff; background: var(--navy); }
+.course-comparison tbody th { width: 19%; background: #e9edf0; }
+.course-comparison td { width: 40.5%; }
+:lang(en) .course-comparison tbody th { width: 26%; }
+:lang(en) .course-comparison td { width: 37%; }
+.course-comparison a { font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
+.guide-courses .guide-course-edition { margin-bottom: 0; font-size: .88rem; font-weight: 700; }
+#iqcs-designation .designation-copy { min-width: 0; overflow-wrap: anywhere; }
+#iqcs-designation .document-note { margin-top: 12px; font-size: .87rem; }
+
 @media (max-width: 950px) {
   .training-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
   .guide-courses { grid-template-columns: 1fr; }
   .training-methods li { padding: 15px; }
+  .course-comparison { font-size: .83rem; }
 }
 @media (max-width: 360px) {
   .training-methods { grid-template-columns: 1fr; }
