@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="회의실에서 심사 자료를 함께 검토하는 두 사람">
   <meta name="theme-color" content="#f6f5f0">
   <title>ISO 인증심사원 전문 연수기관 | KCLI 한국사이버리터러시연구원</title>
-  <link rel="stylesheet" href="./css/styles.css?v=quality-principles-20261115">
+  <link rel="stylesheet" href="./css/styles.css?v=ai-management-20261115">
   <script src="./js/app.js?v=geo-20261114" defer></script>
   <script type="application/ld+json">
   {
@@ -117,6 +117,7 @@
     <div class="container">
       <a href="#iso-clauses">ISO 조항 목록 <span aria-hidden="true">↗</span></a>
       <a href="#quality-management">품질경영 핵심원칙 <span aria-hidden="true">↗</span></a>
+      <a href="#ai-management">ISO/IEC 42001 핵심 <span aria-hidden="true">↗</span></a>
       <a href="#records">교육성과 <span aria-hidden="true">↗</span></a>
       <a href="#policies">연구원 운영방침 <span aria-hidden="true">↗</span></a>
       <a href="#approach">기관·기업 협력 <span aria-hidden="true">↗</span></a>
@@ -344,6 +345,7 @@
           <h3><span>ISO/IEC 42001:2023</span> 인공지능 경영시스템</h3>
           <p><strong>3일 과정</strong><br>AI 시스템의 위험과 영향을 평가하고, 책임 있는 AI 운영을 뒷받침하는 관리 체계를 다룹니다.</p>
           <div class="catalog-card-actions">
+            <a class="text-link" href="#ai-management">ISO/IEC 42001 핵심 <b aria-hidden="true">↓</b></a>
             <a class="text-link" href="#contact" data-course="iso-42001" aria-label="ISO/IEC 42001 교육 문의">교육 문의 <b aria-hidden="true">→</b></a>
             <a class="text-link" href="#iso-42001-clauses" aria-label="ISO/IEC 42001 요구사항 목록">요구사항 목록 <b aria-hidden="true">↓</b></a>
             <a class="text-link" href="#iso-42001-course" aria-label="ISO/IEC 42001 과정 상세">과정 상세 <b aria-hidden="true">↓</b></a>
@@ -448,6 +450,82 @@
         <a class="auditor-inline-link" href="./iso-auditor-training/#iso-9001">ISO 9001 인증심사원 교육</a>
         <a class="auditor-inline-link" href="https://www.iso.org/quality-management/principles">ISO 품질경영원칙 안내</a>
         <a class="auditor-inline-link" href="https://www.iso.org/standard/9001">ISO 9001:2026 발행 정보</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="ai-management" class="section ai-management" aria-labelledby="ai-management-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="ai-management-title">ISO/IEC 42001 핵심</h2>
+        <p>ISO/IEC 42001:2023은 AI 시스템을 개발·제공·사용하는 조직이 인공지능경영시스템(AIMS)을 수립하고 운영·개선하기 위한 요구사항을 규정합니다. 인증심사에서는 조직이 정한 적용범위의 경영시스템을 평가합니다.</p>
+      </div>
+
+      <section id="ai-concepts" aria-labelledby="ai-concepts-title">
+        <h3 id="ai-concepts-title">인공지능, AI 시스템, AI 경영시스템 비교</h3>
+        <table class="ai-concepts-table">
+          <caption class="sr-only">인공지능, 인공지능시스템, 인공지능경영시스템 비교</caption>
+          <thead>
+            <tr><th scope="col">구분</th><th scope="col">의미와 활용 예시</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">인공지능 <small lang="en">AI</small></th>
+              <td>인공지능시스템의 구현 방법과 응용을 연구·개발하는 분야입니다.<p><strong>예시</strong> 문의 문장을 주제별로 분류하는 자연어처리 기법</p></td>
+            </tr>
+            <tr>
+              <th scope="row">인공지능 시스템 <small lang="en">AI system</small></th>
+              <td>사람이 정한 목표에 맞춰 예측·추천·콘텐츠·의사결정 등의 결과를 생성하도록 설계한 시스템입니다.<p><strong>예시</strong> 문의 유형을 추천하고 상담원이 결과를 확인·수정하는 상담 지원 서비스</p></td>
+            </tr>
+            <tr>
+              <th scope="row">인공지능 경영시스템 <small lang="en">AIMS</small></th>
+              <td>AI 시스템의 책임 있는 개발·제공·사용을 위해 조직이 방침과 목표를 정하고 실행하는 관리체계입니다.<p><strong>예시</strong> 문의 분류 서비스의 운영 기준과 책임자를 정하고, 오분류와 개인정보 처리 리스크를 평가하고 관리하는 체계</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ai-audit-focus" aria-labelledby="ai-audit-title">
+        <h3 id="ai-audit-title">심사에서 확인하는 항목</h3>
+        <div class="ai-audit-grid">
+          <article>
+            <h4>적용범위와 책임</h4>
+            <p class="ai-audit-clause">4~5항</p>
+            <p>조직의 역할과 이해관계자 요구를 바탕으로 AIMS의 적용범위를 정합니다. 경영진은 AI 방침을 수립하고 역할·책임·권한을 부여합니다.</p>
+          </article>
+          <article>
+            <h4>AI 리스크 평가·처리</h4>
+            <p class="ai-audit-clause">6.1.2~6.1.3항, 8.2~8.3항</p>
+            <p>리스크가 현실화됐을 때의 결과와 필요한 경우 발생 가능성을 평가한 뒤, 처리 우선순위와 통제를 정합니다. 예를 들어 문의 오분류에 대비해 상담원의 결과 확인 절차를 둘 수 있습니다.</p>
+          </article>
+          <article>
+            <h4>AI 시스템 영향평가</h4>
+            <p class="ai-audit-clause">6.1.4항, 8.4항</p>
+            <p>AI 시스템의 배포·사용·예측 가능한 오용이 개인·집단·사회에 미칠 영향을 평가합니다. 특정 언어를 쓰는 고객에게 문의 처리 지연이 집중될 수 있는지 검토하는 것이 한 예입니다. 결과는 문서화하고 리스크 평가에 반영합니다.</p>
+          </article>
+          <article>
+            <h4>통제와 적용성 보고서(SoA)</h4>
+            <p class="ai-audit-clause">6.1.3항, 부속서 A·B</p>
+            <p>리스크 처리에 필요한 통제를 부속서 A와 대조합니다. 적용성 보고서에 필요한 통제와 포함·제외 근거를 기록하고, 구현에는 부속서 B의 지침을 참고합니다.</p>
+          </article>
+          <article>
+            <h4>데이터와 AI 수명주기</h4>
+            <p class="ai-audit-clause">7~8항, 부속서 A.6·A.7</p>
+            <p>선정한 통제에 따라 데이터 출처와 품질, 배포 전 검증, 운영 중 모니터링, 변경과 운영 종료를 관리합니다.</p>
+          </article>
+          <article>
+            <h4>성과 평가와 개선</h4>
+            <p class="ai-audit-clause">9~10항</p>
+            <p>운영 지표를 AI 목표와 비교하고, 내부심사와 경영검토로 경영시스템의 효과를 확인합니다. 부적합이 발생하면 원인을 파악하고 시정조치의 효과를 확인합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <nav class="ai-management-links" aria-label="ISO/IEC 42001 학습 자료">
+        <a class="auditor-inline-link" href="#iso-42001-clauses">ISO/IEC 42001 조항 목록</a>
+        <a class="auditor-inline-link" href="#iso-42001-course">KCLI 인증심사원 3일 과정</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/42001">ISO/IEC 42001 발행 정보</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/74296.html">ISO/IEC 22989 AI 용어·개념</a>
       </nav>
     </div>
   </section>
@@ -1587,6 +1665,7 @@
           <p class="iso-index-subtitle">인공지능 경영시스템 요구사항</p>
           <p class="iso-index-meta">제1판 · 2023년 12월 발행 · 본문 1~10장 · 번호 72개</p>
           <div class="iso-index-sources">
+            <a class="iso-index-source" href="#ai-management">ISO/IEC 42001 핵심 <span aria-hidden="true">↑</span></a>
             <a class="iso-index-source" href="https://www.iso.org/standard/42001" aria-label="ISO/IEC 42001:2023 ISO 공식 발행 정보">ISO 공식 발행 정보 <span aria-hidden="true">↗</span></a>
           </div>
           <div class="iso-datasheet-actions">
