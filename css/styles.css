@@ -324,6 +324,19 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   text-decoration: underline;
   text-underline-offset: .2em;
 }
+.iso-datasheet-button {
+  display: block;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border: 1px solid #a9bfd4;
+  background: #edf3f7;
+  color: var(--standard-accent);
+  font-size: .88rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+.iso-datasheet-button:hover { background: #dce8f1; }
 .iso-chapters { margin: 22px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .iso-chapters > li { border-bottom: 1px solid var(--line); }
 .iso-chapter-title {
