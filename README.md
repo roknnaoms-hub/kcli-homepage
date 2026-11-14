@@ -11,6 +11,11 @@ GitHub Pages: main 브랜치 / (root).
 
 교육 일정과 비용, 자격 등록 조건은 담당자 및 관련 기관의 최신 안내를 확인하십시오.
 
+## 검색 노출 관리
+
+- 공개 페이지의 대표 주소는 `https://roknnaoms-hub.github.io/kcli-homepage/`입니다. 공개 페이지 주소가 추가되거나 변경되면 `sitemap.xml`과 각 페이지의 대표 주소를 함께 확인합니다.
+- 저장소 루트의 `3bd4ce3f1a1d7b30d0acefab32a9f253.txt`는 IndexNow 요청에 사용하는 공개 확인 파일입니다. 네이버에 갱신을 알릴 때 `keyLocation`에는 `/kcli-homepage/` 아래에 배포된 이 파일의 전체 URL을 지정합니다.
+
 ## ISO 조항 이미지 갱신
 
 `index.html`의 연수교육 표준 4~10항을 수정한 경우 SVG와 PNG를 다시 생성합니다. Node.js, Playwright Chromium과 Noto Sans CJK KR 글꼴이 필요합니다.
