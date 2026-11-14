@@ -324,19 +324,25 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   text-decoration: underline;
   text-underline-offset: .2em;
 }
-.iso-datasheet-button {
-  display: block;
+.iso-datasheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 14px; }
+.iso-datasheet-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   min-height: 44px;
-  margin-top: 14px;
-  padding: 6px 12px;
-  border: 1px solid #a9bfd4;
-  background: #edf3f7;
   color: var(--standard-accent);
   font-size: .88rem;
   font-weight: 750;
-  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: .2em;
 }
-.iso-datasheet-button:hover { background: #dce8f1; }
+.iso-datasheet-actions .iso-datasheet-button {
+  padding: 6px 12px;
+  border: 1px solid #a9bfd4;
+  background: #edf3f7;
+  text-decoration: none;
+}
+.iso-datasheet-actions .iso-datasheet-button:hover { background: #dce8f1; }
 .iso-chapters { margin: 22px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .iso-chapters > li { border-bottom: 1px solid var(--line); }
 .iso-chapter-title {
