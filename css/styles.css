@@ -442,7 +442,13 @@ summary.iso-chapter-title::after {
 }
 details[open] > summary.iso-chapter-title::after { transform: rotate(225deg) translate(-2px, -2px); }
 summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { background: #edf3f7; }
-.iso-clause-number { flex: 0 0 2ch; color: var(--standard-accent); font-variant-numeric: tabular-nums; }
+.iso-clause-number {
+  flex: 0 0 auto;
+  min-inline-size: 2ch;
+  white-space: nowrap;
+  color: var(--standard-accent);
+  font-variant-numeric: tabular-nums;
+}
 .iso-clause-table { width: 100%; border-collapse: collapse; text-align: left; font-size: .95rem; }
 .iso-clause-table th, .iso-clause-table td { padding: 8px 10px; vertical-align: top; }
 .iso-clause-table thead { background: #edf3f7; }
