@@ -1,4 +1,5 @@
-const lessonCount = 14;
+const lessonCount = 12;
+const legacyLessonCount = 14;
 const completionPercent = 90;
 const saveInterval = 2500;
 const storeName = 'progress';
@@ -40,9 +41,11 @@ async function loadCatalog() {
   const response = await fetch('./lessons.json', { cache: 'no-cache' });
   if (!response.ok) throw new Error('Failed to load lesson catalog');
   const entries = await response.json();
-  if (!Array.isArray(entries) || entries.length !== lessonCount) throw new Error('Invalid lesson catalog');
+  if (!Array.isArray(entries) || ![lessonCount, legacyLessonCount].includes(entries.length)) {
+    throw new Error('Invalid lesson catalog');
+  }
   const catalog = new Map(entries.map(entry => [entry.id, entry]));
-  for (let id = 1; id <= lessonCount; id += 1) {
+  for (let id = 1; id <= entries.length; id += 1) {
     if (!catalog.has(id)) throw new Error('Missing lesson in catalog');
   }
   return catalog;

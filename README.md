@@ -13,7 +13,7 @@ GitHub Pages: main 브랜치 / (root).
 
 ## ISO 19011 온라인 강의 영상 등록
 
-`iso-19011-classroom/lessons.json`에서 등록할 교시의 `title`과 `videoUrl`을 입력합니다. `id`는 교시 번호(1~14)입니다. 교시 제목을 비워 두면 번호만 표시되고 `videoUrl`이 비어 있으면 강의실에서 ‘영상 준비 중’으로 표시됩니다.
+`iso-19011-classroom/lessons.json`에서 등록할 교시의 `title`과 `videoUrl`을 입력합니다. `id`는 교시 번호(1~12)입니다. 교시 제목을 비워 두면 번호만 표시되고 `videoUrl`이 비어 있으면 강의실에서 ‘영상 준비 중’으로 표시됩니다.
 
 - 작은 영상은 `iso-19011-classroom/videos/`에 올리고 `videoUrl`에 `./videos/01.mp4`와 같이 상대 경로를 입력합니다.
 - 큰 영상은 영상 호스팅 또는 파일 서버에 올리고 브라우저에서 열 수 있는 MP4·WebM 파일의 직접 HTTPS URL을 입력합니다. 아직 내려받지 않은 구간까지 탐색하려면 호스팅에서 HTTP 범위 요청을 지원해야 합니다. GitHub는 100 MiB를 초과하는 파일을 차단하며 GitHub Pages 공개 사이트의 크기 상한은 1 GB입니다. [GitHub 파일 제한](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) · [GitHub Pages 제한](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)

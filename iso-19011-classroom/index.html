@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self' https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="한국사이버리터러시연구원(KCLI)의 ISO 19011 온라인 강의실입니다. 1~14교시 강의 영상과 교시별 수강 기록을 확인하세요.">
+  <meta name="description" content="한국사이버리터러시연구원(KCLI)의 ISO 19011 온라인 강의실입니다. 1~12교시 강의 영상과 교시별 수강 기록을 확인하세요.">
   <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/iso-19011-classroom/">
   <meta name="theme-color" content="#f6f5f0">
   <title>ISO 19011 온라인 강의실 | KCLI 한국사이버리터러시연구원</title>
   <link rel="stylesheet" href="../css/styles.css?v=audit-glossary-20261115">
   <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=3">
   <script src="../js/app.js?v=geo-20261114" defer></script>
-  <script src="../js/iso-19011-classroom.js?v=2" type="module"></script>
+  <script src="../js/iso-19011-classroom.js?v=3" type="module"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -42,8 +42,8 @@
       </div>
       <a class="classroom-overview" href="#learning-records">
         <span>이 브라우저의 수강 완료</span>
-        <strong><span id="completed-count">0</span><small> / 14교시</small></strong>
-        <progress id="completed-meter" max="14" value="0" aria-label="전체 교시 수강 진도"></progress>
+        <strong><span id="completed-count">0</span><small> / 12교시</small></strong>
+        <progress id="completed-meter" max="12" value="0" aria-label="전체 교시 수강 진도"></progress>
       </a>
     </div>
 
@@ -78,7 +78,7 @@
       <section id="classroom-lessons" class="classroom-card classroom-outline" aria-labelledby="lesson-list-title">
         <div class="classroom-card-heading">
           <h2 id="lesson-list-title">강의 목록</h2>
-          <span id="available-count" class="classroom-availability">0 / 14교시 공개</span>
+          <span id="available-count" class="classroom-availability">0 / 12교시 공개</span>
         </div>
         <ol id="lesson-list" class="classroom-lesson-list" role="list"></ol>
       </section>
