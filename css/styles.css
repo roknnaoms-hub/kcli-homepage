@@ -443,6 +443,12 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 .audit-rows dt { color: var(--ink); font-weight: 750; }
 .audit-rows dd { margin: 0; }
 .audit-findings-notes { margin-top: 14px; }
+.audit-glossary-terms { margin: 0; }
+.audit-glossary-terms > div { padding: 10px 0; border-top: 1px solid var(--line); }
+.audit-glossary-terms > div:last-child { padding-bottom: 0; }
+.audit-glossary-terms dt { font-weight: 750; }
+.audit-glossary-terms dt span { display: block; color: var(--muted); font-size: .82rem; font-weight: 500; }
+.audit-glossary-terms dd { margin: 4px 0 0; }
 @media (max-width: 680px) {
   .audit-grid { grid-template-columns: 1fr; }
 }
