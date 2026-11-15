@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="인공지능·머신러닝·딥러닝의 관계, 지도·비지도·강화학습의 차이, 붓꽃 데이터셋과 산점도로 배우는 KCLI AI 학습 자료입니다.">
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/">
+  <title>AI·머신러닝 학습 기초 | KCLI</title>
+  <link rel="stylesheet" href="../css/styles.css?v=iso-19011-guide-20261115">
+  <link rel="stylesheet" href="../css/ml-guide.css">
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="ml-page-header">
+  <div class="container ml-page-nav">
+    <a class="brand" href="../" aria-label="한국사이버리터러시연구원 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>KCLI</strong><small>한국사이버리터러시연구원</small></span>
+    </a>
+    <a class="auditor-inline-link" href="../iso-auditor-training/#iso-42001">ISO/IEC 42001 교육과정</a>
+  </div>
+</header>
+<main id="main">
+  <section id="ai-learning" class="section ml-guide" aria-labelledby="ai-learning-title">
+    <div class="container">
+      <div class="section-heading">
+        <h1 id="ai-learning-title">AI·머신러닝 학습 기초</h1>
+        <p>인공지능, 머신러닝, 딥러닝의 관계와 대표적인 학습 방식을 살펴보고, 공개 붓꽃 데이터로 지도학습 분류 문제를 준비합니다.</p>
+      </div>
+      <nav class="ai-management-links ml-contents" aria-label="AI·머신러닝 학습 주제">
+        <a class="auditor-inline-link" href="#ml-technologies">기술 개요</a>
+        <a class="auditor-inline-link" href="#ml-methods">학습 방식</a>
+        <a class="auditor-inline-link" href="#ml-dataset">지도학습 데이터셋</a>
+        <a class="auditor-inline-link" href="#ml-visualization">데이터 분석 시각화</a>
+      </nav>
+
+      <section id="ml-technologies" aria-labelledby="ml-technologies-title">
+        <h2 id="ml-technologies-title">인공지능·머신러닝·딥러닝 기술 개요</h2>
+        <p class="ml-intro">머신러닝은 인공지능의 한 분야이며, 딥러닝은 여러 층의 인공신경망을 사용하는 머신러닝 기법입니다.</p>
+        <div class="ml-card-grid ml-technologies">
+          <article>
+            <h3>인공지능 <small lang="en">AI</small></h3>
+            <p>추론, 탐색, 인식, 학습 등 지능적 기능을 컴퓨터로 구현하는 분야입니다.</p>
+            <p class="ml-example"><strong>예시</strong> 지식과 규칙을 바탕으로 설비 고장 원인 후보를 추론하는 전문가 시스템</p>
+          </article>
+          <article>
+            <h3>머신러닝 <small lang="en">ML</small></h3>
+            <p>데이터의 패턴을 학습해 새 입력을 분류하거나 결과를 예측하는 모델을 만듭니다.</p>
+            <p class="ml-example"><strong>예시</strong> 의사결정나무로 꽃의 측정값에서 종을 분류</p>
+          </article>
+          <article>
+            <h3>딥러닝 <small lang="en">DL</small></h3>
+            <p>여러 층의 인공신경망으로 입력을 단계적으로 변환하며 작업에 필요한 표현을 학습합니다.</p>
+            <p class="ml-example"><strong>예시</strong> 신경망이 사진에서 물체의 형태를 학습해 종류를 구분</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ml-methods" aria-labelledby="ml-methods-title">
+        <h2 id="ml-methods-title">지도·비지도·강화학습 개요</h2>
+        <div class="ml-card-grid ml-methods">
+          <article>
+            <h3>지도학습</h3>
+            <p class="ml-signal">입력과 정답 라벨</p>
+            <p>입력과 정답의 관계를 학습해 새 입력의 범주를 분류하거나 수치를 예측합니다.</p>
+            <p class="ml-example"><strong>예시</strong> 붓꽃 종 분류 또는 부품의 수명 예측</p>
+          </article>
+          <article>
+            <h3>비지도학습</h3>
+            <p class="ml-signal">라벨이 없는 관측값</p>
+            <p>관측값에서 비슷한 집단이나 주요 구조를 찾습니다. 군집화와 차원 축소가 대표적입니다.</p>
+            <p class="ml-example"><strong>예시</strong> 이용 패턴이 비슷한 고객을 묶고 각 집단의 특징을 해석</p>
+          </article>
+          <article>
+            <h3>강화학습</h3>
+            <p class="ml-signal">환경과의 상호작용에서 얻는 보상</p>
+            <p>에이전트가 상태를 관측하고 행동을 선택합니다. 장기적인 누적 보상을 높이도록 행동 정책을 학습합니다.</p>
+            <p class="ml-example"><strong>예시</strong> 로봇이 이동 행동을 시도하며 목표 지점에 도달하는 정책을 학습</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ml-dataset" class="ml-dataset" aria-labelledby="ml-dataset-title">
+        <div class="ml-dataset-heading">
+          <div>
+            <h2 id="ml-dataset-title">지도학습 데이터셋 · 붓꽃 분류</h2>
+            <p>꽃받침과 꽃잎의 길이·너비를 입력해 붓꽃의 종을 분류하는 실습입니다. 공개 원자료는 150행이며, 세 종이 각각 50행이고 결측값은 없습니다.</p>
+          </div>
+          <a class="ml-download" href="../assets/ai-learning/iris-learning.csv" download>붓꽃 데이터셋 CSV 다운로드 <span aria-hidden="true">↓</span></a>
+        </div>
+        <dl class="ml-fields">
+          <div><dt>입력 변수 X</dt><dd>꽃받침 길이·너비, 꽃잎 길이·너비<br>네 측정값의 단위는 cm</dd></div>
+          <div><dt>정답 라벨 y</dt><dd><code>species</code> 열의 붓꽃 종<br><span lang="en">setosa, versicolor, virginica</span></dd></div>
+          <div><dt>행 식별과 데이터 분할</dt><dd><code>sample_id</code>로 행을 식별하고, <code>split</code>으로 훈련·검증·시험을 구분</dd></div>
+        </dl>
+
+        <div class="ml-data-grid">
+          <div>
+            <h3>훈련 데이터 표본</h3>
+            <table class="ml-example-table">
+              <caption class="sr-only">붓꽃 종별 훈련 데이터 표본, 측정 단위 센티미터</caption>
+              <colgroup class="ml-id-column" span="1"></colgroup>
+              <colgroup span="2"></colgroup>
+              <colgroup span="2"></colgroup>
+              <colgroup class="ml-species-column" span="1"></colgroup>
+              <thead>
+                <tr><th scope="col" rowspan="2">ID</th><th scope="colgroup" colspan="2">꽃받침 (cm)</th><th scope="colgroup" colspan="2">꽃잎 (cm)</th><th scope="col" rowspan="2">종</th></tr>
+                <tr><th scope="col">길이</th><th scope="col">너비</th><th scope="col">길이</th><th scope="col">너비</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>5.1</td><td>3.5</td><td>1.4</td><td>0.2</td><td lang="en">setosa</td></tr>
+                <tr><th scope="row">51</th><td>7.0</td><td>3.2</td><td>4.7</td><td>1.4</td><td lang="en">versicolor</td></tr>
+                <tr><th scope="row">101</th><td>6.3</td><td>3.3</td><td>6.0</td><td>2.5</td><td lang="en">virginica</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3>훈련·검증·시험 분할</h3>
+            <div class="ml-split-bar" role="group" aria-label="데이터 분할, 단위 행">
+              <span>훈련 90</span><span>검증 30</span><span>시험 30</span>
+            </div>
+            <p class="ml-split-detail">종별로 훈련 30행, 검증 10행, 시험 10행을 배정했습니다. 네 측정값이 같은 행은 동일한 분할에 배치했습니다.</p>
+            <p>모델 학습과 전처리 기준 산정에는 <strong>훈련</strong>, 모델 설정 선택에는 <strong>검증</strong>, 확정 모델의 최종 평가에는 <strong>시험</strong> 데이터를 사용합니다.</p>
+          </div>
+        </div>
+
+        <p class="ml-data-check"><strong>데이터 준비 시 확인할 항목</strong> 예측 목표, 라벨 판정 기준, 측정 단위, 결측·중복 여부, 출처와 사용 권한을 기록합니다.</p>
+        <p class="ml-credit">데이터 출처는 R. A. Fisher(1936)의 <a class="auditor-inline-link" href="https://archive.ics.uci.edu/dataset/53/iris">Iris, UCI Machine Learning Repository</a>입니다. <a class="auditor-inline-link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>에 따라 <code>bezdekIris.data</code>의 수치를 유지하면서 열 이름, 행 ID, 분할 정보를 추가하고 종 라벨을 <span lang="en">setosa</span> 등의 형태로 줄였습니다.</p>
+      </section>
+
+      <section id="ml-visualization" aria-labelledby="ml-visualization-title">
+        <h2 id="ml-visualization-title">데이터 분석 시각화 · 종별 산점도</h2>
+        <p class="ml-intro">훈련 데이터 90행을 사용했습니다. 한 점은 붓꽃 한 개체의 길이와 너비를 나타내며, 측정값이 같으면 점이 겹칩니다.</p>
+        <ul class="ml-plot-legend" aria-label="붓꽃 종별 점 표시">
+          <li><span class="ml-symbol ml-setosa" aria-hidden="true"></span><span lang="en">setosa</span></li>
+          <li><span class="ml-symbol ml-versicolor" aria-hidden="true"></span><span lang="en">versicolor</span></li>
+          <li><span class="ml-symbol ml-virginica" aria-hidden="true"></span><span lang="en">virginica</span></li>
+        </ul>
+        <div class="ml-plot-grid">
+          <figure>
+            <h3>꽃잎 길이와 너비</h3>
+            <img src="../assets/ai-learning/iris-petal.webp" width="1040" height="630" loading="lazy" alt="꽃잎 길이와 너비 산점도. 원형 setosa 점은 왼쪽 아래에 모이고, 사각형 versicolor와 삼각형 virginica 점은 가운데에서 서로 일부 겹칩니다.">
+            <figcaption>훈련 표본의 <span lang="en">setosa</span> 꽃잎 길이는 <strong>1.0~1.9 cm</strong>로, 다른 두 종의 최솟값 3.0 cm보다 짧습니다. <span lang="en">versicolor</span>와 <span lang="en">virginica</span>는 일부 구간에서 겹칩니다.</figcaption>
+          </figure>
+          <figure>
+            <h3>꽃받침 길이와 너비</h3>
+            <img src="../assets/ai-learning/iris-sepal.webp" width="1040" height="630" loading="lazy" alt="꽃받침 길이와 너비 산점도. 세 종의 점이 같은 구간에 분포하며 특히 versicolor와 virginica가 넓게 겹칩니다.">
+            <figcaption>세 종의 길이·너비 범위가 공통으로 겹칩니다. 같은 표본이라도 비교할 입력 변수를 바꾸면 종별 분포를 구분하기 쉬운 정도가 달라집니다.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <nav class="ai-management-links ml-references" aria-label="AI·머신러닝 참고자료">
+        <a class="auditor-inline-link" href="../#ai-management">ISO/IEC 42001 핵심</a>
+        <a class="auditor-inline-link" href="https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks">IBM AI·ML·딥러닝 비교</a>
+        <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/intro-to-ml/what-is-ml">Google 머신러닝 학습 방식</a>
+        <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets">Google 데이터 분할 안내</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
