@@ -19,6 +19,7 @@
   <meta name="theme-color" content="#f6f5f0">
   <title>ISO 인증심사원 전문 연수기관 | KCLI 한국사이버리터러시연구원</title>
   <link rel="stylesheet" href="./css/styles.css?v=iso-19011-guide-20261115">
+  <link rel="stylesheet" href="./css/quality-tools.css">
   <script src="./js/app.js?v=geo-20261114" defer></script>
   <script type="application/ld+json">
   {
@@ -297,6 +298,7 @@
           <p>고객 요구사항을 충족하기 위한 프로세스 관리, 성과 평가와 지속적 개선을 다룹니다.</p>
           <div class="catalog-card-actions">
             <a class="text-link" href="#quality-management">품질경영 핵심원칙 <b aria-hidden="true">↓</b></a>
+            <a class="text-link" href="#lean-six-sigma-tools">린 6시그마 품질측정도구 <b aria-hidden="true">↓</b></a>
             <a class="text-link" href="#contact" data-course="iso-9001" aria-label="ISO 9001 교육 문의">교육 문의 <b aria-hidden="true">→</b></a>
             <a class="text-link" href="#iso-9001-clauses" aria-label="ISO 9001:2026 요구사항 목록">요구사항 목록 <b aria-hidden="true">↓</b></a>
           </div>
@@ -402,6 +404,7 @@
         <a class="auditor-inline-link" href="#quality-process">프로세스 관리</a>
         <a class="auditor-inline-link" href="#quality-principles">품질경영 7원칙</a>
         <a class="auditor-inline-link" href="#quality-pdca">PDCA 사이클</a>
+        <a class="auditor-inline-link" href="#lean-six-sigma-tools">린 6시그마 7가지 품질측정도구</a>
       </nav>
 
       <div class="quality-grid">
@@ -450,6 +453,233 @@
         <a class="auditor-inline-link" href="./iso-auditor-training/#iso-9001">ISO 9001 인증심사원 교육</a>
         <a class="auditor-inline-link" href="https://www.iso.org/quality-management/principles">ISO 품질경영원칙 안내</a>
         <a class="auditor-inline-link" href="https://www.iso.org/standard/9001">ISO 9001:2026 발행 정보</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="lean-six-sigma-tools" class="section quality-tools" aria-labelledby="lean-six-sigma-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="lean-six-sigma-title">린 6시그마<br>7가지 품질측정도구</h2>
+        <p>결함을 기록하고, 개선할 항목의 우선순위를 정하고, 공정 변화를 확인하는 도구입니다. 각 도구를 펼쳐 같은 가공 공정에 어떻게 적용하는지 살펴보세요.</p>
+      </div>
+
+      <div class="quality-tool-case">
+        <h3>실습 사례 · 가공 부품 검사</h3>
+        <p>결함 집계는 두 라인에서 검사한 부품 600개를 사용합니다. 외경 분포와 공정 변화는 별도로 채취한 60개를 5개씩 12개 부분군으로 나누어 살펴봅니다. 모든 수치는 교육용 가상 데이터입니다.</p>
+      </div>
+
+      <div class="quality-tool-list">
+        <details class="quality-tool" open>
+          <summary><strong>파레토 차트 <small lang="en">Pareto chart</small></strong><span>어떤 결함부터 줄일까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./assets/quality-tools/pareto.webp" width="1040" height="630" loading="lazy" alt="결함 빈도를 큰 순서로 정렬한 막대와 누적 비율을 나타낸 선. 외경 상한 초과·버·표면 흠집을 합한 누적 비율은 87.5퍼센트입니다.">
+              <figcaption>막대는 결함 건수, 선은 누적 비율입니다.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>결함 유형별 건수를 큰 순서로 정렬하고 누적 비율을 함께 표시해 우선순위를 정합니다. 빈도와 함께 안전·비용에 미치는 영향도 별도로 평가합니다.</p>
+              <p class="quality-tool-reading">외경 상한 초과·버(돌기)·표면 흠집이 70건으로, 전체 80건의 <strong>87.5%</strong>를 차지합니다.</p>
+              <details class="quality-tool-data">
+                <summary>계산식과 집계 데이터</summary>
+                <p>누적 비율(%) = 해당 순위까지의 결함 건수 합계 ÷ 전체 결함 건수 × 100</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">파레토 차트 결함별 건수와 누적 비율</caption>
+                  <thead><tr><th scope="col">결함 유형</th><th scope="col">건수</th><th scope="col">누적 비율</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">외경 상한 초과</th><td>32</td><td>40%</td></tr>
+                    <tr><th scope="row">버</th><td>23</td><td>68.75%</td></tr>
+                    <tr><th scope="row">표면 흠집</th><td>15</td><td>87.5%</td></tr>
+                    <tr><th scope="row">이물</th><td>8</td><td>97.5%</td></tr>
+                    <tr><th scope="row">표시 누락</th><td>2</td><td>100%</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>특성요인도 <small lang="en">Fishbone diagram</small></strong><span>가능한 원인은 무엇일까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./assets/quality-tools/fishbone.webp" width="1160" height="560" loading="lazy" alt="외경 상한 초과를 결과로 놓고 설비의 공구 마모, 방법의 보정 설정 오류, 측정의 게이지 영점 오류, 작업자의 보정 기준 오해, 재료의 소재 경도 편차, 환경의 현장 온도 변화를 후보 원인으로 연결한 피시본 도표.">
+              <figcaption>6개 범주로 외경 상한 초과의 원인 후보를 정리한 예시입니다.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>특성요인도(피시본)는 결과에 영향을 줄 수 있는 원인을 범주별로 정리합니다. 예시는 작업자·설비·재료·방법·측정·환경의 6M을 사용합니다.</p>
+              <p class="quality-tool-reading">공구 마모가 의심되면 <strong>교체 전후의 외경 측정값</strong>과 공구 사용 이력을 대조해 확인합니다.</p>
+              <details class="quality-tool-data">
+                <summary>범주별 원인 후보</summary>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">외경 상한 초과에 영향을 줄 수 있는 원인 후보</caption>
+                  <thead><tr><th scope="col">범주</th><th scope="col">원인 후보</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">작업자</th><td>보정 기준 오해</td></tr>
+                    <tr><th scope="row">설비</th><td>공구 마모</td></tr>
+                    <tr><th scope="row">재료</th><td>소재 경도 편차</td></tr>
+                    <tr><th scope="row">방법</th><td>보정 설정 오류</td></tr>
+                    <tr><th scope="row">측정</th><td>게이지 영점 오류</td></tr>
+                    <tr><th scope="row">환경</th><td>현장 온도 변화</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>히스토그램 <small lang="en">Histogram</small></strong><span>측정값은 어느 구간에 모일까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./assets/quality-tools/histogram.webp" width="1040" height="630" loading="lazy" alt="외경 60개를 0.02밀리미터 폭의 6개 구간으로 나눈 히스토그램. 빈도는 낮은 구간부터 5, 20, 19, 13, 2, 1개입니다.">
+              <figcaption>구간 폭 0.02 mm, 측정값 60개</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>연속형 측정값을 구간으로 나누고 빈도를 그려 분포의 중심, 퍼짐, 비대칭을 살펴봅니다.</p>
+              <p class="quality-tool-reading"><strong>19.98 mm 이상 20.00 mm 미만</strong> 구간의 빈도가 20개로 가장 높습니다.</p>
+              <details class="quality-tool-data">
+                <summary>계산식과 구간별 빈도</summary>
+                <p>구간 상대빈도 = 구간의 측정값 개수 ÷ 전체 측정값 개수. 구간 수를 정할 때 √n 또는 1 + log₂(n)을 참고할 수 있습니다.</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">외경 구간별 측정 빈도</caption>
+                  <thead><tr><th scope="col">외경 구간 (mm)</th><th scope="col">빈도 (개)</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">19.96 이상 19.98 미만</th><td>5</td></tr>
+                    <tr><th scope="row">19.98 이상 20.00 미만</th><td>20</td></tr>
+                    <tr><th scope="row">20.00 이상 20.02 미만</th><td>19</td></tr>
+                    <tr><th scope="row">20.02 이상 20.04 미만</th><td>13</td></tr>
+                    <tr><th scope="row">20.04 이상 20.06 미만</th><td>2</td></tr>
+                    <tr><th scope="row">20.06 이상 20.08 이하</th><td>1</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>산점도 <small lang="en">Scatter diagram</small></strong><span>두 변수가 함께 변할까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./assets/quality-tools/scatter.webp" width="1040" height="630" loading="lazy" alt="설비 온도와 부분군 평균 외경 12쌍의 산점도. 오른쪽 위로 향하는 경향이 있으며 피어슨 상관계수는 약 0.84입니다.">
+              <figcaption>점 하나는 같은 시점의 설비 온도와 부품 5개의 평균 외경을 나타냅니다.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>같은 대상이나 시점에서 짝지은 두 변수의 관계를 점으로 표시합니다. 피어슨 상관계수 <var>r</var>은 선형 관계의 방향과 강도를 요약합니다.</p>
+              <p class="quality-tool-reading"><strong><var>r</var> ≈ 0.84</strong>로 두 변수에 양의 선형 연관이 나타납니다. 온도의 영향을 판단하려면 공구 마모 등 다른 요인을 통제해 확인합니다.</p>
+              <details class="quality-tool-data">
+                <summary>상관계수와 관측값</summary>
+                <p><var>r</var>은 두 변수의 평균으로부터의 편차 곱을 합한 뒤, 각 변수의 편차 제곱합의 제곱근을 곱한 값으로 나누어 계산합니다.</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">부분군별 설비 온도와 평균 외경</caption>
+                  <thead><tr><th scope="col">부분군</th><th scope="col">온도 (°C)</th><th scope="col">평균 외경 (mm)</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">1</th><td>20</td><td>19.996</td></tr>
+                    <tr><th scope="row">2</th><td>22</td><td>20.001</td></tr>
+                    <tr><th scope="row">3</th><td>21</td><td>19.997</td></tr>
+                    <tr><th scope="row">4</th><td>24</td><td>20.005</td></tr>
+                    <tr><th scope="row">5</th><td>23</td><td>20.004</td></tr>
+                    <tr><th scope="row">6</th><td>21.5</td><td>19.996</td></tr>
+                    <tr><th scope="row">7</th><td>25</td><td>20.009</td></tr>
+                    <tr><th scope="row">8</th><td>22.5</td><td>19.999</td></tr>
+                    <tr><th scope="row">9</th><td>23.5</td><td>20.005</td></tr>
+                    <tr><th scope="row">10</th><td>24.5</td><td>20.008</td></tr>
+                    <tr><th scope="row">11</th><td>25.5</td><td>20.012</td></tr>
+                    <tr><th scope="row">12</th><td>27</td><td>20.046</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>체크시트 <small lang="en">Check sheet</small></strong><span>어떤 결함이 몇 건 발생했을까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <table class="quality-tool-table">
+                <caption class="sr-only">라인별 결함 유형 체크시트</caption>
+                <thead><tr><th scope="col">결함 유형</th><th scope="col">A라인</th><th scope="col">B라인</th><th scope="col">합계</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">외경 상한 초과</th><td>14</td><td>18</td><td>32</td></tr>
+                  <tr><th scope="row">버</th><td>8</td><td>15</td><td>23</td></tr>
+                  <tr><th scope="row">표면 흠집</th><td>5</td><td>10</td><td>15</td></tr>
+                  <tr><th scope="row">이물</th><td>2</td><td>6</td><td>8</td></tr>
+                  <tr><th scope="row">표시 누락</th><td>1</td><td>1</td><td>2</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><th scope="row">결함 부품</th><td>30</td><td>50</td><td>80</td></tr>
+                  <tr><th scope="row">전체 검사</th><td>200</td><td>400</td><td>600</td></tr>
+                </tfoot>
+              </table>
+              <figcaption>결함이 있는 부품은 대표 결함 1건을 기록했습니다. 단위는 개입니다.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>검사 위치, 시점, 결함 유형을 정해 두고 발생할 때마다 기록합니다. 여러 사람이 기록할 때는 결함 유형의 판정 기준을 미리 맞춥니다.</p>
+              <p class="quality-tool-reading">대표 결함을 기록한 부품은 A라인 <strong>30개</strong>, B라인 <strong>50개</strong>입니다. 이 기록으로 파레토 차트와 층별 분석을 작성합니다.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>관리도 <small lang="en">Control chart</small></strong><span>공정에 변화 신호가 있을까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./assets/quality-tools/control.webp" width="1040" height="930" loading="lazy" alt="12개 부분군의 평균과 범위를 두 관리도로 표시했습니다. 12번째 부분군의 평균 외경 20.046밀리미터가 관리상한을 넘습니다. 범위는 모두 관리한계 안에 있습니다.">
+              <figcaption>점선은 중심선, 주황색 파선은 관리한계입니다. 음영은 감시 구간, 마름모는 한계 이탈을 표시합니다.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>시간순으로 공정 측정치를 그려 변화를 감시합니다. X̄ 관리도는 부분군 평균, R 관리도는 부분군 범위를 봅니다. 예시는 처음 10개 부분군으로 관리한계를 계산하고 11~12번째에 적용합니다.</p>
+              <p class="quality-tool-reading">12번째 평균은 <strong>20.046 mm</strong>로 관리상한 20.029 mm를 넘습니다. R 관리도의 모든 점은 한계 안에 있습니다. 관리한계는 공정 변동에서 계산하며 제품 판정에는 별도의 규격한계를 적용합니다.</p>
+              <details class="quality-tool-data">
+                <summary>관리한계와 계산식</summary>
+                <p>부분군 범위는 최댓값에서 최솟값을 뺀 값입니다. 기준 10개 부분군의 평균의 평균은 20.002 mm, 평균 범위 R̄는 0.0464 mm입니다.</p>
+                <p>X̄ 관리한계는 중심선 ± A₂R̄, R 관리한계는 하한 D₃R̄와 상한 D₄R̄입니다. 부분군 크기 5에서 A₂ = 0.577, D₃ = 0, D₄ = 2.115를 적용합니다.</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">관리한계와 중심선, 단위 밀리미터</caption>
+                  <thead><tr><th scope="col">관리도</th><th scope="col">하한</th><th scope="col">중심선</th><th scope="col">상한</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">X̄</th><td>19.975</td><td>20.002</td><td>20.029</td></tr>
+                    <tr><th scope="row">R</th><td>0.000</td><td>0.046</td><td>0.098</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>층별 분석 <small lang="en">Stratification</small></strong><span>어느 라인의 결함률이 높을까요?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <div class="quality-tool-rate-chart">
+                <p class="quality-tool-rate-title">라인별 결함률 (%)</p>
+                <div class="quality-tool-rate">
+                  <label for="quality-rate-a">A라인 <strong>15.0%</strong></label>
+                  <meter id="quality-rate-a" min="0" max="20" value="15">15.0%</meter>
+                  <small>결함 부품 30개 / 검사 200개</small>
+                </div>
+                <div class="quality-tool-rate">
+                  <label for="quality-rate-b">B라인 <strong>12.5%</strong></label>
+                  <meter id="quality-rate-b" min="0" max="20" value="12.5">12.5%</meter>
+                  <small>결함 부품 50개 / 검사 400개</small>
+                </div>
+                <div class="quality-tool-rate-scale" aria-hidden="true"><span>0%</span><span>10%</span><span>20%</span></div>
+              </div>
+              <figcaption>결함률(%) = 결함 부품 수 ÷ 검사 부품 수 × 100</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>라인·설비·교대조처럼 조건이 같은 집단으로 데이터를 나누어 비교합니다. 검사 수량이 다를 때는 각 집단의 검사 수량을 분모로 사용합니다.</p>
+              <p class="quality-tool-reading">결함 부품 수는 B라인이 많고, 검사 수량을 반영한 결함률은 <strong>A라인이 2.5%p</strong> 높습니다.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <nav class="quality-links quality-tool-references" aria-label="품질측정도구 참고자료">
+        <a class="auditor-inline-link" href="https://asq.org/quality-resources/seven-basic-quality-tools">ASQ 7가지 기본 품질도구</a>
+        <a class="auditor-inline-link" href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm">NIST X̄-R 관리도 계산법</a>
       </nav>
     </div>
   </section>
