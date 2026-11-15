@@ -72,6 +72,14 @@
 
 .classroom-records { margin-top: clamp(24px, 4vw, 38px); padding: clamp(14px, 3vw, 26px); }
 .classroom-records > p { margin: 8px 0 16px; color: var(--muted); font-size: .9rem; }
+.classroom-export { margin: 16px 0 20px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 8px; background: #f5f8fa; }
+.classroom-export p { margin: 0 0 10px; color: var(--muted); font-size: .88rem; }
+.classroom-export p[role="status"] { margin: 9px 0 0; color: var(--navy-2); }
+.classroom-export-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-size: .9rem; }
+.classroom-export-controls label { font-weight: 700; }
+.classroom-export-controls input { width: min(100%, 12rem); min-height: 42px; padding: 7px 10px; border: 1px solid #aebdca; border-radius: 6px; color: var(--ink); background: var(--white); font: inherit; }
+.classroom-export-controls button { min-height: 42px; padding: 7px 13px; border: 0; border-radius: 6px; background: var(--navy-2); color: var(--white); font-weight: 700; cursor: pointer; }
+.classroom-export-controls button:disabled { opacity: .6; cursor: default; }
 .classroom-record-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 10px; text-align: left; }
 .classroom-record-table th, .classroom-record-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); }
 .classroom-record-table tbody tr:last-child > * { border-bottom: 0; }

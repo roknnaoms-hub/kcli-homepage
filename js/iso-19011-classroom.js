@@ -25,6 +25,10 @@ const lessonList = document.getElementById('lesson-list');
 const recordList = document.getElementById('lesson-records');
 const lessonTemplate = document.getElementById('lesson-item-template');
 const recordTemplate = document.getElementById('record-item-template');
+const exportForm = document.getElementById('progress-export');
+const studentNumber = document.getElementById('progress-student-id');
+const exportButton = document.getElementById('progress-export-button');
+const exportStatus = document.getElementById('progress-export-status');
 
 const progressRecords = new Map();
 let database;
@@ -283,6 +287,55 @@ document.addEventListener('visibilitychange', () => {
   else if (database) refreshProgress().catch(storageUnavailable);
 });
 
+async function videoFingerprint(source) {
+  if (!source) return null;
+  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(source));
+  return Array.from(new Uint8Array(bytes), byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+exportForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const studentId = studentNumber.value.trim().normalize('NFC');
+  if (!studentId || /[\u0000-\u001f\u007f]/u.test(studentId)) {
+    exportStatus.textContent = 'KCLI에서 받은 수강생 번호를 입력하세요.';
+    exportStatus.hidden = false;
+    return;
+  }
+  exportButton.disabled = true;
+  try {
+    savePlayback(true);
+    if (database) await refreshProgress().catch(storageUnavailable);
+    const records = await Promise.all(lessons.map(async lesson => {
+      const record = progressRecords.get(lesson.key);
+      return {
+        id: lesson.id,
+        title: lesson.name,
+        videoId: await videoFingerprint(lesson.source),
+        duration: record?.duration ?? null,
+        ranges: record?.ranges ?? [],
+        watchedAt: record?.updatedAt ?? null
+      };
+    }));
+    const report = { format: 'kcli.iso19011.progress', version: 1, studentId, exportedAt: Date.now(), lessons: records };
+    const file = new Blob([JSON.stringify(report)], { type: 'application/json' });
+    const url = URL.createObjectURL(file);
+    const link = document.createElement('a');
+    const filenameId = studentId.replace(/[^\p{L}\p{N}._-]/gu, '_');
+    link.href = url;
+    link.download = `KCLI_ISO19011_${filenameId}.json`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    exportStatus.textContent = '수강 기록 파일을 저장했습니다. 이 파일을 KCLI 담당자에게 제출하세요.';
+  } catch {
+    exportStatus.textContent = '수강 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.';
+  } finally {
+    exportStatus.hidden = false;
+    exportButton.disabled = false;
+  }
+});
+
 async function startClassroom() {
   const [catalog] = await Promise.all([loadCatalog().catch(() => null), openProgressStorage()]);
   if (!catalog) {
@@ -311,6 +364,7 @@ async function startClassroom() {
     return !latest || record.updatedAt > progressRecords.get(latest.key).updatedAt ? lesson : latest;
   }, null);
   selectLesson(lastWatched ?? available[0] ?? lessons[0]);
+  exportButton.disabled = !catalog;
 }
 
 startClassroom();

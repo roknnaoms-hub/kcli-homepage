@@ -10,9 +10,9 @@
   <meta name="theme-color" content="#f6f5f0">
   <title>ISO 19011 온라인 강의실 | KCLI 한국사이버리터러시연구원</title>
   <link rel="stylesheet" href="../css/styles.css?v=audit-glossary-20261115">
-  <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=1">
+  <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=2">
   <script src="../js/app.js?v=geo-20261114" defer></script>
-  <script src="../js/iso-19011-classroom.js?v=1" type="module"></script>
+  <script src="../js/iso-19011-classroom.js?v=2" type="module"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -80,6 +80,15 @@
       <h2 id="learning-records-title">내 수강 기록</h2>
       <p>기록은 현재 브라우저에 저장됩니다. 영상에서 실제 재생한 구간이 전체의 <strong>90%</strong> 이상이면 수강 완료로 표시됩니다.</p>
       <p id="storage-notice" class="classroom-alert" role="status" hidden></p>
+      <form id="progress-export" class="classroom-export" aria-describedby="progress-export-help">
+        <p id="progress-export-help">KCLI에서 받은 수강생 번호를 입력하고, 저장한 기록 파일을 담당자에게 제출하세요. 재생 기록이 저장된 브라우저에서 내려받으세요.</p>
+        <div class="classroom-export-controls">
+          <label for="progress-student-id">수강생 번호</label>
+          <input id="progress-student-id" autocomplete="off" maxlength="64" required>
+          <button id="progress-export-button" type="submit" disabled>수강 기록 파일 저장</button>
+        </div>
+        <p id="progress-export-status" role="status" hidden></p>
+      </form>
       <table class="classroom-record-table" aria-labelledby="learning-records-title">
         <thead><tr><th scope="col">교시</th><th scope="col">재생 비율</th><th scope="col">상태 및 마지막 시청</th></tr></thead>
         <tbody id="lesson-records"></tbody>
@@ -108,6 +117,7 @@
   <div class="container">
     <a href="../">한국사이버리터러시연구원(KCLI)</a>
     <a href="../#audit-glossary">ISO 인증심사 기본 용어</a>
+    <a href="https://kcli-iso19011-records.roknaoms.chatgpt.site/">관리자 수강 기록 관리</a>
   </div>
 </footer>
 </body>
