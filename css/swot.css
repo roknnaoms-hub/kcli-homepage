@@ -1,0 +1,68 @@
+.swot {
+  border-top: 1px solid var(--line);
+  background: #fff;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.swot .section-heading { gap: clamp(14px, 4vw, 56px); margin-bottom: 24px; }
+.swot .section-heading h2 { font-size: clamp(1.8rem, 4vw, 3.35rem); line-height: 1.2; }
+.swot h3 { margin: 0 0 12px; color: var(--navy); font-size: clamp(1.22rem, 2.5vw, 1.65rem); }
+.swot p, .swot dd { color: #405b71; }
+.swot p { margin: 0; }
+
+.swot-overview {
+  display: grid;
+  grid-template-columns: minmax(11rem, .35fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 8px 24px;
+  padding: clamp(14px, 2.4vw, 24px);
+  border-inline-start: 4px solid #356587;
+  background: #edf4f8;
+}
+.swot-overview h3 { margin: 0; }
+.swot-overview p + p { margin-top: 10px; }
+
+.swot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(26px, 4vw, 54px);
+  margin-top: 30px;
+}
+
+.swot-steps { margin: 0; padding-inline-start: 1.6rem; }
+.swot-steps li { padding-inline-start: 6px; }
+.swot-steps li + li { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.swot-steps li::marker { color: #275a7a; font-weight: 750; }
+.swot-steps p { margin-top: 4px; }
+.swot p.swot-example-scope { margin-bottom: 14px; }
+
+.swot-matrix { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: left; font-size: .94rem; }
+.swot-origin { width: 72px; }
+.swot-matrix th, .swot-matrix td { padding: clamp(8px, 1.6vw, 16px); border: 1px solid var(--line); vertical-align: top; }
+.swot-matrix th { background: #f0f4f7; }
+.swot-matrix td:nth-child(2) { background: #f0f7fa; }
+.swot-matrix td:nth-child(3) { background: #fcf6eb; }
+.swot-matrix td strong { display: block; color: var(--navy); }
+.swot-matrix td p { margin-top: 4px; }
+.swot-matrix small { display: block; margin-top: 8px; color: #405b71; }
+
+.swot-response { margin-top: 32px; }
+.swot-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+.swot-actions > div { padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; }
+.swot-actions dt, .swot-priority dt { color: var(--navy); font-weight: 750; }
+.swot-actions dt span { margin-inline-end: 6px; color: #275a7a; }
+.swot-actions dd { margin: 5px 0 0; }
+
+.swot-priority { padding: clamp(14px, 2.5vw, 24px); border-inline-start: 4px solid #b97817; background: #fbf5e9; }
+.swot-priority h4 { margin: 0 0 6px; font-size: 1.05rem; }
+.swot-priority dl { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 12px 0 0; }
+.swot-priority dl > div { display: flex; gap: 8px; }
+.swot-priority dt { white-space: nowrap; }
+.swot-priority dd { margin: 0; }
+.swot-resources { margin-top: 14px; font-size: .9rem; }
+
+@media (max-width: 760px) {
+  .swot-grid, .swot-overview, .swot-actions { grid-template-columns: minmax(0, 1fr); }
+  .swot-origin { width: 50px; }
+}
