@@ -19,9 +19,9 @@ GitHub Pages: main 브랜치 / (root).
 - 큰 영상은 영상 호스팅 또는 파일 서버에 올리고 브라우저에서 열 수 있는 MP4·WebM 파일의 직접 HTTPS URL을 입력합니다. 아직 내려받지 않은 구간까지 탐색하려면 호스팅에서 HTTP 범위 요청을 지원해야 합니다. GitHub는 100 MiB를 초과하는 파일을 차단하며 GitHub Pages 공개 사이트의 크기 상한은 1 GB입니다. [GitHub 파일 제한](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) · [GitHub Pages 제한](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
 - `main`에 반영한 뒤 공개 강의실에서 해당 교시의 재생과 탐색이 동작하는지 확인합니다. 다른 영상으로 교체할 때는 새 파일 주소를 사용해 새 영상의 수강 기록이 시작되도록 합니다.
 
-수강 기록은 교시와 영상 주소별로 수강생의 브라우저에 저장됩니다. 실제 재생 구간의 합집합이 영상 길이의 90% 이상이면 완료로 표시됩니다.
+공개 강의실의 **수강생 로그인**은 [계정으로 수강하는 강의실](https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom)에 연결됩니다. KCLI 관리자가 사이트 공유 설정에서 수강생의 ChatGPT 계정 이메일을 초대하면, 수강생은 그 계정으로 로그인해 교시별 진도와 마지막 시청 위치를 계정에 저장할 수 있습니다. 실제 재생 구간의 합집합이 영상 길이의 90% 이상이면 완료로 표시됩니다.
 
-수강생은 **내 수강 기록**에서 KCLI 수강생 번호를 입력하고 기록 파일을 저장해 담당자에게 제출합니다. KCLI 관리자는 비공개 관리 화면에 로그인해 제출된 JSON 파일을 가져오고, 수강생별 요약과 교시별 기록을 엑셀로 저장합니다. 기록 제출 파일에는 수강생 번호와 교시별 재생 구간 및 시청 시각이 담기며 영상 주소는 식별값으로 변환합니다. [관리자 수강 기록 관리](https://kcli-iso19011-records.roknaoms.chatgpt.site/)
+[관리자 수강 기록 관리](https://kcli-iso19011-records.roknaoms.chatgpt.site/)에서 이메일 또는 수강생 번호로 검색하고 요약과 교시별 기록을 엑셀로 저장할 수 있습니다. 공개 강의실의 브라우저 기록은 기존 방식대로 수강생 번호를 입력해 JSON 파일로 저장하고 관리자에게 제출합니다.
 
 ## 검색 노출 관리
 

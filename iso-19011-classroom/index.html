@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#f6f5f0">
   <title>ISO 19011 온라인 강의실 | KCLI 한국사이버리터러시연구원</title>
   <link rel="stylesheet" href="../css/styles.css?v=audit-glossary-20261115">
-  <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=2">
+  <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=3">
   <script src="../js/app.js?v=geo-20261114" defer></script>
   <script src="../js/iso-19011-classroom.js?v=2" type="module"></script>
 </head>
@@ -28,7 +28,7 @@
     <nav id="site-nav" class="site-nav" aria-label="강의실 메뉴">
       <a href="../#iso-19011-guide">ISO 19011 심사 실무</a>
       <a href="#classroom-lessons">강의 목록</a>
-      <a class="nav-cta" href="#learning-records">내 수강 기록</a>
+      <a class="nav-cta" href="https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom">수강생 로그인</a>
     </nav>
   </div>
 </header>
@@ -41,11 +41,19 @@
         <h1>ISO 19011 온라인 강의실</h1>
       </div>
       <a class="classroom-overview" href="#learning-records">
-        <span>수강 완료</span>
+        <span>이 브라우저의 수강 완료</span>
         <strong><span id="completed-count">0</span><small> / 14교시</small></strong>
         <progress id="completed-meter" max="14" value="0" aria-label="전체 교시 수강 진도"></progress>
       </a>
     </div>
+
+    <section class="classroom-card classroom-signin" aria-labelledby="classroom-signin-title">
+      <div>
+        <h2 id="classroom-signin-title">수강생 로그인</h2>
+        <p>KCLI에서 초대받은 ChatGPT 계정으로 로그인해 강의를 시청하세요. 교시별 진도와 마지막 시청 위치가 계정에 저장되고, KCLI 관리자가 수강 기록을 확인할 수 있습니다.</p>
+      </div>
+      <a class="classroom-signin-button" href="https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom">로그인하고 강의실 입장</a>
+    </section>
 
     <noscript><p class="classroom-alert">강의 목록과 수강 기록을 보려면 브라우저에서 자바스크립트를 사용해 주세요.</p></noscript>
     <p id="classroom-error" class="classroom-alert" role="status" hidden></p>
@@ -77,8 +85,8 @@
     </div>
 
     <section id="learning-records" class="classroom-card classroom-records" aria-labelledby="learning-records-title">
-      <h2 id="learning-records-title">내 수강 기록</h2>
-      <p>기록은 현재 브라우저에 저장됩니다. 영상에서 실제 재생한 구간이 전체의 <strong>90%</strong> 이상이면 수강 완료로 표시됩니다.</p>
+      <h2 id="learning-records-title">이 브라우저의 수강 기록</h2>
+      <p>이 화면에서 시청한 기록은 현재 브라우저에 저장됩니다. 계정에 기록하려면 로그인 강의실에서 시청하세요. 영상에서 실제 재생한 구간이 전체의 <strong>90%</strong> 이상이면 수강 완료로 표시됩니다.</p>
       <p id="storage-notice" class="classroom-alert" role="status" hidden></p>
       <form id="progress-export" class="classroom-export" aria-describedby="progress-export-help">
         <p id="progress-export-help">KCLI에서 받은 수강생 번호를 입력하고, 저장한 기록 파일을 담당자에게 제출하세요. 재생 기록이 저장된 브라우저에서 내려받으세요.</p>
