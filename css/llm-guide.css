@@ -1,0 +1,60 @@
+.llm-guide { padding-top: 24px; border-top: 2px solid var(--line); }
+.llm-guide p { max-width: 56rem; }
+.llm-overview article { border-top: 3px solid #356587; }
+.llm-overview .llm-formula { padding: 5px 8px; background: #edf4f8; color: var(--navy); font-size: .94rem; }
+.llm-block { margin-top: clamp(24px, 4vw, 40px); }
+.llm-guide .llm-block > h3, .llm-lab-heading h3 { color: var(--navy); font-size: clamp(1.12rem, 2.4vw, 1.45rem); line-height: 1.3; }
+
+.llm-process { display: grid; gap: 12px; margin-top: 12px; }
+.llm-process > div { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.llm-process h4 { margin: 0 0 6px; color: var(--navy); }
+.llm-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; }
+.llm-flow li { padding: 7px 9px; background: #edf4f8; list-style-position: inside; font-size: .88rem; }
+.llm-flow li::marker { color: var(--navy-2); font-weight: 750; }
+
+.llm-lab { padding: clamp(12px, 2.5vw, 26px); border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.llm-lab .llm-lab-question { display: flex; flex-wrap: wrap; gap: 3px 10px; max-width: none; margin-top: 14px; padding: 10px 12px; border-inline-start: 3px solid #356587; background: #edf4f8; color: var(--navy); }
+.llm-lab-question span { color: #405b71; }
+.llm-lab-controls:not([hidden]) { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 8px 0; }
+.llm-lab-controls label { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--navy); font-size: .92rem; font-weight: 700; }
+.llm-check { cursor: pointer; }
+.llm-check input { width: 17px; height: 17px; margin: 0; accent-color: var(--navy-2); }
+.llm-limit select { min-height: 34px; padding: 4px 8px; border: 1px solid #8ca5b5; border-radius: 5px; background: #fff; color: var(--navy); font: inherit; }
+.llm-check input:focus-visible { outline: 3px solid #00a4c7; outline-offset: 3px; }
+
+.llm-results { width: 100%; margin-top: 8px; border-collapse: collapse; table-layout: fixed; text-align: left; font-size: .91rem; }
+.llm-value-col, .llm-rank-col { width: 17%; }
+.llm-results :is(th, td) { padding: 8px clamp(4px, 1.2vw, 14px); border: 1px solid var(--line); vertical-align: top; }
+.llm-results thead { background: #edf4f8; }
+.llm-results thead th:not(:first-child), .llm-results td { text-align: center; }
+.llm-results tbody th { color: var(--navy); }
+.llm-results tbody th :is(small, span) { display: block; margin-top: 2px; color: #405b71; font-weight: 400; }
+.llm-results .llm-score { display: block; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.llm-results code { font-size: .86em; white-space: nowrap; }
+.llm-results .llm-rank { color: #405b71; font-size: .84rem; }
+.llm-results tr[data-ranked] { background: #f0f7fa; }
+.llm-results tr[data-ranked] .llm-rank { color: var(--navy); font-weight: 750; }
+.llm-results tr[data-filtered] { background: #f5f5f2; }
+.llm-lab-summary { margin-top: 12px; padding: 10px 12px; border-inline-start: 3px solid #b97817; background: #fbf5e9; }
+.llm-lab-summary h4 { margin: 0 0 3px; color: var(--navy); }
+
+.llm-role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0 0; }
+.llm-role-grid > div { padding: clamp(12px, 2vw, 20px); border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.llm-guide dt { color: var(--navy); font-weight: 750; }
+.llm-role-grid dd { margin: 5px 0 0; }
+.llm-trends { margin: 12px 0 0; padding: 2px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.llm-trends > div { display: grid; grid-template-columns: minmax(11rem, .4fr) minmax(0, 1fr); gap: 4px 16px; padding: 9px 0; }
+.llm-trends > div + div { border-top: 1px solid var(--line); }
+.llm-trends dd { margin: 0; }
+.llm-guide .llm-references { margin-top: 12px; font-size: .88rem; }
+
+@media (max-width: 760px) {
+  .llm-role-grid, .llm-trends > div { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .llm-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .llm-value-col { width: 25%; }
+  .llm-rank-col { width: 22%; }
+  .llm-results { font-size: .84rem; }
+}

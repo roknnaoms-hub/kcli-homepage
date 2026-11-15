@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="인공지능·머신러닝·딥러닝의 관계, 지도·비지도·강화학습의 차이, 붓꽃 데이터셋과 산점도로 배우는 KCLI AI 학습 자료입니다.">
+  <meta name="description" content="AI·머신러닝 기초부터 LLM, 벡터DB, RAG, 오케스트레이션과 하네스까지 설명하는 KCLI 학습 자료입니다. 붓꽃 데이터 분석과 문서 검색 실습을 제공합니다.">
   <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/">
-  <title>AI·머신러닝 학습 기초 | KCLI</title>
+  <title>AI·머신러닝 학습 기초와 LLM 응용 | KCLI</title>
   <link rel="stylesheet" href="../css/styles.css?v=iso-19011-guide-20261115">
   <link rel="stylesheet" href="../css/ml-guide.css">
+  <link rel="stylesheet" href="../css/llm-guide.css">
+  <script src="../js/rag-lab.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
@@ -32,6 +34,7 @@
         <a class="auditor-inline-link" href="#ml-methods">학습 방식</a>
         <a class="auditor-inline-link" href="#ml-dataset">지도학습 데이터셋</a>
         <a class="auditor-inline-link" href="#ml-visualization">데이터 분석 시각화</a>
+        <a class="auditor-inline-link" href="#llm-technologies">LLM 응용과 RAG 실습</a>
       </nav>
 
       <section id="ml-technologies" aria-labelledby="ml-technologies-title">
@@ -148,6 +151,121 @@
             <figcaption>세 종의 길이·너비 범위가 공통으로 겹칩니다. 같은 표본이라도 비교할 입력 변수를 바꾸면 종별 분포를 구분하기 쉬운 정도가 달라집니다.</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section id="llm-technologies" class="llm-guide" aria-labelledby="llm-technologies-title">
+        <h2 id="llm-technologies-title">LLM 응용 기술과 개발 동향</h2>
+        <p class="ml-intro">가상의 실습 운영 문서를 예로 들어, 질문에 맞는 문서를 찾고 현행 근거를 확인해 답변하는 과정을 살펴봅니다.</p>
+
+        <div class="ml-card-grid llm-overview">
+          <article>
+            <h3>거대언어모델 <small lang="en">LLM</small></h3>
+            <p>대량의 텍스트 등에서 언어 패턴을 학습한 모델입니다. 챗봇에 쓰이는 생성형 LLM은 질문과 문맥을 토큰 단위로 처리하고 다음 토큰을 순차적으로 생성합니다.</p>
+            <p class="ml-example">요약·질의응답·초안 작성에 활용합니다. 사실 확인이 필요한 답변은 원문 근거와 대조합니다.</p>
+          </article>
+          <article>
+            <h3>임베딩과 유사도</h3>
+            <p>임베딩은 문장을 숫자 벡터로 바꿉니다. 질문과 문서 조각에 같은 임베딩 모델을 적용하면 벡터를 비교해 관련 후보를 찾을 수 있습니다.</p>
+            <p class="llm-formula"><var>sim(q, d)</var> = (<var>q</var> · <var>d</var>) / (‖<var>q</var>‖ × ‖<var>d</var>‖)</p>
+            <p>코사인 유사도는 두 벡터의 내적을 길이의 곱으로 나눈 값입니다. 길이가 0보다 큰 벡터에서는 −1~1 범위이며, 방향이 비슷할수록 값이 큽니다.</p>
+          </article>
+          <article>
+            <h3>벡터DB</h3>
+            <p>임베딩과 문서 식별자, 쪽수, 개정판, 접근권한 등 메타데이터를 관리하고 질문 벡터와 가까운 문서 조각을 검색합니다.</p>
+            <p class="ml-example"><strong>예시</strong> 벡터 검색 결과에 연결된 원문과 쪽수를 찾아 답변에 출처로 표시합니다. HNSW 같은 근사 최근접 인덱스는 검색 속도와 재현율을 함께 고려해 설정합니다.</p>
+          </article>
+        </div>
+
+        <section id="llm-rag" class="llm-block" aria-labelledby="llm-rag-title">
+          <h3 id="llm-rag-title">검색증강생성 <span lang="en">RAG</span></h3>
+          <p>질문에 관련된 문서 조각을 검색해 모델 문맥에 넣고, 그 근거를 바탕으로 답변을 생성하는 방식입니다.</p>
+          <div class="llm-process">
+            <div>
+              <h4>문서 준비</h4>
+              <ol class="llm-flow">
+                <li>원문·개정판 확인</li><li>문서 조각 분할</li><li>임베딩 생성</li><li>벡터·출처 색인</li>
+              </ol>
+            </div>
+            <div>
+              <h4>질문 처리</h4>
+              <ol class="llm-flow">
+                <li>권한·개정판 조건 적용</li><li>후보 검색·재순위화</li><li>근거를 넣어 답변 생성</li><li>인용·본문 대조</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section id="llm-rag-lab" class="llm-block llm-lab" data-query-vector="1,1" aria-labelledby="llm-lab-title">
+          <div class="llm-lab-heading">
+            <h3 id="llm-lab-title">실습 · 문서 개정판이 검색에 미치는 영향</h3>
+            <p>가상 문서 4건에 교육용 2차원 벡터를 지정했습니다. 코사인 유사도로 순위를 계산하고, 검색 결과에 따라 미리 구성한 답변이나 보류 예시를 표시합니다.</p>
+          </div>
+          <p class="llm-lab-question"><strong>질문</strong> 실습 결과 보고서는 누가 검토합니까? <span>질문 벡터 <code>(1, 1)</code></span></p>
+
+          <div class="llm-lab-controls" hidden>
+            <label class="llm-check" for="llm-history"><input id="llm-history" type="checkbox"> 이전 판 포함</label>
+            <label class="llm-limit" for="llm-top-k">상위 문서 수 <select id="llm-top-k"><option value="1">1건</option><option value="2" selected>2건</option><option value="3">3건</option></select></label>
+          </div>
+          <div class="llm-lab-summary">
+            <h4>답변과 근거 확인</h4>
+            <p id="llm-lab-result" role="status">현행 안내가 1위입니다. 운영 담당자가 보고서를 검토합니다. 근거는 실습 운영 안내 v2, 3쪽입니다.</p>
+          </div>
+
+          <table class="llm-results">
+            <caption class="sr-only">문서별 코사인 유사도와 검색 순위</caption>
+            <colgroup><col><col class="llm-value-col"><col class="llm-rank-col"></colgroup>
+            <thead><tr><th scope="col">문서와 근거</th><th scope="col">벡터<br>유사도</th><th scope="col">검색 순위</th></tr></thead>
+            <tbody>
+              <tr data-vector="2,1" data-edition="current" data-current-evidence data-ranked>
+                <th scope="row">실습 운영 안내 v2 <small>3쪽 · 현행</small><span>운영 담당자가 실습 결과 보고서를 검토합니다.</span></th>
+                <td><code>(2, 1)</code><strong class="llm-score">0.949</strong></td><td class="llm-rank">1위</td>
+              </tr>
+              <tr data-vector="1,0" data-edition="current" data-ranked>
+                <th scope="row">실습 체크리스트 v1 <small>2쪽 · 현행</small><span>참가자는 실습 종료 시 보고서를 제출합니다.</span></th>
+                <td><code>(1, 0)</code><strong class="llm-score">0.707</strong></td><td class="llm-rank">2위</td>
+              </tr>
+              <tr data-vector="1,-1" data-edition="current">
+                <th scope="row">교육 신청 안내 v1 <small>1쪽 · 현행</small><span>신청서 제출 순서에 따라 접수를 처리합니다.</span></th>
+                <td><code>(1, −1)</code><strong class="llm-score">0.000</strong></td><td class="llm-rank">상위 범위 밖</td>
+              </tr>
+              <tr data-vector="1,1" data-edition="archived" data-filtered>
+                <th scope="row">실습 운영 안내 v1 <small>3쪽 · 이전 판</small><span>강사가 실습 결과 보고서를 검토합니다.</span></th>
+                <td><code>(1, 1)</code><strong class="llm-score">1.000</strong></td><td class="llm-rank">개정판 필터 제외</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="llm-orchestration" class="llm-block" aria-labelledby="llm-orchestration-title">
+          <h3 id="llm-orchestration-title">오케스트레이션과 하네스</h3>
+          <dl class="llm-role-grid">
+            <div><dt>오케스트레이션</dt><dd>어떤 순서와 조건으로 검색, 모델, 도구를 실행할지 조정합니다. 예를 들어 현행 근거가 부족하면 검색을 다시 시도하고, 근거가 확보될 때까지 답변을 보류합니다.</dd></div>
+            <div><dt>에이전트 실행 하네스</dt><dd>모델이 도구를 사용하고 작업을 이어갈 수 있게 하는 실행 환경입니다. 허용 도구, 접근권한, 작업 상태, 실행 한도, 승인과 기록을 관리합니다. 오케스트레이션은 이 환경 안에서 동작할 수 있습니다.</dd></div>
+            <div><dt>평가 하네스</dt><dd>같은 질문·기대 근거·채점 기준으로 반복 평가하는 환경입니다. 검색 결과의 현행 문서 포함 여부, 답변과 인용의 일치, 근거 부족 시 보류 동작을 확인할 수 있습니다.</dd></div>
+          </dl>
+        </section>
+
+        <section id="llm-trends" class="llm-block" aria-labelledby="llm-trends-title">
+          <h3 id="llm-trends-title">개발 동향</h3>
+          <dl class="llm-trends">
+            <div><dt>하이브리드 검색과 재순위화</dt><dd>조항 번호·제품 코드에는 키워드 검색을, 뜻이 비슷한 문장에는 벡터 검색을 활용합니다. 두 검색의 후보를 합쳐 질문에 답할 가능성이 높은 순으로 다시 정렬합니다.</dd></div>
+            <div><dt>컨텍스트 엔지니어링</dt><dd>질문, 최근 작업 상태, 관련 문서, 도구 결과 중 무엇을 모델에 넣고 얼마나 유지할지 설계합니다.</dd></div>
+            <div><dt>도구·데이터 연결 규약 <span lang="en">MCP</span></dt><dd>Model Context Protocol을 통해 AI 애플리케이션이 외부 서버의 도구와 자료를 발견하고 사용할 수 있습니다. 호출 권한과 승인 조건은 실행 환경의 정책으로 적용합니다.</dd></div>
+            <div><dt>실행 기록과 회귀 평가</dt><dd>검색 문서, 도구 호출, 답변 근거를 추적합니다. 모델·문서·검색 구성을 바꾼 뒤에도 같은 평가 질문을 실행해 이전에 통과한 항목을 다시 확인합니다.</dd></div>
+          </dl>
+        </section>
+
+        <nav class="ai-management-links llm-references" aria-label="LLM 응용 기술 참고자료">
+          <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/crash-course/llm/transformers">Google LLM 개요</a>
+          <a class="auditor-inline-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html">코사인 유사도</a>
+          <a class="auditor-inline-link" href="https://github.com/pgvector/pgvector">벡터 검색 사례</a>
+          <a class="auditor-inline-link" href="https://proceedings.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html">RAG 원 논문</a>
+          <a class="auditor-inline-link" href="https://www.anthropic.com/research/building-effective-agents">에이전트 워크플로</a>
+          <a class="auditor-inline-link" href="https://developers.openai.com/blog/codex-as-a-platform">실행 하네스 사례</a>
+          <a class="auditor-inline-link" href="https://github.com/EleutherAI/lm-evaluation-harness">평가 하네스 사례</a>
+          <a class="auditor-inline-link" href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">컨텍스트 엔지니어링</a>
+          <a class="auditor-inline-link" href="https://modelcontextprotocol.io/docs/learn/architecture">MCP 아키텍처</a>
+        </nav>
       </section>
 
       <nav class="ai-management-links ml-references" aria-label="AI·머신러닝 참고자료">
