@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self' https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="한국사이버리터러시연구원(KCLI)의 ISO 19011 온라인 강의실입니다. 1~14교시 강의 영상과 교시별 수강 기록을 확인하세요.">
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/iso-19011-classroom/">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>ISO 19011 온라인 강의실 | KCLI 한국사이버리터러시연구원</title>
+  <link rel="stylesheet" href="../css/styles.css?v=audit-glossary-20261115">
+  <link rel="stylesheet" href="../css/iso-19011-classroom.css?v=1">
+  <script src="../js/app.js?v=geo-20261114" defer></script>
+  <script src="../js/iso-19011-classroom.js?v=1" type="module"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="한국사이버리터러시연구원 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>KCLI</strong><small>한국사이버리터러시연구원</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">메뉴 열기</span><i></i><i></i>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="강의실 메뉴">
+      <a href="../#iso-19011-guide">ISO 19011 심사 실무</a>
+      <a href="#classroom-lessons">강의 목록</a>
+      <a class="nav-cta" href="#learning-records">내 수강 기록</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="classroom">
+  <div class="container">
+    <div class="classroom-intro">
+      <div>
+        <p class="classroom-edition">경영시스템 심사 지침 · ISO 19011:2026</p>
+        <h1>ISO 19011 온라인 강의실</h1>
+      </div>
+      <a class="classroom-overview" href="#learning-records">
+        <span>수강 완료</span>
+        <strong><span id="completed-count">0</span><small> / 14교시</small></strong>
+        <progress id="completed-meter" max="14" value="0" aria-label="전체 교시 수강 진도"></progress>
+      </a>
+    </div>
+
+    <noscript><p class="classroom-alert">강의 목록과 수강 기록을 보려면 브라우저에서 자바스크립트를 사용해 주세요.</p></noscript>
+    <p id="classroom-error" class="classroom-alert" role="status" hidden></p>
+
+    <div class="classroom-layout">
+      <section id="classroom-player" class="classroom-card classroom-player" aria-labelledby="current-lesson-title">
+        <div class="classroom-card-heading">
+          <h2 id="current-lesson-title" tabindex="-1">1교시</h2>
+          <span id="current-lesson-status" class="classroom-status" data-state="pending">영상 준비 중</span>
+        </div>
+        <div class="classroom-media">
+          <video id="lesson-video" controls playsinline preload="metadata" aria-labelledby="current-lesson-title" hidden></video>
+          <div id="player-message" class="classroom-media-message" role="status">
+            <span class="classroom-play" aria-hidden="true"></span>
+            <strong id="player-message-title">강의 목록을 불러오는 중</strong>
+            <p id="player-message-detail">잠시 기다려 주세요.</p>
+          </div>
+        </div>
+        <p id="resume-note" class="classroom-resume" hidden></p>
+      </section>
+
+      <section id="classroom-lessons" class="classroom-card classroom-outline" aria-labelledby="lesson-list-title">
+        <div class="classroom-card-heading">
+          <h2 id="lesson-list-title">강의 목록</h2>
+          <span id="available-count" class="classroom-availability">0 / 14교시 공개</span>
+        </div>
+        <ol id="lesson-list" class="classroom-lesson-list" role="list"></ol>
+      </section>
+    </div>
+
+    <section id="learning-records" class="classroom-card classroom-records" aria-labelledby="learning-records-title">
+      <h2 id="learning-records-title">내 수강 기록</h2>
+      <p>기록은 현재 브라우저에 저장됩니다. 영상에서 실제 재생한 구간이 전체의 <strong>90%</strong> 이상이면 수강 완료로 표시됩니다.</p>
+      <p id="storage-notice" class="classroom-alert" role="status" hidden></p>
+      <table class="classroom-record-table" aria-labelledby="learning-records-title">
+        <thead><tr><th scope="col">교시</th><th scope="col">재생 비율</th><th scope="col">상태 및 마지막 시청</th></tr></thead>
+        <tbody id="lesson-records"></tbody>
+      </table>
+    </section>
+  </div>
+</main>
+
+<template id="lesson-item-template">
+  <li>
+    <button type="button" class="classroom-lesson-button">
+      <span class="classroom-lesson-name"></span>
+      <span class="classroom-status"></span>
+    </button>
+  </li>
+</template>
+<template id="record-item-template">
+  <tr>
+    <th scope="row"><button type="button" class="classroom-record-link"></button></th>
+    <td><div class="classroom-record-progress"><progress max="100" value="0"></progress><span></span></div></td>
+    <td><span class="classroom-status"></span><time hidden></time></td>
+  </tr>
+</template>
+
+<footer class="classroom-footer">
+  <div class="container">
+    <a href="../">한국사이버리터러시연구원(KCLI)</a>
+    <a href="../#audit-glossary">ISO 인증심사 기본 용어</a>
+  </div>
+</footer>
+</body>
+</html>
