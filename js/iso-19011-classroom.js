@@ -6,9 +6,9 @@ const storeName = 'progress';
 const statusLabels = {
   pending: '영상 준비 중',
   unavailable: '상태 확인 필요',
-  unwatched: '미수강',
-  watching: '수강 중',
-  completed: '수강 완료'
+  unwatched: '미시청',
+  watching: '시청 중',
+  completed: '시청 완료'
 };
 const dateFormat = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' });
 
@@ -132,7 +132,7 @@ function storageUnavailable() {
   database?.close();
   database = undefined;
   const notice = document.getElementById('storage-notice');
-  notice.textContent = '이 브라우저에서 내 수강 기록을 저장할 수 없습니다. 이 화면을 열어 둔 동안의 수강 기록은 확인할 수 있습니다.';
+  notice.textContent = '이 브라우저에서 내 시청 기록을 저장할 수 없습니다. 이 화면을 열어 둔 동안의 시청 기록은 확인할 수 있습니다.';
   notice.hidden = false;
 }
 
@@ -330,9 +330,9 @@ exportForm.addEventListener('submit', async event => {
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    exportStatus.textContent = '수강 기록 파일을 저장했습니다. 이 파일을 KCLI 담당자에게 제출하세요.';
+    exportStatus.textContent = '참고용 시청 기록 파일을 저장했습니다. 공식 기록이 아니며, 담당자가 요청한 비공개 경로로만 제출하세요.';
   } catch {
-    exportStatus.textContent = '수강 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.';
+    exportStatus.textContent = '시청 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.';
   } finally {
     exportStatus.hidden = false;
     exportButton.disabled = false;

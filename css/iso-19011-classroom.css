@@ -116,3 +116,13 @@
   .classroom-record-table th, .classroom-record-table td { padding-inline: 5px; }
   .classroom-record-progress { grid-template-columns: 1fr; gap: 2px; }
 }
+
+.classroom-process { margin-bottom: 24px; padding: clamp(18px, 3vw, 26px); scroll-margin-top: 110px; }
+.classroom-process p { margin: 12px 0 0; font-size: .94rem; }
+.classroom-process a, .classroom-records > p a { color: var(--navy-2); text-decoration: underline; text-underline-offset: .2em; }
+.classroom-process-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+.classroom-process-grid section { padding: 16px; border-radius: 9px; background: #eff4f8; }
+.classroom-process h3 { margin: 0; font-size: 1.05rem; color: var(--navy-2); }
+@media (max-width: 760px) {
+  .classroom-process-grid { grid-template-columns: minmax(0, 1fr); }
+}
