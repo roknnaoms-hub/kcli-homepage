@@ -5,12 +5,48 @@
 .llm-block { margin-top: clamp(24px, 4vw, 40px); }
 .llm-guide .llm-block > h3, .llm-lab-heading h3 { color: var(--navy); font-size: clamp(1.12rem, 2.4vw, 1.45rem); line-height: 1.3; }
 
-.llm-process { display: grid; gap: 12px; margin-top: 12px; }
-.llm-process > div { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-.llm-process h4 { margin: 0 0 6px; color: var(--navy); }
-.llm-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; }
-.llm-flow li { padding: 7px 9px; background: #edf4f8; list-style-position: inside; font-size: .88rem; }
-.llm-flow li::marker { color: var(--navy-2); font-weight: 750; }
+.ai-architecture h3 { margin: 22px 0 0; color: var(--navy); }
+.ai-diagram {
+  margin: 14px 0;
+  padding: clamp(12px, 2.5vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f5f8fa;
+}
+.ai-diagram figcaption { margin-bottom: 12px; color: var(--navy); font-weight: 750; }
+.ai-diagram h4 { margin: 0 0 8px; color: var(--navy); }
+.ai-flow { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 22px; margin: 0; padding: 0; list-style: none; }
+.ai-flow li { position: relative; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.ai-flow li + li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  inset-inline-start: -12px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #356587;
+  border-right: 2px solid #356587;
+  transform: translate(-60%, -50%) rotate(45deg);
+}
+.ai-flow strong { display: block; margin-bottom: 4px; color: var(--navy); }
+.ai-flow span { display: block; color: var(--muted); font-size: .92rem; }
+.llm-guide .ai-diagram-note { margin-top: 12px; }
+.llm-guide .ai-diagram-bridge {
+  max-width: none;
+  margin: 12px 0;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #e5eff5;
+  color: var(--navy);
+  text-align: center;
+  font-weight: 700;
+}
+.ai-diagram-bridge span { margin-inline-end: 6px; }
+.ai-flow-outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 0; }
+.ai-flow-outcomes > div { padding: 10px 12px; border-inline-start: 3px solid #356587; background: #e5eff5; }
+.ai-flow-outcomes > div + div { border-color: #b97817; background: #fbf5e9; }
+.ai-flow-outcomes dd { margin: 4px 0 0; }
+#llm-vector-db { scroll-margin-top: 24px; }
 
 .llm-lab { padding: clamp(12px, 2.5vw, 26px); border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .llm-lab .llm-lab-question { display: flex; flex-wrap: wrap; gap: 3px 10px; max-width: none; margin-top: 14px; padding: 10px 12px; border-inline-start: 3px solid #356587; background: #edf4f8; color: var(--navy); }
@@ -40,7 +76,7 @@
 
 .llm-role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0 0; }
 .llm-role-grid > div { padding: clamp(12px, 2vw, 20px); border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-.llm-guide dt { color: var(--navy); font-weight: 750; }
+:is(.ai-architecture, .llm-guide) dt { color: var(--navy); font-weight: 750; }
 .llm-role-grid dd { margin: 5px 0 0; }
 .llm-trends { margin: 12px 0 0; padding: 2px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
 .llm-trends > div { display: grid; grid-template-columns: minmax(11rem, .4fr) minmax(0, 1fr); gap: 4px 16px; padding: 9px 0; }
@@ -50,10 +86,16 @@
 
 @media (max-width: 760px) {
   .llm-role-grid, .llm-trends > div { grid-template-columns: minmax(0, 1fr); }
+  .ai-flow { grid-auto-flow: row; grid-auto-columns: auto; gap: 18px; }
+  .ai-flow li + li::before {
+    top: -10px;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -60%) rotate(135deg);
+  }
 }
 
 @media (max-width: 540px) {
-  .llm-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ai-flow-outcomes { grid-template-columns: 1fr; }
   .llm-value-col { width: 25%; }
   .llm-rank-col { width: 22%; }
   .llm-results { font-size: .84rem; }

@@ -416,6 +416,15 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 .ai-audit-grid .ai-audit-clause { margin: 3px 0 9px; color: var(--navy-2); font-size: .85rem; font-weight: 750; }
 .ai-management-links { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 16px; color: var(--navy-2); }
 .ai-management-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.ai-learning-resources {
+  margin-top: 24px;
+  padding: clamp(14px, 2.5vw, 24px);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--navy-2);
+  background: #eef4f8;
+}
+.ai-learning-resources h3 { margin-bottom: 4px; }
+.ai-learning-resources .ai-management-links { margin-top: 0; }
 
 @media (max-width: 600px) {
   .ai-concepts-table thead th:first-child { width: 34%; }
