@@ -10,10 +10,9 @@ a{color:inherit;text-decoration:none} button{font:inherit}.container{width:min(c
 .skip-link{position:fixed;top:10px;left:10px;z-index:999;padding:10px 16px;color:var(--navy);background:var(--lime);transform:translateY(-160%)}.skip-link:focus{transform:none}
 
 .site-header{position:fixed;inset:0 0 auto;z-index:100;color:var(--ink);background:#f6f5f0;border-bottom:1px solid var(--line);transition:.25s}
-.site-header .brand-mark i{background:#b97817}
 .site-header.scrolled,.site-header.open{color:var(--ink);background:rgba(246,245,240,.97);box-shadow:0 8px 30px rgba(11,34,57,.08);backdrop-filter:blur(15px)}
 .header-inner{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:inline-flex;align-items:center;gap:12px;line-height:1}.brand>span:last-child{display:grid;gap:4px}.brand strong{font-size:1.25rem;letter-spacing:.12em}.brand small{font-size:.65rem;letter-spacing:.08em;opacity:.7}
-.brand-mark{width:34px;height:34px;display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:3px;transform:skew(-12deg)}.brand-mark i{display:block;background:var(--lime)}.brand-mark i:nth-child(1){height:45%}.brand-mark i:nth-child(2){height:75%}.brand-mark i:nth-child(3){height:100%}
+.brand-mark{display:block;flex:none;object-fit:contain}
 .site-nav{display:flex;align-items:center;gap:34px;font-size:.88rem;font-weight:700}.site-nav>a:not(.nav-cta){position:relative;padding:29px 0}.site-nav>a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:100%;bottom:21px;height:2px;background:var(--lime);transition:right .2s}.site-nav>a:hover::after,.site-nav>a:focus-visible::after{right:0}.nav-cta{padding:10px 18px;border:1px solid var(--navy);border-radius:8px;color:var(--navy)}.nav-cta:hover{color:#fff;background:var(--navy)}.menu-button{display:none;border:0;background:transparent;color:inherit}
 
 .hero {

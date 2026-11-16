@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="90"
+     viewBox="15 3 120 90" role="img">
+  <title>KCLI 삼색 마크 · 15°</title>
+  <desc>Three straight-sided parallelograms in olive, medium blue and sky blue for the Army, Navy and Air Force. Each side edge leans 15 degrees to the right from vertical.</desc>
+  <g stroke="#142D4B" stroke-width="2.9" stroke-linejoin="miter">
+<polygon fill="#84A76B" points="19.94805771,88.5 29.59422863,52.5 51.99422863,52.5 42.34805771,88.5"/>
+<polygon fill="#4D85C6" points="52.94805771,88.5 69.15898385,28.0 91.55898385,28.0 75.34805771,88.5"/>
+<polygon fill="#7CBFE7" points="85.94805771,88.5 107.65194229,7.5 130.05194229,7.5 108.34805771,88.5"/>
+</g>
+</svg>
