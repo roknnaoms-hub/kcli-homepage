@@ -14,6 +14,7 @@ const dateFormat = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeS
 
 const player = document.getElementById('classroom-player');
 const video = document.getElementById('lesson-video');
+video.addEventListener('contextmenu', (event) => event.preventDefault());
 const playerTitle = document.getElementById('current-lesson-title');
 const playerStatus = document.getElementById('current-lesson-status');
 const playerMessage = document.getElementById('player-message');

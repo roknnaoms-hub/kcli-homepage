@@ -511,22 +511,19 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   text-underline-offset: .2em;
 }
 .iso-datasheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 14px; }
-.iso-datasheet-actions a {
+.iso-datasheet-actions .iso-datasheet-button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   min-height: 44px;
   color: var(--standard-accent);
+  font: inherit;
   font-size: .88rem;
   font-weight: 750;
-  text-decoration: underline;
-  text-underline-offset: .2em;
-}
-.iso-datasheet-actions .iso-datasheet-button {
   padding: 6px 12px;
   border: 1px solid #a9bfd4;
   background: #edf3f7;
-  text-decoration: none;
+  cursor: pointer;
 }
 .iso-datasheet-actions .iso-datasheet-button:hover { background: #dce8f1; }
 .iso-chapters { margin: 22px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }

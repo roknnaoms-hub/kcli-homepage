@@ -29,11 +29,14 @@
 
 .textbook-figure-image {
   display: block;
+  width: 100%;
   padding: 10px 12px 8px;
+  border: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 9px 9px 0 0;
   background: #f7fafc;
   color: var(--navy-2);
+  font: inherit;
   cursor: zoom-in;
 }
 
@@ -81,6 +84,60 @@
   color: var(--navy-2);
   font-size: .8rem;
   font-weight: 700;
+}
+
+.textbook-preview {
+  width: min(1120px, 94vw);
+  max-height: 90vh;
+  margin: auto;
+  padding: clamp(10px, 2vw, 20px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  background: var(--white);
+  overscroll-behavior: contain;
+}
+
+.textbook-preview::backdrop {
+  background: rgb(12 29 45 / 74%);
+}
+
+.textbook-preview-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  background: var(--white);
+}
+
+.textbook-preview-header h2 {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.textbook-preview-close {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--navy-2);
+  background: #f7fafc;
+  font: inherit;
+  cursor: pointer;
+}
+
+.textbook-preview-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.textbook-figure-image img,
+.textbook-preview-media img {
+  -webkit-touch-callout: none;
 }
 
 @media (max-width: 760px) {

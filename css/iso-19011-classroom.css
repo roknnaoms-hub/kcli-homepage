@@ -53,7 +53,7 @@
   background: var(--navy);
   color: var(--white);
 }
-.classroom-media video { display: block; width: 100%; height: 100%; background: #080d16; }
+.classroom-media video { display: block; width: 100%; height: 100%; background: #080d16; -webkit-touch-callout: none; }
 .classroom-media-message { width: 100%; height: 100%; display: grid; align-content: center; justify-items: center; gap: 8px; padding: 16px; text-align: center; background: radial-gradient(ellipse at 50% 30%, #183f66, var(--navy) 78%); }
 .classroom-media-message strong { font-size: clamp(.98rem, 2.5vw, 1.35rem); }
 .classroom-media-message p { margin: 0; color: #d5e4f1; font-size: .85rem; }

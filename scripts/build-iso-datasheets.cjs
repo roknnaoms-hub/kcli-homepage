@@ -166,10 +166,9 @@ function buildDatasheets() {
     const edition = [standard, amendment].filter(Boolean).join(' ').replace(/[^a-z0-9]+/gi, '_');
     const filename = `KCLI_${edition}_Clauses_4-10`;
     const pngPath = `./assets/iso-datasheets/${filename}.png`;
-    const svgPath = `./assets/iso-datasheets/${filename}.svg`;
-    const links = Array.from(card.querySelectorAll('.iso-datasheet-actions a'), (link) => link.getAttribute('href'));
-    if (links.join('|') !== [pngPath, pngPath, svgPath].join('|')) {
-      throw new Error(`이미지 링크의 파일명을 확인하세요. ${standard}`);
+    const previewPath = card.querySelector('.iso-datasheet-actions [data-preview-src]')?.dataset.previewSrc;
+    if (previewPath !== pngPath) {
+      throw new Error(`이미지 보기의 파일명을 확인하세요. ${standard}`);
     }
 
     const svg = createDatasheet(card, standard, amendment);

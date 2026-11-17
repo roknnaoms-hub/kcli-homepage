@@ -83,6 +83,28 @@ document.querySelectorAll('a[data-course]').forEach((link) => {
   });
 });
 updateInquiry();
+
+const textbookPreview = document.getElementById('textbook-preview');
+if (textbookPreview) {
+  const title = textbookPreview.querySelector('h2');
+  const media = textbookPreview.querySelector('.textbook-preview-media');
+  document.querySelectorAll('button[aria-controls="textbook-preview"]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const heading = button.closest('figure, .iso-index-standard').querySelector('h3, h4').textContent;
+      const thumbnail = button.querySelector('img');
+      const image = new Image();
+      image.src = thumbnail?.src ?? button.dataset.previewSrc;
+      image.alt = thumbnail?.alt ?? `${heading} 4~10항 도표`;
+      image.draggable = false;
+      title.textContent = heading;
+      media.replaceChildren(image);
+      textbookPreview.showModal();
+    });
+    button.addEventListener('contextmenu', (event) => event.preventDefault());
+  });
+  media.addEventListener('contextmenu', (event) => event.preventDefault());
+}
+
 const copyEmail = document.getElementById('copy-email');
 if (copyEmail) {
   copyEmail.hidden = false;
