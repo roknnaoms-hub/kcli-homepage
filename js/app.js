@@ -1,5 +1,47 @@
 document.documentElement.classList.add('js');
 
+// Leave domain-forwarding frames before opening the cookie-based LMS.
+document.querySelectorAll('a[href]').forEach((link) => {
+  const url = new URL(link.href, location.href);
+  if (url.origin === 'https://kcli-iso19011-records.roknaoms.chatgpt.site') {
+    link.target = '_top';
+  }
+});
+
+if (window.self !== window.top) {
+  const english = document.documentElement.lang.startsWith('en');
+  const destination = new URL(location.href);
+  destination.protocol = 'https:';
+  const notice = document.createElement('aside');
+  notice.setAttribute('aria-label', english ? 'Secure access' : '보안 접속 안내');
+  Object.assign(notice.style, {
+    position: 'relative', zIndex: '1001', padding: '16px 20px',
+    background: '#edf4fa', color: '#102a43', borderBottom: '1px solid #aebdca',
+    fontFamily: 'sans-serif', lineHeight: '1.6', textAlign: 'center'
+  });
+  const message = document.createElement('p');
+  message.textContent = english
+    ? 'Open KCLI directly over HTTPS to use the classroom and sign in securely.'
+    : '도메인 연결 화면 안에서 접속하셨습니다. 안전한 로그인과 수강을 위해 HTTPS 화면을 직접 열어 주세요.';
+  message.style.margin = '0 0 8px';
+  notice.append(message);
+  [
+    [destination.href, english ? 'Open secure KCLI website' : '보안 홈페이지 열기'],
+    ['https://kcli-iso19011-records.roknaoms.chatgpt.site/login', english ? 'Student sign in' : '수강생 로그인']
+  ].forEach(([href, label]) => {
+    const link = document.createElement('a');
+    link.href = href;
+    link.target = '_top';
+    link.textContent = label;
+    Object.assign(link.style, {
+      display: 'inline-block', margin: '4px 8px', padding: '8px 14px',
+      background: '#0b3564', color: '#fff', borderRadius: '6px', fontWeight: '700'
+    });
+    notice.append(link);
+  });
+  document.body.prepend(notice);
+}
+
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-button');
 const menuLabel = menuButton?.querySelector('.sr-only');
