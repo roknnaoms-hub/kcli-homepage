@@ -1,0 +1,90 @@
+.textbook-visuals {
+  margin-top: 32px;
+}
+
+.textbook-visuals h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.3;
+}
+
+.textbook-visuals-intro {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.textbook-visuals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.textbook-figure {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.textbook-figure-image {
+  display: block;
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 9px 9px 0 0;
+  background: #f7fafc;
+  color: var(--navy-2);
+  cursor: zoom-in;
+}
+
+.textbook-figure-image:hover {
+  background: #eaf2f8;
+}
+
+.textbook-figure-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: contain;
+}
+
+.textbook-figure-image > span {
+  display: block;
+  margin-top: 6px;
+  text-align: right;
+  font-size: .85rem;
+  font-weight: 750;
+}
+
+.textbook-figure-image b {
+  margin-inline-start: 6px;
+}
+
+.textbook-figure figcaption {
+  padding: 14px clamp(12px, 2vw, 20px) 18px;
+}
+
+.textbook-figure h4 {
+  margin: 4px 0 6px;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+.textbook-figure p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.textbook-figure .textbook-source {
+  color: var(--navy-2);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .textbook-visuals-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
