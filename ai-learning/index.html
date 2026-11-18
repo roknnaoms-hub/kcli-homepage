@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI·머신러닝 기초, AI 시스템과 ISO/IEC 42001 AIMS, LLM과 RAG 아키텍처를 설명하는 KCLI 학습자료입니다. 붓꽃 데이터 분석과 문서 검색 실습을 제공합니다.">
+  <meta name="description" content="AI·머신러닝 기초, ISO/IEC 42001 AIMS, LLM과 RAG 아키텍처를 학습합니다. 붓꽃 데이터 분석, 문서 검색, 가상 구매규정 답변 4건의 검색·생성 평가를 실습하세요.">
   <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/">
   <title>AI·머신러닝 학습 기초와 LLM 응용 | KCLI</title>
   <link rel="stylesheet" href="../css/styles.css?v=kcli-mark-20261116">
@@ -36,6 +36,7 @@
         <a class="auditor-inline-link" href="#ml-dataset">지도학습 데이터셋</a>
         <a class="auditor-inline-link" href="#ml-visualization">데이터 분석 시각화</a>
         <a class="auditor-inline-link" href="#llm-technologies">LLM 응용과 RAG 실습</a>
+        <a class="auditor-inline-link" href="#rag-evaluation">RAG 검색·답변 평가</a>
       </nav>
 
       <section id="ml-technologies" aria-labelledby="ml-technologies-title">
@@ -337,6 +338,32 @@
           <a class="auditor-inline-link" href="https://github.com/EleutherAI/lm-evaluation-harness">평가 하네스 사례</a>
           <a class="auditor-inline-link" href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">컨텍스트 엔지니어링</a>
           <a class="auditor-inline-link" href="https://modelcontextprotocol.io/docs/learn/architecture">MCP 아키텍처</a>
+        </nav>
+      </section>
+
+      <section id="rag-evaluation" class="ml-dataset" aria-labelledby="rag-evaluation-title">
+        <h2 id="rag-evaluation-title">구매규정 챗봇의 검색과 답변 평가</h2>
+        <p class="ml-intro">개정된 규정집으로 AI를 시험할 때는 질문마다 현행 근거 문서와 기대 답변을 먼저 정합니다. 아래는 오류 원인을 구분하기 위한 <strong>가상 시험기록 4건</strong>입니다.</p>
+        <table class="ai-concepts-table">
+          <caption class="sr-only">가상 구매규정 평가 세트의 질문, 검색 근거와 답변 판독 결과</caption>
+          <thead><tr><th scope="col">시험 질문</th><th scope="col">검색된 근거</th><th scope="col">답변 판독</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">비품 요청 양식은?</th><td>현행 양식 목록</td><td>목록에 있는 양식을 정확히 안내</td></tr>
+            <tr><th scope="row">예외구매 승인자는?</th><td>현행 결재 조항</td><td>해당 조항과 다른 직책을 답변</td></tr>
+            <tr><th scope="row">발주기록 보관기간은?</th><td>이전 판만 검색</td><td>개정 전 기간을 그대로 안내</td></tr>
+            <tr><th scope="row">해외지사 전용 양식은?</th><td>규정집에 근거 없음</td><td>답변을 보류하고 담당자에게 연결</td></tr>
+          </tbody>
+        </table>
+        <dl class="ml-fields">
+          <div><dt>현행 근거 검색 · 2/3</dt><dd>근거가 있는 질문 3건 중 2건에서 현행 조항을 찾았습니다. 보관기간 오류는 색인에 포함된 문서의 개정 상태부터 추적합니다.</dd></div>
+          <div><dt>검색 성공 후 답변 일치 · 1/2</dt><dd>현행 조항을 찾은 2건 중 정확한 답변은 1건입니다. 승인자 오류는 모델이 받은 문맥과 생성한 문장을 대조합니다.</dd></div>
+          <div><dt>근거 없는 질문 보류 · 1/1</dt><dd>답할 근거가 없는 질문 1건을 보류했습니다. 운영 시에는 사람이 검토한 결과도 함께 기록합니다.</dd></div>
+        </dl>
+        <p class="ml-data-check">조직은 AI의 용도와 오류가 미칠 영향에 맞춰 허용 기준을 정합니다. 모델이나 문서 색인이 바뀌면 같은 시험 세트를 다시 실행하고, 변경 승인자가 이전 결과와 비교할 수 있게 기록합니다.</p>
+        <nav class="ai-management-links" aria-label="RAG 평가와 경영시스템 심사">
+          <a class="auditor-inline-link" href="../iso-case-studies/#ai">ISO/IEC 42001 심사 사례</a>
+          <a class="auditor-inline-link" href="#llm-rag-lab">문서 검색 실습</a>
+          <a class="auditor-inline-link" href="https://doi.org/10.6028/NIST.AI.600-1">NIST 생성형 AI 위험관리</a>
         </nav>
       </section>
 
