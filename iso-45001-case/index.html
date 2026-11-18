@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-1nZmlUnRlGZkCrVNe+FmwnqZiwEh9QevEIAwy+2b3dY='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>ISO 45001 안전보건 심사 사례 · 조선소 아차사고 | KCLI</title>
+  <meta name="description" content="조선소에서 자재운반차와 작업자가 마주친 교육용 가상 사례입니다. ISO 45001 심사원의 관점에서 아차사고 신고, 근로자 참여, 위험성평가와 시정조치의 효과를 확인해 보세요.">
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/iso-45001-case/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="KCLI 한국사이버리터러시연구원">
+  <meta property="og:title" content="ISO 45001 심사 사례 · 조선소 아차사고의 후속 조치">
+  <meta property="og:description" content="교육 참석부는 있는데, 다음 교대조의 통로는 안전해졌을까요? 신고 기록에서 시정조치의 효과까지 추적하는 KCLI 실습입니다.">
+  <meta property="og:url" content="https://roknnaoms-hub.github.io/kcli-homepage/iso-45001-case/">
+  <link rel="icon" type="image/svg+xml" href="../assets/kcli-mark.svg">
+  <style>
+:root {
+  --navy: #071d38;
+  --ink: #102a43;
+  --line: #d9dfe1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 1rem/1.65 system-ui, "Malgun Gothic", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+a { color: inherit; text-underline-offset: .2em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #1688ad; outline-offset: 3px; }
+.container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  z-index: 1;
+  padding: 8px 16px;
+  background: #f1c75b;
+  transform: translateY(-150%);
+}
+.skip-link:focus { transform: none; }
+.site-header { background: #f6f5f0; border-bottom: 1px solid var(--line); }
+.header-inner, .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-block: 15px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand span { display: grid; line-height: 1.3; }
+.brand strong { font-size: 1.25rem; letter-spacing: .12em; }
+.brand small { font-size: .72rem; }
+.site-nav, .footer-top nav, .guide-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav a:hover, .brand:hover { text-decoration: underline; }
+.guide-hero {
+  padding-block: clamp(30px, 6vw, 72px);
+  background: #f6f5f0;
+}
+.guide-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: .85rem;
+}
+.guide-breadcrumb li + li::before { content: "/"; margin-right: 10px; color: #597485; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.22; letter-spacing: -.045em; }
+.guide-hero p { margin: 16px 0 24px; color: #465c6b; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--navy);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button.primary { background: var(--navy); color: white; }
+.button:hover { text-decoration: underline; }
+.guide-content { padding-block: clamp(36px, 6vw, 72px); }
+.guide-content h2 { margin: 0 0 12px; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.4; }
+.site-footer { padding-block: 20px; background: var(--navy); color: white; }
+.footer-top p { margin: 0; font-size: .9rem; }
+@media (max-width: 640px) {
+  .header-inner { gap: 4px; }
+  .site-nav { width: 100%; gap: 2px 12px; }
+}
+
+.case-cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 86px);
+}
+
+.case-cover h1 {
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.case-cover .case-record {
+  margin: 0;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid var(--line);
+  border-top: 4px solid #527764;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.case-record .record-label {
+  margin: 0 0 5px;
+  color: #466853;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.case-record h2 {
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+}
+
+.case-record dl {
+  margin: 0;
+}
+
+.case-record dl > div {
+  display: grid;
+  grid-template-columns: 5em minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.case-record dt {
+  color: #4c5f6c;
+}
+
+.case-record dd {
+  margin: 0;
+}
+
+.case-content {
+  max-width: 880px;
+}
+
+.case-content section + section {
+  margin-top: clamp(34px, 6vw, 62px);
+}
+
+.case-content p {
+  color: #40586a;
+  line-height: 1.8;
+}
+
+.evidence-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid #adbdc4;
+}
+
+.evidence-list li {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.4fr);
+  gap: 24px;
+  padding-block: 18px;
+}
+
+.evidence-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.evidence-list h3,
+.evidence-list p {
+  margin: 0;
+}
+
+.evidence-list h3 {
+  font-size: 1.08rem;
+}
+
+.evidence-list small {
+  color: #486951;
+}
+
+.case-exercise {
+  padding: clamp(20px, 4vw, 34px);
+  border-left: 4px solid #527764;
+  background: #f1f5f1;
+}
+
+.case-exercise summary {
+  padding-block: 8px;
+  color: var(--navy);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.sample-answer {
+  padding-top: 4px;
+  border-top: 1px solid #c5d3c8;
+}
+
+.sample-answer strong {
+  display: block;
+  color: var(--ink);
+}
+
+.sample-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.case-references ul {
+  padding-left: 1.2em;
+}
+
+.case-references li + li {
+  margin-top: 6px;
+}
+
+.case-references .guide-actions {
+  margin-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .case-cover,
+  .evidence-list li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .evidence-list li {
+    gap: 6px;
+  }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "ISO 45001 안전보건 심사 사례 · 조선소 아차사고의 후속 조치",
+    "url": "https://roknnaoms-hub.github.io/kcli-homepage/iso-45001-case/",
+    "inLanguage": "ko",
+    "learningResourceType": "사례 실습",
+    "teaches": "아차사고의 신고 기록과 현장 증거를 대조하여 시정조치의 효과를 판단하는 방법",
+    "about": {"@type": "DefinedTerm", "name": "ISO 45001:2018", "url": "https://www.iso.org/standard/45001"},
+    "publisher": {"@type": "EducationalOrganization", "@id": "https://roknnaoms-hub.github.io/kcli-homepage/#kcli", "name": "한국사이버리터러시연구원"},
+    "dateModified": "2026-11-18"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문 바로가기</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="한국사이버리터러시연구원 홈">
+      <img class="brand-mark" src="../assets/kcli-mark.svg" width="40" height="30" alt="">
+      <span><strong>KCLI</strong><small>한국사이버리터러시연구원</small></span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+      <a href="../iso-auditor-training/#iso-45001">ISO 45001 과정</a>
+      <a href="../#iso-45001-clauses">요구사항 목록</a>
+      <a href="#exercise">심사 실습</a>
+      <a class="nav-cta" href="../?course=iso-45001#contact">교육 문의</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="safety-case">
+  <div class="guide-hero">
+    <div class="container case-cover">
+      <div>
+        <nav class="guide-breadcrumb" aria-label="현재 위치">
+          <ol><li><a href="../">KCLI 홈</a></li><li aria-current="page">ISO 45001 안전보건 심사 사례</li></ol>
+        </nav>
+        <h1>조선소 아차사고,<br>조치를 종결해도 될까요?</h1>
+        <p>교대 시간에 자재운반차와 작업자가 같은 통로에서 마주쳤습니다. 다친 사람은 없었습니다. 안전보건정보시스템에 남은 신고를 읽고, 다음 교대조의 위험도 줄었는지 판단해 보세요.</p>
+        <div class="guide-actions"><a class="button primary" href="#evidence">심사 증거 살펴보기 <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <section class="case-record" aria-labelledby="record-title">
+        <p class="record-label">KCLI 교육용 가상 사례</p>
+        <h2 id="record-title">아차사고 신고 기록</h2>
+        <dl>
+          <div><dt>사건번호</dt><dd>NM-017</dd></div>
+          <div><dt>발생 장소</dt><dd>자재 반입 통로와 보행로의 교차 지점</dd></div>
+          <div><dt>처리 상태</dt><dd><strong>교육 실시 · 조치 완료</strong></dd></div>
+          <div><dt>첨부 자료</dt><dd>주간조 안전교육 참석부</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+
+  <div class="container guide-content case-content">
+    <section id="evidence" aria-labelledby="evidence-title">
+      <h2 id="evidence-title">사건번호 하나로 어떤 증거를 확인할까요?</h2>
+      <p>ISO 45001의 심사 대상은 조직의 안전보건경영시스템입니다. 이 실습에서는 안전보건정보시스템을 이용해 신고 한 건을 위험성평가표, 조치 기록, 현장 점검 결과와 연결합니다.</p>
+      <ol class="evidence-list">
+        <li>
+          <div><h3>신고와 근로자 의견</h3><small>관련 조항 5.4 · 10.2</small></div>
+          <p>운전자와 보행자에게 각각 당시 위치와 시야를 묻습니다. 두 사람이 표시한 지점과 신고 시각을 대조해 어느 작업이 겹쳤는지 확인합니다.</p>
+        </li>
+        <li>
+          <div><h3>위험성평가와 대책 선정</h3><small>관련 조항 6.1.2 · 8.1.2</small></div>
+          <p>기존 위험성평가표와 통로 배치도에서 교대 시간의 충돌 위험을 찾습니다. 동선이 교차하지 않게 바꾸거나 물리적으로 분리하는 방안을 검토했는지, 근로자 의견이 대책 선택에 어떻게 반영됐는지 살핍니다.</p>
+        </li>
+        <li>
+          <div><h3>조치 이행과 기록</h3><small>관련 조항 7.5 · 10.2</small></div>
+          <p>담당자와 이행 기한을 확인합니다. 동선 변경을 대책으로 정했다면 개정한 배치도, 현장 설치 기록, 교대조별 전달 기록을 사건번호와 대조합니다.</p>
+        </li>
+        <li>
+          <div><h3>효과 확인과 종결</h3><small>관련 조항 9.1.1 · 10.2</small></div>
+          <p>주간과 야간의 실제 교대 시간에 운반차와 작업자가 어디로 이동하는지 관찰합니다. 근로자 면담과 관찰 결과를 기록하고, 위험이 남으면 위험성평가와 조치 계획을 다시 검토합니다.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="exercise" class="case-exercise" aria-labelledby="exercise-title">
+      <h2 id="exercise-title">심사원이라면 어떻게 기록하시겠습니까?</h2>
+      <p>신고 기록에 첨부된 자료는 주간조 교육 참석부 한 건입니다. 확인한 사실과 추가로 확인할 사항을 한 문장씩 작성해 보세요.</p>
+      <details>
+        <summary>심사 기록 예시 보기</summary>
+        <div class="sample-answer">
+          <p><strong>확인한 사실</strong> 주간조 근로자가 교육에 참석한 기록을 확인했다. 제출된 자료만으로는 교대 시간의 충돌 위험이 줄었는지 판단하기 어렵다.</p>
+          <p><strong>추가 확인</strong> 주·야간조의 실제 통행 경로와 운전자·보행자 면담 결과를 위험성평가표에 대조한 뒤, 시정조치의 효과와 종결 근거를 확인한다.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="case-references" aria-labelledby="references-title">
+      <h2 id="references-title">실습에 사용한 기준과 참고자료</h2>
+      <ul>
+        <li><a class="auditor-inline-link" href="https://www.iso.org/standard/45001">ISO 45001:2018 안전보건경영시스템 표준 안내</a></li>
+        <li><a class="auditor-inline-link" href="https://moel.go.kr/news/enews/report/enewsView.do?news_seq=19924">고용노동부 · 운반기계 작업구역과 보행로를 구분하는 작업장 안전디자인</a></li>
+        <li><a class="auditor-inline-link" href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html">미국 국립산업안전보건연구원(NIOSH) · 위험 저감 대책의 우선순위</a></li>
+      </ul>
+      <div class="guide-actions">
+        <a class="button primary" href="../?course=iso-45001#contact">ISO 45001 교육 문의</a>
+        <a class="button outline" href="../#iso-45001-clauses">ISO 45001 요구사항 목록</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <a class="brand" href="../"><img class="brand-mark" src="../assets/kcli-mark.svg" width="40" height="30" alt=""><span><strong>KCLI</strong><small>한국사이버리터러시연구원</small></span></a>
+    <p>ISO 인증심사원 전문 연수기관<br>서울 가산 디지털산업단지</p>
+    <nav aria-label="하단 메뉴"><a href="../">홈페이지</a><a href="../iso-auditor-training/">교육과정 비교</a></nav>
+  </div>
+</footer>
+<script>if (window.self !== window.top) import("../js/app.js?v=secure-20261118");</script>
+</body>
+</html>
