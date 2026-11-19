@@ -73,3 +73,33 @@
   .ml-dataset-heading { flex-direction: column; }
   .ml-example-table { font-size: .84rem; }
 }
+
+.ai-page-links { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; }
+.ai-page-links a { padding-block: .55rem; }
+.concept-route, .milestones { padding: 0; margin: 0; list-style: none; display: grid; }
+.concept-route { grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #aabcca; border-top: 3px solid #285777; border-radius: 8px 8px 0 0; background: white; }
+.concept-route li { padding: clamp(16px, 1.7vw, 24px); }
+.concept-route li + li { border-inline-start: 1px solid var(--line); }
+.concept-route h3 { line-height: 1.45; }
+.concept-route li > div { margin-top: .65rem; }
+.ai-roadmap a, .milestones a { display: inline-block; color: #174e70; font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
+.ai-roadmap a { margin-inline-end: .7rem; padding-block: .2rem; }
+.aims-band { display: grid; grid-template-columns: minmax(10rem, .38fr) 1fr; align-items: start; gap: clamp(10px, 2vw, 30px); padding: clamp(16px, 2vw, 26px); background: var(--navy); border-radius: 0 0 8px 8px; }
+.aims-band h3 { color: #fff; }
+.ml-guide .aims-band p { color: #dae7f0; margin: 0 0 .4rem; }
+.aims-band a { color: #f5da90; }
+.milestones { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(20px, 4vw, 56px); }
+.milestones li { display: grid; grid-template-columns: 4ch 1fr; gap: 1rem; align-items: start; padding: 1rem 0; border-top: 1px solid #aabcca; }
+.milestones time { font-size: 1.15rem; font-weight: 750; font-variant-numeric: tabular-nums; color: #295879; }
+.milestones h3 { margin-bottom: .2rem; }
+.milestones a { font-size: .9rem; }
+@media (max-width: 900px) {
+  .concept-route { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .concept-route li:nth-child(odd) { border-inline-start: 0; }
+  .concept-route li:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 620px) {
+  .concept-route, .aims-band, .milestones { grid-template-columns: 1fr; }
+  .concept-route li + li { border-inline-start: 0; border-top: 1px solid var(--line); }
+  .milestones li { gap: .7rem; }
+}

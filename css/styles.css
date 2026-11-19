@@ -779,7 +779,7 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .training-methods { grid-template-columns: 1fr; }
 }
 
-.strategy-menu { position: relative; }
+.nav-group { position: relative; }
 @media (min-width: 1101px) and (max-width: 1250px) {
   .home-header .site-nav { gap: .65rem; }
 }
@@ -811,9 +811,9 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .home-header .site-nav > a { padding: .7rem 0; }
   .home-header .site-nav > a::after { display: none; }
   .home-header .nav-cta { text-align: center; }
-  .home-header .strategy-links { position: static; box-shadow: none; }
+  .home-header .nav-group-links { position: static; box-shadow: none; }
 }
-.strategy-menu > summary {
+.nav-group > summary {
   display: flex;
   align-items: center;
   gap: .4em;
@@ -822,8 +822,8 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   white-space: nowrap;
   list-style: none;
 }
-.strategy-menu > summary::-webkit-details-marker { display: none; }
-.strategy-menu > summary::after {
+.nav-group > summary::-webkit-details-marker { display: none; }
+.nav-group > summary::after {
   content: "";
   width: .4em;
   height: .4em;
@@ -831,8 +831,8 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   border-width: 0 1.5px 1.5px 0;
   transform: rotate(45deg);
 }
-.strategy-menu[open] > summary::after { transform: rotate(225deg); }
-.strategy-links {
+.nav-group[open] > summary::after { transform: rotate(225deg); }
+.nav-group-links {
   position: absolute;
   inset: 100% 0 auto auto;
   min-width: 9rem;
@@ -842,11 +842,11 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(11,34,57,.12);
 }
-.strategy-links a { display: block; padding: .7rem 1rem; white-space: nowrap; }
-.strategy-links a:hover, .strategy-links a:focus-visible { background: #edf4fa; }
+.nav-group-links a { display: block; padding: .7rem 1rem; white-space: nowrap; }
+.nav-group-links a:hover, .nav-group-links a:focus-visible { background: #edf4fa; }
 @media (max-width: 760px) {
-  .strategy-menu > summary { padding: 13px 0; }
-  .strategy-links { position: static; box-shadow: none; }
+  .nav-group > summary { padding: 13px 0; }
+  .nav-group-links { position: static; box-shadow: none; }
 }
 
 /* KCLI symbol design philosophy */
@@ -902,4 +902,47 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
 .symbol-philosophy-figure a:hover > span { text-decoration: underline; text-underline-offset: .2em; }
 @media (max-width: 820px) {
   .symbol-philosophy, .symbol-philosophy-colors > div { grid-template-columns: minmax(0, 1fr); }
+}
+
+.learning-hub, .humanities-feature {
+  padding-block: clamp(36px, 5vw, 72px);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.learning-hub { background: #fff; border-block-start: 1px solid var(--line); }
+.learning-hub h2, .humanities-feature h2 {
+  margin: 0 0 1.4rem;
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+  line-height: 1.22;
+  letter-spacing: -.045em;
+}
+.learning-layout { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.4fr); gap: clamp(24px, 4vw, 56px); }
+.iso-path { padding: clamp(22px, 3.2vw, 42px); color: white; background: var(--navy); border-radius: 12px; }
+.learning-layout h3, .featured-book h3 { margin: 0; font-size: 1.22rem; line-height: 1.45; letter-spacing: -.035em; }
+.iso-path h3 { font-size: clamp(1.5rem, 2.4vw, 2.1rem); }
+.iso-path p { color: #dae4ee; margin: .8rem 0 1.2rem; }
+.path-links { display: flex; flex-wrap: wrap; gap: .15rem 1.1rem; }
+.path-links a { padding-block: .35rem; font-weight: 700; text-decoration: underline; text-underline-offset: .24em; }
+.path-links a:hover, .featured-book a:hover { color: #156a89; }
+.iso-path .path-links { align-items: start; flex-direction: column; color: #f1d68e; }
+.iso-path a:hover { color: #fff; }
+.related-paths { border-top: 2px solid var(--navy); }
+.related-paths section { display: grid; grid-template-columns: minmax(7rem, .34fr) 1fr; gap: 1.2rem; padding: 1.15rem 0; border-bottom: 1px solid var(--line); }
+.related-paths p { margin: 0 0 .22rem; color: #41596b; }
+.humanities-feature { background: #eef3f4; }
+.humanities-layout { display: grid; align-items: center; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); }
+.reading-copy > p, .featured-book p { color: #40566a; margin: .6rem 0; }
+.reading-question { margin: 1.2rem 0 .85rem; padding-inline-start: 1rem; border-inline-start: 3px solid #a77b32; }
+.reading-question h3 { font-size: 1rem; margin: 0 0 .25rem; }
+.reading-question p { margin: 0; }
+.featured-book { display: grid; grid-template-columns: minmax(96px, .52fr) minmax(0, 1fr); gap: clamp(14px, 2vw, 28px); align-items: center; padding: clamp(18px, 2.4vw, 32px); background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.featured-book img { display: block; width: 100%; height: auto; box-shadow: 0 8px 18px #102a4326; }
+.featured-book .book-byline { margin: 0 0 .45rem; font-size: .88rem; font-weight: 700; color: #4d6578; }
+@media (max-width: 800px) {
+  .learning-layout, .humanities-layout { grid-template-columns: minmax(0, 1fr); }
+  .iso-path .path-links { flex-direction: row; }
+}
+@media (max-width: 560px) {
+  .related-paths section { grid-template-columns: 1fr; gap: .45rem; }
+  .featured-book { grid-template-columns: minmax(70px, .38fr) minmax(0, 1fr); }
 }

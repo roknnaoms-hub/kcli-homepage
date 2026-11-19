@@ -57,14 +57,21 @@ const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-button');
 const menuLabel = menuButton?.querySelector('.sr-only');
 const menuOpenLabel = menuLabel?.textContent;
-const strategyMenu = header?.querySelector('.strategy-menu');
+const navGroups = header?.querySelectorAll('.nav-group') ?? [];
 
-if (strategyMenu) {
-  document.addEventListener('click', (event) => {
-    if (!strategyMenu.contains(event.target)) strategyMenu.open = false;
+function closeNavGroups(outsideTarget) {
+  navGroups.forEach((group) => {
+    if (!group.contains(outsideTarget)) group.open = false;
   });
-  strategyMenu.addEventListener('focusout', (event) => {
-    if (event.relatedTarget && !strategyMenu.contains(event.relatedTarget)) strategyMenu.open = false;
+}
+
+if (navGroups.length) {
+  document.addEventListener('click', (event) => closeNavGroups(event.target));
+  header.addEventListener('focusout', (event) => {
+    if (!event.relatedTarget) return;
+    // In the stacked menu, keep the next link under the pointer until its click.
+    if (header.classList.contains('open') && header.contains(event.relatedTarget)) return;
+    closeNavGroups(event.relatedTarget);
   });
 }
 
@@ -79,7 +86,7 @@ menuButton?.addEventListener('click', () => {
 });
 
 document.querySelectorAll('.site-nav a').forEach((link) => link.addEventListener('click', () => {
-  if (strategyMenu) strategyMenu.open = false;
+  closeNavGroups(null);
   header?.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
   if (menuLabel) menuLabel.textContent = menuOpenLabel;
@@ -110,9 +117,10 @@ document.querySelectorAll('[data-year]').forEach((element) => {
 
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && strategyMenu?.open) {
-    strategyMenu.open = false;
-    strategyMenu.querySelector('summary').focus();
+  const openGroup = header?.querySelector('.nav-group[open]');
+  if (event.key === 'Escape' && openGroup) {
+    openGroup.open = false;
+    openGroup.querySelector('summary').focus();
     return;
   }
   if (event.key === 'Escape' && header?.classList.contains('open')) {

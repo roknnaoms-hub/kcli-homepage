@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI·머신러닝 기초, AI 시스템과 ISO/IEC 42001 AIMS, LLM과 RAG 아키텍처를 설명하는 KCLI 학습자료입니다. 붓꽃 데이터 분석과 문서 검색 실습을 제공합니다.">
+  <meta name="description" content="AI의 발전 연표와 기술 연결도를 따라 머신러닝, 딥러닝, LLM, RAG, 에이전트와 ISO/IEC 42001의 관계를 익히고 데이터 분석과 문서 검색을 실습합니다.">
   <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/">
   <link rel="icon" type="image/svg+xml" href="../assets/kcli-mark.svg">
-  <title>AI·머신러닝 학습 기초와 LLM 응용 | KCLI</title>
+  <title>인공지능 첨단기술 | AI 기술 연결도·발전 연표·ISO/IEC 42001 | KCLI</title>
   <link rel="stylesheet" href="../css/styles.css?v=kcli-mark-20261116">
-  <link rel="stylesheet" href="../css/ml-guide.css">
+  <link rel="stylesheet" href="../css/ml-guide.css?v=learning-20261120">
   <link rel="stylesheet" href="../css/llm-guide.css?v=ai-learning-20261116">
   <script src="../js/rag-lab.js" defer></script>
 </head>
@@ -20,24 +20,72 @@
       <img class="brand-mark" src="../assets/kcli-mark.svg" width="40" height="30" alt="">
       <span><strong>KCLI</strong><small>한국사이버리터러시연구원</small></span>
     </a>
-    <a class="auditor-inline-link" href="../iso-auditor-training/#iso-42001">ISO/IEC 42001 교육과정</a>
+    <nav class="ai-page-links" aria-label="관련 학습 메뉴"><a class="auditor-inline-link" href="../#learning-hub">분야별 학습자료</a><a class="auditor-inline-link" href="../iso-auditor-training/#iso-42001">ISO/IEC 42001 교육과정</a></nav>
   </div>
 </header>
 <main id="main">
   <section id="ai-learning" class="section ml-guide" aria-labelledby="ai-learning-title">
     <div class="container">
       <div class="section-heading">
-        <h1 id="ai-learning-title">AI·머신러닝 학습 기초</h1>
-        <p>인공지능·머신러닝의 기초부터 AI 시스템과 AIMS, LLM·RAG 아키텍처까지 살펴봅니다. 공개 붓꽃 데이터와 가상 운영 문서로 데이터 준비와 문서 검색을 실습합니다.</p>
+        <h1 id="ai-learning-title">인공지능 첨단기술</h1>
+        <p>AI가 데이터를 학습하는 원리부터 문서를 찾아 답하는 과정, 조직이 그 결과를 검토하는 방법까지 연결해 살펴봅니다.</p>
       </div>
-      <nav class="ai-management-links ml-contents" aria-label="AI·머신러닝 학습 주제">
-        <a class="auditor-inline-link" href="#ml-technologies">기술 개요</a>
-        <a class="auditor-inline-link" href="#ai-system-architecture">AI 시스템과 AIMS</a>
-        <a class="auditor-inline-link" href="#ml-methods">학습 방식</a>
-        <a class="auditor-inline-link" href="#ml-dataset">지도학습 데이터셋</a>
-        <a class="auditor-inline-link" href="#ml-visualization">데이터 분석 시각화</a>
-        <a class="auditor-inline-link" href="#llm-technologies">LLM 응용과 RAG 실습</a>
+      <nav class="ai-management-links ml-contents" aria-label="인공지능 첨단기술 학습 목차">
+        <a class="auditor-inline-link" href="#ai-roadmap">기술 연결도</a>
+        <a class="auditor-inline-link" href="#ai-history">인공지능 발전 연표</a>
+        <a class="auditor-inline-link" href="#ml-dataset">데이터 실습</a>
+        <a class="auditor-inline-link" href="#llm-rag-lab">문서 검색 실습</a>
+        <a class="auditor-inline-link" href="#ai-system-architecture">ISO/IEC 42001과 AIMS</a>
       </nav>
+
+      <section id="ai-roadmap" class="ai-roadmap" aria-labelledby="roadmap-title">
+        <h2 id="roadmap-title">AI 기술 연결도</h2>
+        <p class="ml-intro">교육 담당자가 “이 보고서의 검토자는 누구인가요?”라고 묻는 상황을 떠올려 보세요. 답변을 생성하는 모델, 현행 문서를 찾는 검색기, 결과를 확인하는 사람은 서로 다른 역할을 합니다.</p>
+        <ol class="concept-route">
+          <li>
+            <h3>데이터로 패턴 배우기</h3>
+            <p>머신러닝은 사례에서 패턴을 배우고, 딥러닝은 신경망의 여러 층으로 특징을 학습합니다. 붓꽃 분류 예제로 학습·검증 데이터를 구분해 봅니다.</p>
+            <div><a href="#ml-technologies">AI·ML·딥러닝</a><a href="#ml-methods">지도·비지도·강화학습</a><a href="#ml-dataset">데이터셋</a><a href="#ml-visualization">산점도</a></div>
+          </li>
+          <li>
+            <h3>질문에서 문장 만들기</h3>
+            <p>딥러닝을 언어에 적용한 모델의 한 예가 LLM입니다. Transformer가 문맥 안의 관계를 반영하고, 생성형 LLM은 다음 토큰을 예측해 문장을 이어갑니다.</p>
+            <div><a href="#llm-technologies">LLM 응용 개요</a><a href="#llm-architecture">Transformer 구조</a></div>
+          </li>
+          <li>
+            <h3>현행 문서로 답변 뒷받침하기</h3>
+            <p>질문과 문서를 임베딩으로 표현한 뒤 유사도를 비교합니다. RAG는 검색한 문서 조각을 LLM에 전달합니다. 실습에서 구판을 제외하면 답변 근거가 어떻게 달라지는지 확인하세요.</p>
+            <div><a href="#llm-embeddings">임베딩·유사도</a><a href="#llm-vector-db">벡터DB</a><a href="#llm-rag">RAG 구조</a><a href="#llm-rag-lab">검색 실습</a></div>
+          </li>
+          <li>
+            <h3>도구를 연결하고 결과 점검하기</h3>
+            <p>오케스트레이션은 검색과 생성 순서를 조정합니다. 실행 하네스는 에이전트의 도구와 권한을 관리하고, 평가 하네스는 문서가 바뀐 뒤에도 올바른 근거를 찾는지 시험합니다.</p>
+            <div><a href="#llm-orchestration">오케스트레이션·하네스</a><a href="#llm-trends">MCP·검색·평가 동향</a></div>
+          </li>
+        </ol>
+        <div class="aims-band">
+          <h3>전 과정에 적용하는 ISO/IEC 42001</h3>
+          <div><p>AIMS(인공지능경영시스템)는 조직이 AI의 목적과 책임을 정하고 위험과 성과를 관리하는 체계입니다. 위 사례라면 누가 현행 문서를 승인하고, 잘못된 답변이 나오면 누가 조치하는지 살펴봅니다.</p>
+          <a href="#ai-system-architecture">AI 시스템과 AIMS 비교</a><a href="../#iso-42001-clauses">ISO/IEC 42001 조항 목록</a></div>
+        </div>
+      </section>
+
+      <section id="ai-history" class="ai-history" aria-labelledby="history-title">
+        <h2 id="history-title">인공지능 발전 연표</h2>
+        <p class="ml-intro">지식을 규칙으로 표현하던 연구에서 데이터 학습, 언어 생성, 외부 도구 사용으로 연구 주제가 넓어졌습니다. 주요 연구와 표준이 각각 어떤 문제를 다뤘는지 살펴보세요.</p>
+        <ol class="milestones">
+          <li><time datetime="1956">1956</time><div><h3>AI를 연구 분야로 논의하다</h3><p>다트머스 여름 연구 모임에서 학습과 추론을 기계로 구현할 가능성을 논의했습니다. <a href="https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth">다트머스 기록</a></p></div></li>
+          <li><time datetime="1965">1965</time><div><h3>전문가 지식을 규칙으로 표현하다</h3><p>DENDRAL은 화학자의 지식을 활용해 관측 데이터와 일치할 수 있는 분자 구조를 추론했습니다. <a href="https://www.computerhistory.org/timeline/ai-robotics/">컴퓨터역사박물관</a></p></div></li>
+          <li><time datetime="1986">1986</time><div><h3>오차를 이용해 신경망을 학습시키다</h3><p>루멜하트 등의 연구는 역전파로 여러 층의 가중치를 조정해 특징을 학습하는 방법을 보였습니다. <a href="https://doi.org/10.1038/323533a0">역전파 논문</a></p></div></li>
+          <li><time datetime="2012">2012</time><div><h3>딥러닝으로 이미지를 분류하다</h3><p>AlexNet은 대규모 이미지 데이터와 합성곱 신경망을 활용해 ImageNet 분류 대회에서 오류율을 낮췄습니다. <a href="https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">AlexNet 논문</a></p></div></li>
+          <li><time datetime="2017">2017</time><div><h3>Transformer가 문맥의 관계를 학습하다</h3><p>기계번역 연구에서 어텐션을 중심으로 한 구조를 제안했습니다. 오늘날 여러 대규모 언어모델이 이 구조를 활용합니다. <a href="https://arxiv.org/abs/1706.03762">Transformer 논문</a></p></div></li>
+          <li><time datetime="2020">2020</time><div><h3>RAG가 검색과 생성을 결합하다</h3><p>외부 문서에서 찾은 정보를 생성 모델에 제공해 지식이 필요한 질문에 답하는 방법을 연구했습니다. <a href="https://arxiv.org/abs/2005.11401">RAG 논문</a></p></div></li>
+          <li><time datetime="2022">2022</time><div><h3>언어모델이 도구를 쓰고 결과를 관찰하다</h3><p>ReAct 연구는 모델이 외부 환경에서 얻은 정보를 다음 판단과 행동에 반영하는 방법을 제시했습니다. <a href="https://arxiv.org/abs/2210.03629">ReAct 논문</a></p></div></li>
+          <li><time datetime="2023">2023</time><div><h3>AI 운영을 위한 경영시스템 표준 발행</h3><p>ISO/IEC 42001은 조직이 AI 경영시스템을 수립·운영하고 지속적으로 개선하기 위한 요구사항을 제시했습니다. <a href="https://www.iso.org/standard/42001">ISO 표준 안내</a></p></div></li>
+          <li><time datetime="2024">2024</time><div><h3>AI와 외부 도구의 연결 방식을 공유하다</h3><p>MCP가 공개되면서 AI 애플리케이션이 공통 규약을 통해 자료와 도구를 연결하는 방법이 제시됐습니다. <a href="https://www.anthropic.com/news/model-context-protocol">MCP 발표</a></p></div></li>
+          <li><time datetime="2026">2026</time><div><h3>에이전트의 실행과 기록을 분리하다</h3><p>Anthropic은 모델을 제어하는 하네스, 도구 실행 환경, 세션 기록을 분리한 운영 사례를 공개했습니다. <a href="https://www.anthropic.com/research/managed-agents">에이전트 설계 사례</a></p></div></li>
+        </ol>
+      </section>
 
       <section id="ml-technologies" aria-labelledby="ml-technologies-title">
         <h2 id="ml-technologies-title">인공지능·머신러닝·딥러닝 기술 개요</h2>
@@ -199,7 +247,7 @@
             <p>대량의 텍스트 등에서 언어 패턴을 학습한 모델입니다. 챗봇에 쓰이는 생성형 LLM은 질문과 문맥을 토큰 단위로 처리하고 다음 토큰을 순차적으로 생성합니다.</p>
             <p class="ml-example">요약·질의응답·초안 작성에 활용합니다. 사실 확인이 필요한 답변은 원문 근거와 대조합니다.</p>
           </article>
-          <article>
+          <article id="llm-embeddings">
             <h3>임베딩과 유사도</h3>
             <p>임베딩은 문장을 숫자 벡터로 바꿉니다. 질문과 문서 조각에 같은 임베딩 모델을 적용하면 벡터를 비교해 관련 후보를 찾을 수 있습니다.</p>
             <p class="llm-formula"><var>sim(q, d)</var> = (<var>q</var> · <var>d</var>) / (‖<var>q</var>‖ × ‖<var>d</var>‖)</p>
