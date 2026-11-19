@@ -235,6 +235,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
   color: var(--muted);
 }
 .director-heading strong { font-size: 1.2rem; color: var(--navy-2); }
+.home-introduction { padding-block: clamp(20px, 3vw, 42px) clamp(32px, 5vw, 64px); }
 .director-greeting {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(210px, 30%);
@@ -316,7 +317,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{
 
 @media (max-width: 760px) {
   .director-greeting, .director-details { grid-template-columns: minmax(0, 1fr); }
-  .director-portrait { grid-row: 1; justify-self: center; max-width: 240px; }
+  .director-portrait { justify-self: center; max-width: 240px; }
   .director-details { gap: 16px; margin-top: 16px; }
   .institute-policies { margin-top: 38px; }
   .institute-policy-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
@@ -862,7 +863,7 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
-.symbol-philosophy h3 {
+.director-greeting h2, .symbol-philosophy h2 {
   margin: 0 0 .7rem;
   font-size: clamp(1.45rem, 2.7vw, 2.1rem);
   line-height: 1.25;
