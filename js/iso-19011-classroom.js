@@ -5,6 +5,7 @@ const saveInterval = 2500;
 const storeName = 'progress';
 const statusLabels = {
   pending: '영상 준비 중',
+  checking: '재생 확인 중',
   unavailable: '상태 확인 필요',
   unwatched: '미시청',
   watching: '시청 중',
@@ -37,6 +38,76 @@ let database;
 let lessons = [];
 let activeLesson;
 let lastSaved;
+let catalogLoaded = false;
+let exporting = false;
+const exportAvailability = document.getElementById('progress-export-availability');
+const oneHour = 60 * 60 * 1000;
+
+function savedMediaState(source, entry) {
+  const now = Date.now();
+  try {
+    const check = JSON.parse(sessionStorage.getItem('kcli:media:' + source) || 'null');
+    if (check && check.until > now && ['ready', 'unavailable'].includes(check.state)) return check.state;
+  } catch {}
+  const verifiedAt = Date.parse(entry?.verifiedAt);
+  return entry?.verifiedVideoUrl === entry?.videoUrl && verifiedAt <= now && now - verifiedAt < 24 * oneHour
+    ? 'ready' : 'checking';
+}
+
+function setMediaState(lesson, ready) {
+  lesson.mediaState = ready ? 'ready' : 'unavailable';
+  try {
+    sessionStorage.setItem('kcli:media:' + lesson.source, JSON.stringify({
+      state: lesson.mediaState, until: Date.now() + (ready ? oneHour : 60_000),
+    }));
+  } catch {}
+  displayProgress();
+}
+
+// A media element can validate an external video without requiring cross-origin fetch or a download.
+function probeFirstFrame(source) {
+  return new Promise(resolve => {
+    const probe = document.createElement('video');
+    const finish = ready => {
+      clearTimeout(timer);
+      probe.onloadeddata = probe.onseeked = probe.onloadedmetadata = probe.onerror = null;
+      probe.removeAttribute('src');
+      probe.load();
+      resolve(ready);
+    };
+    const timer = setTimeout(() => finish(false), 10_000);
+    const decoded = () => finish(probe.readyState >= 2 && probe.videoWidth > 0 && Number.isFinite(probe.duration) && probe.duration > 0);
+    probe.preload = 'metadata';
+    probe.muted = true;
+    probe.playsInline = true;
+    probe.onloadeddata = decoded;
+    probe.onseeked = decoded;
+    probe.onerror = () => finish(false);
+    probe.onloadedmetadata = () => {
+      if (Number.isFinite(probe.duration) && probe.duration > 0) probe.currentTime = Math.min(0.05, probe.duration / 2);
+      else finish(false);
+    };
+    probe.src = source;
+    probe.load();
+  });
+}
+
+function hasExportableRecord() {
+  return lessons.some(lesson => {
+    const record = progressRecords.get(lesson.key);
+    return lesson.mediaState === 'ready' && record?.duration > 0 && playedSeconds(record.ranges) > 0;
+  });
+}
+
+function updateExportState() {
+  const canExport = hasExportableRecord();
+  exportButton.disabled = exporting || !canExport;
+  const message = canExport ? '' : lessons.some(lesson => lesson.mediaState === 'ready')
+    ? '내보낼 시청기록이 없습니다.' : lessons.some(lesson => lesson.mediaState === 'checking')
+    ? '영상의 재생 가능 여부를 확인하고 있습니다.' : '현재 내보낼 공개 영상과 시청기록이 없습니다.';
+  if (exportAvailability.textContent !== message) exportAvailability.textContent = message;
+  exportAvailability.hidden = !message;
+}
 
 async function loadCatalog() {
   const response = await fetch('./lessons.json', { cache: 'no-cache' });
@@ -95,7 +166,7 @@ function watchPercent(record) {
 }
 
 function lessonState(lesson, record, percent) {
-  if (!lesson.source) return lesson.unavailable ? 'unavailable' : 'pending';
+  if (lesson.mediaState !== 'ready') return lesson.mediaState;
   if (percent >= completionPercent) return 'completed';
   return record ? 'watching' : 'unwatched';
 }
@@ -114,10 +185,13 @@ function displayProgress() {
     if (state === 'completed') completed += 1;
     setStatus(lesson.listStatus, state);
     setStatus(lesson.recordStatus, state);
-    if (lesson === activeLesson) setStatus(playerStatus, state);
-    lesson.meter.hidden = !lesson.source;
+    if (lesson === activeLesson) {
+      setStatus(playerStatus, state);
+      video.controlsList?.toggle('noplaybackrate', state !== 'completed');
+    }
+    lesson.meter.hidden = lesson.mediaState !== 'ready';
     lesson.meter.value = percent;
-    lesson.percent.textContent = lesson.source ? `${percent}%` : '—';
+    lesson.percent.textContent = lesson.mediaState === 'ready' ? `${percent}%` : '—';
     lesson.lastWatched.hidden = !record;
     if (record) {
       const date = new Date(record.updatedAt);
@@ -127,6 +201,10 @@ function displayProgress() {
   }
   completedCount.textContent = String(completed);
   completedMeter.value = completed;
+  const availableCount = document.getElementById('available-count');
+  const availableText = catalogLoaded ? lessons.filter(lesson => lesson.mediaState === 'ready').length + ' / ' + lessonCount + '교시 공개' : '공개 상태 확인 필요';
+  if (availableCount.textContent !== availableText) availableCount.textContent = availableText;
+  updateExportState();
 }
 
 function storageUnavailable() {
@@ -216,15 +294,19 @@ function showPlayerMessage(title, detail) {
 }
 
 function selectLesson(lesson, moveFocus = false) {
-  if (lesson !== activeLesson || video.error) {
+  if (lesson !== activeLesson || video.error || (moveFocus && lesson.mediaState === 'unavailable')) {
     savePlayback(true);
     activeLesson?.button.removeAttribute('aria-current');
     activeLesson = lesson;
     lastSaved = undefined;
+    if (watchPercent(progressRecords.get(lesson.key)) < completionPercent) {
+      video.defaultPlaybackRate = 1;
+      video.playbackRate = 1;
+    }
     lesson.button.setAttribute('aria-current', 'true');
     playerTitle.textContent = lesson.name;
     resumeNote.hidden = true;
-    if (lesson.source) {
+    if (lesson.source && (lesson.mediaState !== 'unavailable' || moveFocus)) {
       video.src = lesson.source;
       video.load();
       video.hidden = false;
@@ -235,8 +317,8 @@ function selectLesson(lesson, moveFocus = false) {
         video.load();
       }
       showPlayerMessage(
-        lesson.unavailable ? `${lesson.id}교시 영상 확인 필요` : `${lesson.id}교시 영상 준비 중`,
-        lesson.unavailable ? '잠시 후 다시 접속해 주세요.' : '영상이 등록되면 재생할 수 있습니다.'
+        lesson.mediaState === 'unavailable' ? `${lesson.id}교시 영상 확인 필요` : `${lesson.id}교시 영상 준비 중`,
+        lesson.mediaState === 'unavailable' ? '잠시 후 다시 접속해 주세요.' : '영상이 등록되면 재생할 수 있습니다.'
       );
     }
     displayProgress();
@@ -276,12 +358,26 @@ video.addEventListener('loadedmetadata', () => {
   resumeNote.textContent = `지난 시청 위치 ${Math.floor(seconds / 60)}분 ${seconds % 60}초에서 이어 볼 수 있습니다.`;
   resumeNote.hidden = false;
 });
-video.addEventListener('play', () => { resumeNote.hidden = true; });
+function applyPlaybackLimit() {
+  if (activeLesson && video.playbackRate > 1 && watchPercent(progressRecords.get(activeLesson.key)) < completionPercent) {
+    video.playbackRate = 1;
+  }
+}
+
+video.addEventListener('ratechange', applyPlaybackLimit);
+video.addEventListener('play', () => {
+  applyPlaybackLimit();
+  resumeNote.hidden = true;
+});
+video.addEventListener('loadeddata', () => {
+  if (activeLesson?.source === video.currentSrc && video.videoWidth > 0 && Number.isFinite(video.duration) && video.duration > 0) setMediaState(activeLesson, true);
+});
 video.addEventListener('timeupdate', () => savePlayback());
 video.addEventListener('pause', () => savePlayback(true));
 video.addEventListener('ended', () => savePlayback(true));
 video.addEventListener('error', () => {
   if (activeLesson?.source && video.currentSrc === activeLesson.source) {
+    setMediaState(activeLesson, false);
     showPlayerMessage('영상을 재생할 수 없습니다', '잠시 후 강의 목록에서 이 교시를 다시 선택해 주세요.');
   }
 });
@@ -299,18 +395,21 @@ async function videoFingerprint(source) {
 
 exportForm.addEventListener('submit', async event => {
   event.preventDefault();
+  if (exporting || !hasExportableRecord()) { updateExportState(); return; }
   const studentId = studentNumber.value.trim().normalize('NFC');
   if (!studentId || /[\u0000-\u001f\u007f]/u.test(studentId)) {
     exportStatus.textContent = 'KCLI에서 받은 수강생 번호를 입력하세요.';
     exportStatus.hidden = false;
     return;
   }
-  exportButton.disabled = true;
+  exporting = true;
+  updateExportState();
   try {
     savePlayback(true);
     if (database) await refreshProgress().catch(storageUnavailable);
+    if (!hasExportableRecord()) return;
     const records = await Promise.all(lessons.map(async lesson => {
-      const record = progressRecords.get(lesson.key);
+      const record = lesson.mediaState === 'ready' ? progressRecords.get(lesson.key) : null;
       return {
         id: lesson.id,
         title: lesson.name,
@@ -336,12 +435,14 @@ exportForm.addEventListener('submit', async event => {
     exportStatus.textContent = '시청 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.';
   } finally {
     exportStatus.hidden = false;
-    exportButton.disabled = false;
+    exporting = false;
+    updateExportState();
   }
 });
 
 async function startClassroom() {
   const [catalog] = await Promise.all([loadCatalog().catch(() => null), openProgressStorage()]);
+  catalogLoaded = Boolean(catalog);
   if (!catalog) {
     const error = document.getElementById('classroom-error');
     error.textContent = '강의 목록을 불러오지 못했습니다. 페이지를 새로고침해 주세요.';
@@ -354,21 +455,29 @@ async function startClassroom() {
     const path = typeof entry?.videoUrl === 'string' ? entry.videoUrl.trim() : '';
     const source = mediaSource(path);
     const name = title ? `${id}교시 · ${title}` : `${id}교시`;
-    return { id, name, source, key: source ? `${id}:${source}` : null, unavailable: !catalog || Boolean(path && !source) };
+    const mediaState = source ? savedMediaState(source, entry) : (!catalog || path) ? 'unavailable' : 'pending';
+    return { id, name, source, key: source ? `${id}:${source}` : null, mediaState };
   });
   lessons.forEach(addLessonControls);
-  const available = lessons.filter(lesson => lesson.source);
-  document.getElementById('available-count').textContent = catalog
-    ? `${available.length} / ${lessonCount}교시 공개`
-    : '공개 상태 확인 필요';
+  const available = lessons.filter(lesson => lesson.mediaState === 'ready');
+  const unchecked = lessons.filter(lesson => lesson.mediaState === 'checking');
+  displayProgress();
 
   const lastWatched = available.reduce((latest, lesson) => {
     const record = progressRecords.get(lesson.key);
     if (!record) return latest;
     return !latest || record.updatedAt > progressRecords.get(latest.key).updatedAt ? lesson : latest;
   }, null);
-  selectLesson(lastWatched ?? available[0] ?? lessons[0]);
-  exportButton.disabled = !catalog;
+  if (available.length || !unchecked.length) selectLesson(lastWatched ?? available[0] ?? lessons[0]);
+  async function checkNext() {
+    for (let lesson = unchecked.shift(); lesson; lesson = unchecked.shift()) {
+      const ready = await probeFirstFrame(lesson.source);
+      if (lesson.mediaState === 'checking') setMediaState(lesson, ready);
+      if (!activeLesson && lesson.mediaState === 'ready') selectLesson(lesson);
+    }
+  }
+  await Promise.all([checkNext(), checkNext()]);
+  if (!activeLesson) selectLesson(lessons[0]);
 }
 
 startClassroom();

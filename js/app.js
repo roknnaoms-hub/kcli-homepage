@@ -8,10 +8,21 @@ document.querySelectorAll('a[href]').forEach((link) => {
   }
 });
 
-if (window.self !== window.top) {
+const forwardedHosts = new Set(['kcli.ai.kr', 'www.kcli.ai.kr']);
+const framed = window.self !== window.top;
+const insecureAlias = location.protocol === 'http:' && forwardedHosts.has(location.hostname);
+if (framed || insecureAlias) {
   const english = document.documentElement.lang.startsWith('en');
-  const destination = new URL(location.href);
-  destination.protocol = 'https:';
+  const officialHome = 'https://roknnaoms-hub.github.io/kcli-homepage/';
+  const canonical = document.querySelector('link[rel="canonical"]')?.href;
+  const destination = new URL(canonical?.startsWith(officialHome) ? canonical : officialHome);
+  destination.hash = location.hash;
+  const frameHost = document.referrer ? new URL(document.referrer).hostname : '';
+  if (insecureAlias) window.location.replace(destination.href);
+  else if (forwardedHosts.has(frameHost)) {
+    // Some in-app browsers require user activation for top navigation; the links below also work there.
+    try { window.top.location.href = destination.href; } catch {}
+  }
   const notice = document.createElement('aside');
   notice.setAttribute('aria-label', english ? 'Secure access' : '보안 접속 안내');
   Object.assign(notice.style, {
@@ -27,7 +38,7 @@ if (window.self !== window.top) {
   notice.append(message);
   [
     [destination.href, english ? 'Open secure KCLI website' : '보안 홈페이지 열기'],
-    ['https://kcli-iso19011-records.roknaoms.chatgpt.site/login', english ? 'Student sign in' : '수강생 로그인']
+    ['https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom', english ? 'Student sign in' : '수강생 로그인']
   ].forEach(([href, label]) => {
     const link = document.createElement('a');
     link.href = href;

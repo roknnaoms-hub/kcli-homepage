@@ -9,7 +9,7 @@
 .classroom [hidden] { display: none !important; }
 .classroom-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(198px, 248px);
+  grid-template-columns: minmax(0, 1fr);
   align-items: end;
   gap: 24px;
   margin-bottom: clamp(24px, 4vw, 36px);
@@ -18,6 +18,8 @@
 .classroom h1 { margin: 0; font-size: clamp(1.85rem, 4.7vw, 3.5rem); line-height: 1.16; letter-spacing: -.05em; }
 .classroom h2 { margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.3; }
 .classroom-overview {
+  max-width: 22rem;
+  margin: 12px 0;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -63,7 +65,7 @@
 
 .classroom-outline .classroom-card-heading { border-bottom: 1px solid var(--line); }
 .classroom-availability { color: var(--muted); font-size: .82rem; font-weight: 650; font-variant-numeric: tabular-nums; }
-.classroom-lesson-list { margin: 0; padding: 7px 9px; max-height: clamp(319px, 38vw, 433px); overflow-y: auto; list-style: none; scrollbar-gutter: stable; }
+.classroom-lesson-list { margin: 0; padding: 7px 9px; list-style: none; }
 .classroom-lesson-list li + li { border-top: 1px solid #e6ebef; }
 .classroom-lesson-button { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; width: 100%; min-height: 47px; padding: 6px 10px; border: 0; border-radius: 6px; color: var(--ink); background: var(--white); cursor: pointer; text-align: left; }
 .classroom-lesson-button:hover { background: #f1f5f8; }
@@ -103,7 +105,6 @@
 @media (max-width: 760px) {
   .classroom-intro, .classroom-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .classroom-overview { width: min(100%, 300px); }
-  .classroom-lesson-list { max-height: none; }
   .classroom-record-table time { display: block; margin: 3px 0 0; }
   .classroom-record-table thead th:first-child { width: 19%; }
   .classroom-record-table thead th:nth-child(2) { width: 31%; }
