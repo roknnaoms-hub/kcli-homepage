@@ -779,6 +779,43 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .training-methods { grid-template-columns: 1fr; }
 }
 
+.strategy-menu { position: relative; }
+.strategy-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+  list-style: none;
+}
+.strategy-menu > summary::-webkit-details-marker { display: none; }
+.strategy-menu > summary::after {
+  content: "";
+  width: .4em;
+  height: .4em;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+.strategy-menu[open] > summary::after { transform: rotate(225deg); }
+.strategy-links {
+  position: absolute;
+  inset: 100% 0 auto auto;
+  min-width: 9rem;
+  padding: .25rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(11,34,57,.12);
+}
+.strategy-links a { display: block; padding: .7rem 1rem; white-space: nowrap; }
+.strategy-links a:hover, .strategy-links a:focus-visible { background: #edf4fa; }
+@media (max-width: 760px) {
+  .strategy-menu > summary { padding: 13px 0; }
+  .strategy-links { position: static; box-shadow: none; }
+}
+
 /* KCLI symbol design philosophy */
 .symbol-philosophy {
   display: grid;
