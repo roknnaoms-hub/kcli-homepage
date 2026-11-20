@@ -947,3 +947,25 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .related-paths section { grid-template-columns: 1fr; gap: .45rem; }
   .featured-book { grid-template-columns: minmax(70px, .38fr) minmax(0, 1fr); }
 }
+
+/* Keep the alternate language within reach when the navigation collapses. */
+.home-header .language-switch {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-inline: auto 1rem;
+  padding-inline: .65rem;
+  color: var(--navy);
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .24em;
+}
+@media (min-width: 1101px) {
+  .home-header .language-switch { order: 1; margin-inline: .85rem 0; }
+  .home-header .brand { margin-inline-end: auto; }
+}
+@media (max-width: 400px) {
+  .home-header .language-switch { margin-inline-end: .25rem; }
+}
