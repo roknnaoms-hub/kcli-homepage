@@ -23,8 +23,8 @@
   <meta name="theme-color" content="#f6f5f0">
   <link rel="icon" type="image/svg+xml" href="../assets/kcli-mark.svg">
   <link rel="stylesheet" href="../css/styles.css?v=language-20261120">
-  <link rel="stylesheet" href="./home.css?v=1">
-  <script src="../js/app.js?v=learning-20261120" defer></script>
+  <link rel="stylesheet" href="./home.css?v=global2">
+  <script src="../js/app.js?v=global2" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,10 +53,27 @@
       <span class="sr-only">Open menu</span><i></i><i></i>
     </button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a href="#about">About KCLI</a>
+      <details class="nav-group">
+        <summary>Institute</summary>
+        <div class="nav-group-links">
+          <a href="./institute/">About KCLI and its director</a>
+          <a href="./institute/#policies">Training policies</a>
+          <a href="./institute/#records">Training history</a>
+          <a href="./director/#books">Auditor handbooks</a>
+        </div>
+      </details>
       <a href="#course-options">ISO courses</a>
-      <a href="#learning">Learning resources</a>
-      <a href="https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom" target="_top" hreflang="ko">Student sign-in (Korean)</a>
+      <details class="nav-group">
+        <summary>Learning resources</summary>
+        <div class="nav-group-links">
+          <a href="./clauses/">Browse ISO clauses</a><a href="./iso-knowledge-graph/">ISO knowledge graph</a>
+          <a href="./audit-practice/">Audit practice and quality tools</a><a href="./iso-45001-case/">Safety audit case</a>
+          <a href="./reading/#management-strategy">Management strategy</a><a href="./reading/#humanities">Humanities</a>
+          <a href="./ai-learning/">AI technologies</a><a href="./iso-19011-classroom/">ISO 19011 classroom</a>
+        </div>
+      </details>
+      <a href="#southeast-asia">Southeast Asia</a>
+      <a href="https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom?lang=en" target="_top" hreflang="en">Student sign-in</a>
       <a class="nav-cta" href="#course-inquiries">Contact</a>
     </nav>
   </div>
@@ -70,7 +87,7 @@
         <p class="hero-lead">At the Korea Cyber Literacy Institute, you learn to turn an ISO requirement into an audit question, weigh the evidence and explain your findings in an audit report.</p>
         <div class="hero-actions">
           <a class="button primary" href="#course-options">Explore ISO courses</a>
-          <a class="button hero-secondary" href="#course-inquiries">Enquire about training</a>
+          <a class="button hero-secondary" href="#southeast-asia">Southeast Asia training</a>
         </div>
         <p class="provider-line">IQCS-designated training provider · <a href="#iqcs-registration">KRT0184</a></p>
       </div>
@@ -92,12 +109,12 @@
       <div class="institute-detail">
         <h3>Our approach</h3>
         <p>In a workshop, learners review a record, decide what it shows and document how it supports their finding. The institute explains the assessment criteria before learners begin.</p>
-        <a href="../director/" hreflang="ko">Director’s profile and publications (Korean)</a>
+        <a href="./institute/#director-greeting">Director’s welcome</a> · <a href="./director/#books">Publications</a>
       </div>
       <div class="institute-detail">
         <h3>The KCLI symbol</h3>
         <p>Olive, blue and sky blue represent land, sea and sky. The three shapes share a baseline and lean 15° to the right, expressing the resolve to put judgement into practice.</p>
-        <a href="../#symbol-philosophy" hreflang="ko">Symbol and its meaning (Korean)</a>
+        <a href="./institute/#symbol-philosophy">Our symbol and its meaning</a>
       </div>
     </div>
   </section>
@@ -105,7 +122,7 @@
   <section class="english-section" id="course-options" aria-labelledby="course-options-title">
     <div class="container catalogue-grid">
       <div class="catalogue-copy">
-        <h2 id="course-options-title">Find a course <br>by standard</h2>
+        <h2 id="course-options-title"><span id="education">Find a course</span> <br>by standard</h2>
         <p>Choose the management system you expect to audit. Each entry opens the English training guide and links to the relevant ISO publication.</p>
         <a id="course-comparison" class="auditor-inline-link" href="./iso-auditor-training/#course-comparison">Compare ISO 9001 and ISO/IEC 42001</a>
       </div>
@@ -120,45 +137,53 @@
         <li><a href="./iso-auditor-training/#iso-53001"><strong>ISO/UNDP 53001</strong><span>Sustainable Development Goals</span></a></li>
       </ul>
     </div>
+    <div class="container registration-note" id="iso-42001-course">
+      <h3>AI management system auditor training</h3>
+      <p>The three-day ISO/IEC 42001 course covers the standard and related documents, certification audit principles, AI concepts and evidence. Learners complete a written examination and a case workshop assessment.</p>
+      <div class="path-links"><a href="./ai-learning/">AI learning hub</a><a href="./iso-auditor-training/#iso-42001">Course details</a><a href="../assets/iso42001-training-poster.jpg">Original course poster (Korean)</a><a data-course="iso-42001" href="#contact">Ask about this course</a></div>
+    </div>
     <div class="container registration-note" id="iqcs-registration">
       <h3>After training</h3>
       <p>Once you pass your course, you can apply separately to IQCS for auditor registration. IQCS reviews your evidence against the requirements for the standard and grade you select.</p>
-      <a class="auditor-inline-link" href="./iso-auditor-training/#iqcs-registration">Provider details and registration guide</a>
+      <a class="auditor-inline-link" href="./iqcs-auditor-registration/">Auditor grades, registration documents and fees</a>
     </div>
   </section>
 
   <section id="learning" class="learning-hub" aria-labelledby="learning-title">
     <div class="container">
-      <h2 id="learning-title">Learning resources</h2>
-      <p class="resource-intro">The resources below are in Korean. These English introductions will help you choose where to start.</p>
+      <h2 id="learning-hub"><span id="learning-title">Learning resources</span></h2>
+      <p class="resource-intro">Explore clauses, practise making audit findings and test how an AI system retrieves evidence. Each resource opens in English.</p>
       <div class="learning-layout">
         <article class="iso-path">
           <h3>ISO audit practice</h3>
           <p>Trace a requirement through the ISO knowledge graph, then use the audit guide to decide which records would support a finding.</p>
           <div class="path-links">
-            <a href="../iso-knowledge-graph/" hreflang="ko">ISO knowledge graph</a>
-            <a href="../#iso-19011-guide" hreflang="ko">ISO 19011 audit practice</a>
-            <a href="../director/#books" hreflang="ko">KCLI auditor handbooks</a>
-            <a href="../iso-19011-classroom/" hreflang="ko" target="_top">ISO 19011 classroom guide</a>
+            <a href="./clauses/">Clause lists and charts</a>
+            <a href="./iso-knowledge-graph/">ISO knowledge graph</a>
+            <a href="./audit-practice/#lean-six-sigma-tools">Seven quality tools</a>
+            <a href="./iso-45001-case/">Occupational safety audit case</a>
+            <a href="./audit-practice/#iso-19011-guide">ISO 19011 audit practice</a>
+            <a href="./director/#books">KCLI auditor handbooks</a>
+            <a href="./iso-19011-classroom/" target="_top">ISO 19011 classroom guide</a>
           </div>
         </article>
         <div class="related-paths">
           <section>
             <h3>Management strategy</h3>
             <div><p>Use Sun Tzu and the Thirty-Six Stratagems to develop alternatives, then weigh strengths, weaknesses, opportunities and threats before choosing a course of action.</p>
-              <div class="path-links"><a href="../#management-strategy" hreflang="ko">Strategy readings</a><a href="../#swot-analysis" hreflang="ko">SWOT case study</a></div>
+              <div class="path-links"><a href="./reading/#management-strategy">Strategy readings</a><a href="./audit-practice/#swot-analysis">SWOT case study</a></div>
             </div>
           </section>
           <section>
             <h3>Humanities</h3>
             <div><p>When an AI recommendation affects a learner, what might the data leave out? KCLI’s book on philosophy and everyday judgement explores how people take responsibility for decisions.</p>
-              <div class="path-links"><a href="../#humanities" hreflang="ko">Featured book and reading question</a></div>
+              <div class="path-links"><a href="./reading/#humanities">Featured book and reading question</a></div>
             </div>
           </section>
           <section>
             <h3>AI technologies</h3>
             <div><p>Follow the path from machine learning to language models. Try document retrieval and examine the evidence behind a generated answer.</p>
-              <div class="path-links"><a href="../ai-learning/" hreflang="ko">AI learning hub</a><a href="../ai-learning/#llm-rag-lab" hreflang="ko">Document retrieval lab</a></div>
+              <div class="path-links"><a href="./ai-learning/">AI learning hub</a><a href="./ai-learning/#llm-rag-lab">Document retrieval lab</a></div>
             </div>
           </section>
         </div>
@@ -166,25 +191,68 @@
     </div>
   </section>
 
+  <section id="southeast-asia" class="regional-section">
+    <div class="container enquiries-grid">
+      <div>
+        <h2>ISO training for Southeast Asia</h2>
+        <p>KCLI is planning ISO auditor training for Malaysia and other Southeast Asian countries. Individuals, employers and local training organisations can enquire about a course or discuss hosting a group.</p>
+      </div>
+      <div id="approach">
+        <h3>Plan a session with KCLI</h3>
+        <p>Share the country and city, the ISO standard, the number of learners, the teaching language you need and your preferred dates. KCLI will discuss delivery format, assessments, fees and arrangements before confirming a session.</p>
+        <a class="auditor-inline-link" data-course="regional" href="#contact">Prepare a regional enquiry</a>
+      </div>
+    </div>
+  </section>
   <section class="enquiries" id="course-inquiries" aria-labelledby="inquiries-title">
     <div class="container enquiries-grid">
       <div>
-        <h2 id="inquiries-title">Contact KCLI</h2>
+        <h2 id="inquiries-title"><span id="contact">Contact KCLI</span></h2>
         <p>For an individual course, tell us which standard interests you, your preferred dates and the language you need. We can confirm the teaching language, fees and entry requirements for that session.</p>
         <p>For institutional training or a partnership, include your organisation, group size and learning goals.</p>
       </div>
+      <div class="regional-contact">
+        <div class="regional-form">
+          <label for="inquiry-type">Enquiry topic</label>
+          <select id="inquiry-type">
+            <option value="course">General ISO training</option>
+            <option value="regional">Southeast Asia training</option>
+            <optgroup label="Course">
+              <option value="iso-9001" data-standard="ISO 9001">ISO 9001 training</option>
+              <option value="iso-14001" data-standard="ISO 14001">ISO 14001 training</option>
+              <option value="iso-45001" data-standard="ISO 45001">ISO 45001 training</option>
+              <option value="iso-22301" data-standard="ISO 22301">ISO 22301 training</option>
+              <option value="iso-27001" data-standard="ISO/IEC 27001">ISO/IEC 27001 training</option>
+              <option value="iso-27701" data-standard="ISO/IEC 27701">ISO/IEC 27701 training</option>
+              <option value="iso-42001" data-standard="ISO/IEC 42001">ISO/IEC 42001 training</option>
+              <option value="iso-53001" data-standard="ISO/UNDP 53001">ISO/UNDP 53001 training</option>
+            </optgroup>
+            <option value="organization">Group training and partnerships</option>
+            <option value="knowledge">AI and knowledge partnerships</option>
+          </select>
+          <label for="enquiry-country">Country or region (optional)</label>
+          <select id="enquiry-country"><option value="">Select a country or region</option><option>Malaysia</option><option>Brunei</option><option>Cambodia</option><option>Indonesia</option><option>Laos</option><option>Myanmar</option><option>Philippines</option><option>Singapore</option><option>Thailand</option><option>Timor-Leste</option><option>Viet Nam</option><option>Republic of Korea</option><option>Other</option></select>
+          <label for="enquiry-timezone">Time zone (optional)</label>
+          <input id="enquiry-timezone" placeholder="e.g. Malaysia time (UTC+8)" maxlength="70">
+          <div class="regional-actions">
+            <a id="inquiry-mail" href="mailto:roknaoms@naver.com?subject=KCLI%20training%20enquiry">Draft email</a>
+            <button type="button" id="copy-email" hidden>Copy email address</button>
+          </div>
+          <p id="inquiry-status" role="status">Review and send the draft in your email app. KCLI will confirm the arrangements with you.</p>
+        </div>
       <address>
         <div><strong>Email</strong><a href="mailto:roknaoms@naver.com?subject=KCLI%20international%20training%20enquiry">roknaoms@naver.com</a></div>
         <div><strong>Phone</strong><a href="tel:+821087684192">+82 10 8768 4192</a></div>
-        <div><strong>Location</strong><span>Building A (<span lang="ko">가산 퍼블릭 A동</span>), 178 Digital-ro,<br>Geumcheon-gu, Seoul, Republic of Korea</span></div>
+        <div><strong>Location</strong><span>Building A, 178 Digital-ro,<br>Geumcheon-gu, Seoul, Republic of Korea</span></div>
       </address>
+      </div>
     </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-top">
     <a class="brand" href="./"><img class="brand-mark" src="../assets/kcli-mark.svg" width="40" height="30" alt=""><span><strong>KCLI</strong><small>Korea Cyber Literacy Institute</small></span></a>
-    <nav aria-label="Footer navigation"><a href="./iso-auditor-training/">English training guide</a><a href="#course-inquiries">Contact KCLI</a><a href="../" hreflang="ko" lang="ko">한국어 홈페이지</a></nav>
+    <nav aria-label="Footer navigation"><a href="./institute/#policies">Policies</a><a href="./iso-19011-classroom/#learner-privacy">Learning record privacy</a><a href="./institute/#faq">FAQ</a><a href="./iso-auditor-training/">English training guide</a><a href="#course-inquiries">Contact KCLI</a><a href="../" hreflang="ko" lang="ko">한국어 홈페이지</a></nav>
   </div>
 </footer>
 </body>

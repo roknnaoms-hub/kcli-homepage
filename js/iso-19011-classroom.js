@@ -1,17 +1,22 @@
+const english = document.documentElement.lang.startsWith('en');
+const local = (ko, en) => english ? en : ko;
+const catalogUrl = new URL('../iso-19011-classroom/lessons.json', import.meta.url);
+const lessonLabel = id => local(`${id}교시`, `Lesson ${id}`);
+
 const lessonCount = 12;
 const legacyLessonCount = 14;
 const completionPercent = 90;
 const saveInterval = 2500;
 const storeName = 'progress';
 const statusLabels = {
-  pending: '영상 준비 중',
-  checking: '재생 확인 중',
-  unavailable: '상태 확인 필요',
-  unwatched: '미시청',
-  watching: '시청 중',
-  completed: '시청 완료'
+  pending: local('영상 준비 중', 'Not published'),
+  checking: local('재생 확인 중', 'Checking playback'),
+  unavailable: local('상태 확인 필요', 'Unavailable'),
+  unwatched: local('미시청', 'Not started'),
+  watching: local('시청 중', 'In progress'),
+  completed: local('시청 완료', 'Watched')
 };
-const dateFormat = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'medium', timeStyle: 'short' });
+const dateFormat = new Intl.DateTimeFormat(english ? 'en-GB' : 'ko-KR', { dateStyle: 'medium', timeStyle: 'short' });
 
 const player = document.getElementById('classroom-player');
 const video = document.getElementById('lesson-video');
@@ -103,14 +108,14 @@ function updateExportState() {
   const canExport = hasExportableRecord();
   exportButton.disabled = exporting || !canExport;
   const message = canExport ? '' : lessons.some(lesson => lesson.mediaState === 'ready')
-    ? '내보낼 시청기록이 없습니다.' : lessons.some(lesson => lesson.mediaState === 'checking')
-    ? '영상의 재생 가능 여부를 확인하고 있습니다.' : '현재 내보낼 공개 영상과 시청기록이 없습니다.';
+    ? local('내보낼 시청기록이 없습니다.', 'Watch part of a published lesson to export a record.') : lessons.some(lesson => lesson.mediaState === 'checking')
+    ? local('영상의 재생 가능 여부를 확인하고 있습니다.', 'Checking which lesson videos can be played.') : local('현재 내보낼 공개 영상과 시청기록이 없습니다.', 'There are no public videos with viewing records to export.');
   if (exportAvailability.textContent !== message) exportAvailability.textContent = message;
   exportAvailability.hidden = !message;
 }
 
 async function loadCatalog() {
-  const response = await fetch('./lessons.json', { cache: 'no-cache' });
+  const response = await fetch(catalogUrl, { cache: 'no-cache' });
   if (!response.ok) throw new Error('Failed to load lesson catalog');
   const entries = await response.json();
   if (!Array.isArray(entries) || ![lessonCount, legacyLessonCount].includes(entries.length)) {
@@ -126,7 +131,7 @@ async function loadCatalog() {
 function mediaSource(path) {
   if (!path) return null;
   try {
-    const url = new URL(path, location.href);
+    const url = new URL(path, catalogUrl);
     if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) return null;
     if (url.protocol !== 'https:' && url.origin !== location.origin) return null;
     url.hash = '';
@@ -202,7 +207,7 @@ function displayProgress() {
   completedCount.textContent = String(completed);
   completedMeter.value = completed;
   const availableCount = document.getElementById('available-count');
-  const availableText = catalogLoaded ? lessons.filter(lesson => lesson.mediaState === 'ready').length + ' / ' + lessonCount + '교시 공개' : '공개 상태 확인 필요';
+  const availableText = catalogLoaded ? lessons.filter(lesson => lesson.mediaState === 'ready').length + ' / ' + lessonCount + local('교시 공개', ' lessons available') : local('공개 상태 확인 필요', 'Availability unknown');
   if (availableCount.textContent !== availableText) availableCount.textContent = availableText;
   updateExportState();
 }
@@ -211,7 +216,7 @@ function storageUnavailable() {
   database?.close();
   database = undefined;
   const notice = document.getElementById('storage-notice');
-  notice.textContent = '이 브라우저에서 내 시청 기록을 저장할 수 없습니다. 이 화면을 열어 둔 동안의 시청 기록은 확인할 수 있습니다.';
+  notice.textContent = local('이 브라우저에서 내 시청 기록을 저장할 수 없습니다. 이 화면을 열어 둔 동안의 시청 기록은 확인할 수 있습니다.', 'This browser cannot save viewing records. Progress is available while this page remains open.');
   notice.hidden = false;
 }
 
@@ -317,8 +322,8 @@ function selectLesson(lesson, moveFocus = false) {
         video.load();
       }
       showPlayerMessage(
-        lesson.mediaState === 'unavailable' ? `${lesson.id}교시 영상 확인 필요` : `${lesson.id}교시 영상 준비 중`,
-        lesson.mediaState === 'unavailable' ? '잠시 후 다시 접속해 주세요.' : '영상이 등록되면 재생할 수 있습니다.'
+        lesson.mediaState === 'unavailable' ? local(`${lesson.id}교시 영상 확인 필요`, `Lesson ${lesson.id} is unavailable`) : local(`${lesson.id}교시 영상 준비 중`, `Lesson ${lesson.id} has no published preview`),
+        lesson.mediaState === 'unavailable' ? local('잠시 후 다시 접속해 주세요.', 'Please try this lesson again later.') : local('영상이 등록되면 재생할 수 있습니다.', 'The preview will be playable when a video is published.')
       );
     }
     displayProgress();
@@ -339,10 +344,10 @@ function addLessonControls(lesson) {
 
   const row = recordTemplate.content.cloneNode(true);
   const recordLink = row.querySelector('button');
-  recordLink.textContent = `${lesson.id}교시`;
+  recordLink.textContent = lessonLabel(lesson.id);
   recordLink.addEventListener('click', () => selectLesson(lesson, true));
   lesson.meter = row.querySelector('progress');
-  lesson.meter.setAttribute('aria-label', `${lesson.id}교시 재생 비율`);
+  lesson.meter.setAttribute('aria-label', local(`${lesson.id}교시 재생 비율`, `Lesson ${lesson.id} percentage watched`));
   lesson.percent = row.querySelector('.classroom-record-progress span');
   lesson.recordStatus = row.querySelector('.classroom-status');
   lesson.lastWatched = row.querySelector('time');
@@ -355,7 +360,10 @@ video.addEventListener('loadedmetadata', () => {
   if (!record || Math.abs(record.duration - video.duration) > 0.5 || record.position <= 0 || record.position >= video.duration - 0.5) return;
   video.currentTime = record.position;
   const seconds = Math.floor(record.position);
-  resumeNote.textContent = `지난 시청 위치 ${Math.floor(seconds / 60)}분 ${seconds % 60}초에서 이어 볼 수 있습니다.`;
+  resumeNote.textContent = local(
+    `지난 시청 위치 ${Math.floor(seconds / 60)}분 ${seconds % 60}초에서 이어 볼 수 있습니다.`,
+    `Resuming at ${Math.floor(seconds / 60)} min ${seconds % 60} sec.`
+  );
   resumeNote.hidden = false;
 });
 function applyPlaybackLimit() {
@@ -378,7 +386,7 @@ video.addEventListener('ended', () => savePlayback(true));
 video.addEventListener('error', () => {
   if (activeLesson?.source && video.currentSrc === activeLesson.source) {
     setMediaState(activeLesson, false);
-    showPlayerMessage('영상을 재생할 수 없습니다', '잠시 후 강의 목록에서 이 교시를 다시 선택해 주세요.');
+    showPlayerMessage(local('영상을 재생할 수 없습니다', 'Video unavailable'), local('잠시 후 강의 목록에서 이 교시를 다시 선택해 주세요.', 'Try selecting this lesson again from the list.'));
   }
 });
 window.addEventListener('pagehide', () => savePlayback(true));
@@ -398,7 +406,7 @@ exportForm.addEventListener('submit', async event => {
   if (exporting || !hasExportableRecord()) { updateExportState(); return; }
   const studentId = studentNumber.value.trim().normalize('NFC');
   if (!studentId || /[\u0000-\u001f\u007f]/u.test(studentId)) {
-    exportStatus.textContent = 'KCLI에서 받은 수강생 번호를 입력하세요.';
+    exportStatus.textContent = local('KCLI에서 받은 수강생 번호를 입력하세요.', 'Enter the learner number that KCLI issued to you.');
     exportStatus.hidden = false;
     return;
   }
@@ -430,9 +438,9 @@ exportForm.addEventListener('submit', async event => {
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    exportStatus.textContent = '참고용 시청 기록 파일을 저장했습니다. 공식 기록이 아니며, 담당자가 요청한 비공개 경로로만 제출하세요.';
+    exportStatus.textContent = local('참고용 시청 기록 파일을 저장했습니다. 공식 기록이 아니며, 담당자가 요청한 비공개 경로로만 제출하세요.', 'Your reference file has been saved. If KCLI requests it, submit it through the private channel provided.');
   } catch {
-    exportStatus.textContent = '시청 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.';
+    exportStatus.textContent = local('시청 기록 파일을 저장하지 못했습니다. 다시 시도해 주세요.', 'The viewing record could not be saved. Please try again.');
   } finally {
     exportStatus.hidden = false;
     exporting = false;
@@ -445,16 +453,17 @@ async function startClassroom() {
   catalogLoaded = Boolean(catalog);
   if (!catalog) {
     const error = document.getElementById('classroom-error');
-    error.textContent = '강의 목록을 불러오지 못했습니다. 페이지를 새로고침해 주세요.';
+    error.textContent = local('강의 목록을 불러오지 못했습니다. 페이지를 새로고침해 주세요.', 'The lesson list could not be loaded. Refresh the page to try again.');
     error.hidden = false;
   }
   lessons = Array.from({ length: lessonCount }, (_, index) => {
     const id = index + 1;
     const entry = catalog?.get(id);
-    const title = typeof entry?.title === 'string' ? entry.title.trim() : '';
+    const catalogTitle = english ? entry?.titleEn : entry?.title;
+    const title = typeof catalogTitle === 'string' ? catalogTitle.trim() : '';
     const path = typeof entry?.videoUrl === 'string' ? entry.videoUrl.trim() : '';
     const source = mediaSource(path);
-    const name = title ? `${id}교시 · ${title}` : `${id}교시`;
+    const name = title ? `${lessonLabel(id)} · ${title}` : lessonLabel(id);
     const mediaState = source ? savedMediaState(source, entry) : (!catalog || path) ? 'unavailable' : 'pending';
     return { id, name, source, key: source ? `${id}:${source}` : null, mediaState };
   });

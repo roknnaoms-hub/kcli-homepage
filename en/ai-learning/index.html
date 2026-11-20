@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trace how machine learning, deep learning, LLMs, RAG and agents connect to ISO/IEC 42001. Explore the history of AI, analyse a dataset and try document retrieval.">
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/en/ai-learning/">
+  <link rel="alternate" hreflang="x-default" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/"><link rel="alternate" hreflang="ko" href="https://roknnaoms-hub.github.io/kcli-homepage/ai-learning/"><link rel="alternate" hreflang="en" href="https://roknnaoms-hub.github.io/kcli-homepage/en/ai-learning/"><link rel="icon" type="image/svg+xml" href="../../assets/kcli-mark.svg">
+  <title>AI technologies | Learning map, history and ISO/IEC 42001 | KCLI</title>
+  <link rel="stylesheet" href="../../css/styles.css?v=kcli-mark-20261116">
+  <link rel="stylesheet" href="../../css/ml-guide.css?v=learning-20261120">
+  <link rel="stylesheet" href="../../css/llm-guide.css?v=ai-learning-20261116">
+  <script src="./rag-lab.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="ml-page-header">
+  <div class="container ml-page-nav">
+    <a class="brand" href="../" aria-label="Korea Cyber Literacy Institute home">
+      <img class="brand-mark" src="../../assets/kcli-mark.svg" width="40" height="30" alt="">
+      <span><strong>KCLI</strong><small>Korea Cyber Literacy Institute</small></span>
+    </a>
+    <nav class="ai-page-links" aria-label="Related learning resources"><a class="auditor-inline-link" href="../#learning-hub">Learning resources</a><a class="auditor-inline-link" href="../iso-auditor-training/#iso-42001">ISO/IEC 42001 training</a><a href="../../ai-learning/" lang="ko" hreflang="ko" class="auditor-inline-link" aria-label="Korean version · 한국어">한국어</a></nav>
+  </div>
+</header>
+<main id="main">
+  <section id="ai-learning" class="section ml-guide" aria-labelledby="ai-learning-title">
+    <div class="container">
+      <div class="section-heading">
+        <h1 id="ai-learning-title">AI technologies</h1>
+        <p>Explore how AI learns from data, how a model uses a retrieved document to answer a question and how an organisation checks the result.</p>
+      </div>
+      <nav class="ai-management-links ml-contents" aria-label="AI technologies contents">
+        <a class="auditor-inline-link" href="#ai-roadmap">Learning map</a>
+        <a class="auditor-inline-link" href="#ai-history">History of AI</a>
+        <a class="auditor-inline-link" href="#ml-dataset">Data exercise</a>
+        <a class="auditor-inline-link" href="#llm-rag-lab">Document retrieval lab</a>
+        <a class="auditor-inline-link" href="#ai-system-architecture">ISO/IEC 42001 and AIMS</a>
+      </nav>
+
+      <section id="ai-roadmap" class="ai-roadmap" aria-labelledby="roadmap-title">
+        <h2 id="roadmap-title">How AI technologies fit together</h2>
+        <p class="ml-intro">A training coordinator asks, “Who reviews this report?” The model writes an answer, the retriever finds the current document and a person checks the evidence. Follow each part of that process below.</p>
+        <ol class="concept-route">
+          <li>
+            <h3>Learn patterns from data</h3>
+            <p>Machine learning finds patterns in examples. Deep learning uses multiple layers of a neural network to learn features. Use the iris classification exercise to distinguish training data from validation data.</p>
+            <div><a href="#ml-technologies">AI, ML and deep learning</a><a href="#ml-methods">Supervised, unsupervised and reinforcement learning</a><a href="#ml-dataset">Dataset</a><a href="#ml-visualization">Scatter plots</a></div>
+          </li>
+          <li>
+            <h3>Generate text from a question</h3>
+            <p>A large language model (LLM) applies deep learning to language. Transformers capture relationships in context, and a generative LLM builds a response by predicting successive tokens.</p>
+            <div><a href="#llm-technologies">LLM applications</a><a href="#llm-architecture">Transformer architecture</a></div>
+          </li>
+          <li>
+            <h3>Ground an answer in current documents</h3>
+            <p>Represent the question and document passages as embeddings, then compare their similarity. Retrieval-augmented generation (RAG) passes the retrieved text to the model. Try excluding a superseded edition and see how the evidence changes.</p>
+            <div><a href="#llm-embeddings">Embeddings and similarity</a><a href="#llm-vector-db">Vector databases</a><a href="#llm-rag">RAG architecture</a><a href="#llm-rag-lab">Try retrieval</a></div>
+          </li>
+          <li>
+            <h3>Connect tools and check results</h3>
+            <p>Orchestration coordinates retrieval and generation. An execution harness manages the agent’s tools and permissions. An evaluation harness checks whether the system still finds the right evidence after a document changes.</p>
+            <div><a href="#llm-orchestration">Orchestration and harnesses</a><a href="#llm-trends">MCP, retrieval and evaluation</a></div>
+          </li>
+        </ol>
+        <div class="aims-band">
+          <h3>Applying ISO/IEC 42001 across the process</h3>
+          <div><p>An artificial intelligence management system (AIMS) helps an organisation set AI objectives, assign responsibilities and manage risks and performance. In this example, identify who approves the current document and who acts when an answer is wrong.</p>
+          <a href="#ai-system-architecture">Compare an AI system and an AIMS</a><a href="../clauses/#iso-42001-clauses">ISO/IEC 42001 clause list</a></div>
+        </div>
+      </section>
+
+      <section id="ai-history" class="ai-history" aria-labelledby="history-title">
+        <h2 id="history-title">History of AI</h2>
+        <p class="ml-intro">AI research has expanded from representing knowledge as rules to learning from data, generating language and using external tools. Explore the questions addressed by these projects and standards.</p>
+        <ol class="milestones">
+          <li><time datetime="1956">1956</time><div><h3>AI as a field of study</h3><p>The Dartmouth summer research project explored whether machines could carry out learning and reasoning. <a href="https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth">Dartmouth account</a></p></div></li>
+          <li><time datetime="1965">1965</time><div><h3>Encoding expert knowledge as rules</h3><p>DENDRAL used chemists’ knowledge to infer molecular structures consistent with observed data. <a href="https://www.computerhistory.org/timeline/ai-robotics/">Computer History Museum</a></p></div></li>
+          <li><time datetime="1986">1986</time><div><h3>Training neural networks using errors</h3><p>Rumelhart and colleagues showed how backpropagation adjusts weights across layers to learn useful features. <a href="https://doi.org/10.1038/323533a0">Backpropagation paper</a></p></div></li>
+          <li><time datetime="2012">2012</time><div><h3>Classifying images with deep learning</h3><p>AlexNet used a convolutional neural network and a large image dataset to reduce the error rate in the ImageNet classification competition. <a href="https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">AlexNet paper</a></p></div></li>
+          <li><time datetime="2017">2017</time><div><h3>Learning relationships in context</h3><p>Researchers proposed an attention-based architecture for machine translation. Many large language models now use this architecture. <a href="https://arxiv.org/abs/1706.03762">Transformer paper</a></p></div></li>
+          <li><time datetime="2020">2020</time><div><h3>Combining retrieval and generation</h3><p>The RAG study explored answering knowledge-intensive questions by supplying a generative model with information retrieved from external documents. <a href="https://arxiv.org/abs/2005.11401">RAG paper</a></p></div></li>
+          <li><time datetime="2022">2022</time><div><h3>Using tools and observing their results</h3><p>ReAct showed how a language model can use information from its environment to guide subsequent reasoning and actions. <a href="https://arxiv.org/abs/2210.03629">ReAct paper</a></p></div></li>
+          <li><time datetime="2023">2023</time><div><h3>A management system standard for AI</h3><p>ISO/IEC 42001 set out requirements for establishing, operating and continually improving an AI management system. <a href="https://www.iso.org/standard/42001">ISO standard overview</a></p></div></li>
+          <li><time datetime="2024">2024</time><div><h3>A shared interface for tools and data</h3><p>The Model Context Protocol introduced a common way for AI applications to connect to resources and tools. <a href="https://www.anthropic.com/news/model-context-protocol">MCP announcement</a></p></div></li>
+          <li><time datetime="2026">2026</time><div><h3>Separating agent execution from session records</h3><p>Anthropic described separating the model harness, tool execution environment and session records in a managed agent system. <a href="https://www.anthropic.com/research/managed-agents">Agent design case study</a></p></div></li>
+        </ol>
+      </section>
+
+      <section id="ml-technologies" aria-labelledby="ml-technologies-title">
+        <h2 id="ml-technologies-title">Artificial intelligence, machine learning and deep learning</h2>
+        <p class="ml-intro">Machine learning is a field within AI. Deep learning is a set of machine learning techniques that uses neural networks with multiple layers.</p>
+        <div class="ml-card-grid ml-technologies">
+          <article>
+            <h3>Artificial intelligence <small lang="en">AI</small></h3>
+            <p>The field concerned with implementing capabilities such as reasoning, search, perception and learning in computers.</p>
+            <p class="ml-example"><strong>Example</strong> An expert system uses knowledge and rules to infer possible causes of an equipment fault.</p>
+          </article>
+          <article>
+            <h3>Machine learning <small lang="en">ML</small></h3>
+            <p>A model learns patterns in data to classify a new input or predict an outcome.</p>
+            <p class="ml-example"><strong>Example</strong> A decision tree classifies a flower from its measurements.</p>
+          </article>
+          <article>
+            <h3>Deep learning <small lang="en">DL</small></h3>
+            <p>Successive layers of a neural network transform the input and learn useful representations for a task.</p>
+            <p class="ml-example"><strong>Example</strong> A neural network learns shapes in photographs to distinguish types of objects.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai-system-architecture" class="ai-architecture" aria-labelledby="ai-system-architecture-title">
+        <h2 id="ai-system-architecture-title">AI, AI systems and AIMS</h2>
+        <p class="ml-intro"><strong>Artificial intelligence (AI)</strong> covers techniques for learning, reasoning and generation. <strong>An AI system</strong> brings together components such as models, data, a user interface and access controls to serve a specific purpose. <strong>An artificial intelligence management system (AIMS)</strong> sets organisational policies and objectives for developing, providing or using AI and governs responsibilities, risks and performance.</p>
+
+        <figure class="ai-diagram">
+          <figcaption>AI system architecture for questions about internal training documents</figcaption>
+          <ol class="ai-flow" role="list">
+            <li><strong>User input</strong><span>A training coordinator asks who reviews the report.</span></li>
+            <li><strong>Application</strong><span>The application checks the user’s rights and determines which documents can be searched.</span></li>
+            <li><strong>Retrieval and model inference</strong><span>The retriever passes authorised passages to the LLM as evidence.</span></li>
+            <li><strong>Output and review</strong><span>The system displays an answer and citation. The coordinator consults the original.</span></li>
+          </ol>
+        </figure>
+
+        <h3>AIMS operation and examples of audit evidence</h3>
+        <dl class="llm-role-grid">
+          <div><dt>Planning and assessment</dt><dd>Identify the AI systems and owners in scope. Assess the risks and impacts of incorrect guidance and document exposure. Examine the inventory and assessment records.</dd></div>
+          <div><dt>Deployment and change</dt><dd>Test access permissions and document edition filters. Check approval of deployments or model changes against test results and the change history.</dd></div>
+          <div><dt>Operation and improvement</dt><dd>Monitor citation errors and user objections. Check whether actions were effective using operational metrics, management review and corrective action records.</dd></div>
+        </dl>
+        <nav class="ai-management-links" aria-label="AI systems and AIMS resources">
+          <a class="auditor-inline-link" href="../audit-practice/#ai-concepts">Compare AI, AI systems and AIMS</a>
+          <a class="auditor-inline-link" href="../audit-practice/#ai-audit-focus">Evidence to examine in an ISO/IEC 42001 audit</a>
+          <a class="auditor-inline-link" href="https://www.iso.org/standard/74296.html">ISO/IEC 22989 AI concepts and terminology</a>
+          <a class="auditor-inline-link" href="https://www.iso.org/standard/42001">ISO/IEC 42001 publication details</a>
+        </nav>
+      </section>
+
+      <section id="ml-methods" aria-labelledby="ml-methods-title">
+        <h2 id="ml-methods-title">Three approaches to learning</h2>
+        <div class="ml-card-grid ml-methods">
+          <article>
+            <h3>Supervised learning</h3>
+            <p class="ml-signal">Inputs paired with known labels</p>
+            <p>Learn the relationship between inputs and outputs to predict a category or numerical value for a new input.</p>
+            <p class="ml-example"><strong>Example</strong> Classify an iris species or predict the service life of a component.</p>
+          </article>
+          <article>
+            <h3>Unsupervised learning</h3>
+            <p class="ml-signal">Unlabelled observations</p>
+            <p>Find groups or underlying structure in observations. Common approaches include clustering and dimensionality reduction.</p>
+            <p class="ml-example"><strong>Example</strong> Group customers by usage pattern and interpret the characteristics of each group.</p>
+          </article>
+          <article>
+            <h3>Reinforcement learning</h3>
+            <p class="ml-signal">Rewards from interaction with an environment</p>
+            <p>An agent observes states and selects actions. It learns a policy that increases the expected cumulative reward over time.</p>
+            <p class="ml-example"><strong>Example</strong> A robot learns a policy for reaching a destination by trying different movements.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ml-dataset" class="ml-dataset" aria-labelledby="ml-dataset-title">
+        <div class="ml-dataset-heading">
+          <div>
+            <h2 id="ml-dataset-title">Supervised learning dataset · iris classification</h2>
+            <p>Classify an iris using its sepal and petal length and width. The public dataset contains 150 rows, with 50 observations for each of three species and no missing values.</p>
+          </div>
+          <a class="ml-download" href="../../assets/ai-learning/iris-learning.csv" download>Download the iris dataset (CSV) <span aria-hidden="true">↓</span></a>
+        </div>
+        <dl class="ml-fields">
+          <div><dt>Input features X</dt><dd>Sepal length and width, petal length and width.<br>All four measurements are in centimetres.</dd></div>
+          <div><dt>Target label y</dt><dd><code>species</code>  gives the species:<br><span lang="en">setosa, versicolor, virginica</span></dd></div>
+          <div><dt>Row identification and dataset splits</dt><dd>Use <code>sample_id</code> to identify each row and <code>split</code> to see its training, validation or test assignment.</dd></div>
+        </dl>
+
+        <div class="ml-data-grid">
+          <div>
+            <h3>Training data examples</h3>
+            <table class="ml-example-table">
+              <caption class="sr-only">One training example per iris species, measured in centimetres</caption>
+              <colgroup class="ml-id-column" span="1"></colgroup>
+              <colgroup span="2"></colgroup>
+              <colgroup span="2"></colgroup>
+              <colgroup class="ml-species-column" span="1"></colgroup>
+              <thead>
+                <tr><th scope="col" rowspan="2">ID</th><th scope="colgroup" colspan="2">Sepal (cm)</th><th scope="colgroup" colspan="2">Petal (cm)</th><th scope="col" rowspan="2">Species</th></tr>
+                <tr><th scope="col">Length</th><th scope="col">Width</th><th scope="col">Length</th><th scope="col">Width</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>5.1</td><td>3.5</td><td>1.4</td><td>0.2</td><td lang="en">setosa</td></tr>
+                <tr><th scope="row">51</th><td>7.0</td><td>3.2</td><td>4.7</td><td>1.4</td><td lang="en">versicolor</td></tr>
+                <tr><th scope="row">101</th><td>6.3</td><td>3.3</td><td>6.0</td><td>2.5</td><td lang="en">virginica</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3>Training, validation and test split</h3>
+            <div class="ml-split-bar" role="group" aria-label="Dataset split in rows">
+              <span>Training 90</span><span>Validation 30</span><span>Test 30</span>
+            </div>
+            <p class="ml-split-detail">For each species, 30 rows are assigned to training, 10 to validation and 10 to testing. Rows with identical values for all four measurements are kept together.</p>
+            <p>Fit model parameters and preprocessing on the <strong>training set</strong>, select settings using the <strong>validation set</strong>, then evaluate the chosen model on the <strong>test set</strong>.</p>
+          </div>
+        </div>
+
+        <p class="ml-data-check"><strong>Dataset preparation</strong> Record the prediction target, labelling criteria, measurement units, missing or duplicate values, source and permission to use the data.</p>
+        <p class="ml-credit">Adapted from R. A. Fisher (1936), <a class="auditor-inline-link" href="https://archive.ics.uci.edu/dataset/53/iris">Iris, UCI Machine Learning Repository</a>. The exercise is shared under <a class="auditor-inline-link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. It preserves the original measurements in <code>bezdekIris.data</code> and adds column names, row IDs and split assignments. Species labels are shortened to names such as <span lang="en">setosa</span>.</p>
+      </section>
+
+      <section id="ml-visualization" aria-labelledby="ml-visualization-title">
+        <h2 id="ml-visualization-title">Exploring the data · scatter plots by species</h2>
+        <p class="ml-intro">The plots use 90 training rows. Each point represents the length and width of one flower. Equal measurements appear in the same position.</p>
+        <ul class="ml-plot-legend" aria-label="Plot symbols by iris species">
+          <li><span class="ml-symbol ml-setosa" aria-hidden="true"></span><span lang="en">setosa</span></li>
+          <li><span class="ml-symbol ml-versicolor" aria-hidden="true"></span><span lang="en">versicolor</span></li>
+          <li><span class="ml-symbol ml-virginica" aria-hidden="true"></span><span lang="en">virginica</span></li>
+        </ul>
+        <div class="ml-plot-grid">
+          <figure>
+            <h3>Petal length and width</h3>
+            <img src="./iris-petal.webp" width="1040" height="630" loading="lazy" alt="Scatter plot of petal length and width. Setosa circles cluster in the lower left. Versicolor squares and virginica triangles partly overlap.">
+            <figcaption>In the training set, <span lang="en">setosa</span>  petals range from <strong>1.0–1.9 cm</strong> in length. The shortest petal among the other two species is 3.0 cm. Measurements for <span lang="en">versicolor</span> and <span lang="en">virginica</span> overlap in parts of the plot.</figcaption>
+          </figure>
+          <figure>
+            <h3>Sepal length and width</h3>
+            <img src="./iris-sepal.webp" width="1040" height="630" loading="lazy" alt="Scatter plot of sepal length and width. All three species share some of the same range. Versicolor and virginica overlap widely.">
+            <figcaption>All three species overlap in sepal length and width. The same observations are easier or harder to distinguish depending on which features you compare.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="llm-technologies" class="llm-guide" aria-labelledby="llm-technologies-title">
+        <h2 id="llm-technologies-title">LLM applications and development</h2>
+        <p class="ml-intro">Use a fictional set of training documents to find passages relevant to a question and check the current source before answering.</p>
+        <nav class="ai-management-links" aria-label="LLM application topics">
+          <a class="auditor-inline-link" href="#llm-architecture">LLM architecture</a>
+          <a class="auditor-inline-link" href="#llm-rag">RAG architecture</a>
+          <a class="auditor-inline-link" href="#llm-rag-lab">RAG lab</a>
+          <a class="auditor-inline-link" href="#llm-orchestration">Orchestration and harnesses</a>
+        </nav>
+
+        <div class="ml-card-grid llm-overview">
+          <article>
+            <h3>Large language models <small lang="en">LLM</small></h3>
+            <p>An LLM learns language patterns from large amounts of text and other data. A generative LLM used in a chatbot processes the query and its context as tokens and generates subsequent tokens in sequence.</p>
+            <p class="ml-example">Use cases include summaries, questions and answers, and drafts. Check factual claims against original sources.</p>
+          </article>
+          <article id="llm-embeddings">
+            <h3>Embeddings and similarity</h3>
+            <p>An embedding represents text as a vector of numbers. Apply the same embedding model to the question and document passages, then compare the vectors to identify relevant candidates.</p>
+            <p class="llm-formula"><var>sim(q, d)</var> = (<var>q</var> · <var>d</var>) / (‖<var>q</var>‖ × ‖<var>d</var>‖)</p>
+            <p>Cosine similarity divides the dot product of two vectors by the product of their lengths. For nonzero vectors, its range is −1 to 1. Vectors pointing in similar directions have a higher score.</p>
+          </article>
+          <article id="llm-vector-db">
+            <h3>Vector databases</h3>
+            <p>A vector database stores embeddings with metadata such as document IDs, pages, editions and access rights. It retrieves passages whose vectors are close to the query vector.</p>
+            <p class="ml-example"><strong>Example</strong> Look up the passage and page referenced by a search result to show its source in the answer. With an approximate nearest-neighbour index such as HNSW, tune retrieval speed and recall together.</p>
+          </article>
+        </div>
+
+        <section id="llm-architecture" class="llm-block" aria-labelledby="llm-architecture-title">
+          <h3 id="llm-architecture-title">LLM architecture · the Transformer decoder</h3>
+          <p>A decoder-only generative model uses the input and previously generated tokens as context to calculate a probability distribution for the next token.</p>
+          <figure class="ai-diagram">
+            <figcaption>From the input text to the next token</figcaption>
+            <ol class="ai-flow" role="list">
+              <li><strong>Tokenisation</strong><span>Split the input into tokens the model can process.</span></li>
+              <li><strong>Embeddings and position</strong><span>Represent tokens as vectors and encode their order in the sequence.</span></li>
+              <li><strong>Transformer blocks</strong><span>Self-attention draws on the current and earlier positions. A feed-forward network transforms the representation at each position.</span></li>
+              <li><strong>Next-token selection</strong><span>The output layer scores candidate tokens. The decoding method determines which token is selected.</span></li>
+            </ol>
+            <p class="ai-diagram-note">Append the chosen token to the context and repeat until a stop token or length limit is reached.</p>
+          </figure>
+          <p class="ai-diagram-note">RAG adds retrieved text to the input context at inference time. The model weights stay fixed during this process.</p>
+        </section>
+
+        <section id="llm-rag" class="llm-block" aria-labelledby="llm-rag-title">
+          <h3 id="llm-rag-title">Retrieval-augmented generation (<span lang="en">RAG</span>) architecture</h3>
+          <p>Retrieve relevant passages, add them to the model context and generate a response based on that evidence.</p>
+          <figure class="ai-diagram">
+            <figcaption>A RAG workflow from indexing to an answer with evidence</figcaption>
+            <h4>Document indexing</h4>
+            <ol class="ai-flow" role="list">
+              <li><strong>Approved source documents</strong><span>Check the source, permission to use it and its revision history.</span></li>
+              <li><strong>Document chunking</strong><span>Divide the text into retrievable units such as paragraphs or clauses.</span></li>
+              <li><strong>Embedding generation</strong><span>Convert each passage into a vector for retrieval.</span></li>
+              <li><strong>Store the vector index</strong><span>Link each vector to its document ID, page, edition and access rights.</span></li>
+            </ol>
+            <p class="ai-diagram-bridge"><span aria-hidden="true">↓</span> Query the index to find evidence relevant to the question.</p>
+            <h4>Query processing</h4>
+            <ol class="ai-flow" role="list">
+              <li><strong>Question and search scope</strong><span>Embed the question and filter by the user’s permissions and the required edition.</span></li>
+              <li><strong>Retrieval and reranking</strong><span>Find passages that meet the filters and rerank them by relevance.</span></li>
+              <li><strong>Context and generation</strong><span>Pass the selected passages and the question to the LLM to produce a draft answer.</span></li>
+              <li><strong>Citation verification</strong><span>Check that each citation points to the original passage and that the passage supports the claim.</span></li>
+            </ol>
+            <dl class="ai-flow-outcomes">
+              <div><dt>When the evidence is sufficient</dt><dd>Provide the document title, edition and page or a link to the original with the answer.</dd></div>
+              <div><dt>When evidence is missing or inconsistent</dt><dd>Withhold the answer and request a document check or human review.</dd></div>
+            </dl>
+          </figure>
+          <h4>Examples of retrieval and answer metrics</h4>
+          <dl class="llm-role-grid">
+            <div><dt>Retrieval hit rate (Hit@k)</dt><dd>The fraction of test questions with a known supporting passage for which the top k results contain at least one expected passage.</dd></div>
+            <div><dt>Citation support rate</dt><dd>The fraction of reviewed citations for which the cited passage supports the corresponding claim.</dd></div>
+            <div><dt>Correct abstention rate</dt><dd>The fraction of questions requiring abstention for which the system actually withholds an answer.</dd></div>
+          </dl>
+          <nav class="ai-management-links" aria-label="RAG components and practice">
+            <a class="auditor-inline-link" href="#llm-vector-db">Vector database concepts</a>
+            <a class="auditor-inline-link" href="#llm-rag-lab">Try the edition filter</a>
+          </nav>
+        </section>
+
+        <section id="llm-rag-lab" class="llm-block llm-lab" data-query-vector="1,1" aria-labelledby="llm-lab-title">
+          <div class="llm-lab-heading">
+            <h3 id="llm-lab-title">Lab · how document editions change retrieval</h3>
+            <p>Four fictional documents have two-dimensional example vectors. The exercise ranks them by cosine similarity and displays a predefined answer or abstention message based on the retrieved evidence.</p>
+          </div>
+          <p class="llm-lab-question"><strong>Question</strong> Who reviews the exercise report? <span>Query vector <code>(1, 1)</code></span></p>
+
+          <div class="llm-lab-controls" hidden>
+            <label class="llm-check" for="llm-history"><input id="llm-history" type="checkbox"> Include superseded editions</label>
+            <label class="llm-limit" for="llm-top-k">Number of top results <select id="llm-top-k"><option value="1">1 document</option><option value="2" selected>2 documents</option><option value="3">3 documents</option></select></label>
+          </div>
+          <div class="llm-lab-summary">
+            <h4>Answer and evidence</h4>
+            <p id="llm-lab-result" role="status">The current guide ranks first. The operations coordinator reviews the report. See Exercise Operations Guide v2, page 3.</p>
+          </div>
+
+          <table class="llm-results">
+            <caption class="sr-only">Cosine similarity and retrieval rank by document</caption>
+            <colgroup><col><col class="llm-value-col"><col class="llm-rank-col"></colgroup>
+            <thead><tr><th scope="col">Document and evidence</th><th scope="col">Vector<br>Similarity</th><th scope="col">Retrieval rank</th></tr></thead>
+            <tbody>
+              <tr data-vector="2,1" data-edition="current" data-current-evidence data-ranked>
+                <th scope="row">Exercise Operations Guide v2 <small>Page 3 · current</small><span>The operations coordinator reviews the exercise report.</span></th>
+                <td><code>(2, 1)</code><strong class="llm-score">0.949</strong></td><td class="llm-rank">Rank 1</td>
+              </tr>
+              <tr data-vector="1,0" data-edition="current" data-ranked>
+                <th scope="row">Exercise Checklist v1 <small>Page 2 · current</small><span>Participants submit their report at the end of the exercise.</span></th>
+                <td><code>(1, 0)</code><strong class="llm-score">0.707</strong></td><td class="llm-rank">Rank 2</td>
+              </tr>
+              <tr data-vector="1,-1" data-edition="current">
+                <th scope="row">Training Application Guide v1 <small>Page 1 · current</small><span>Applications are processed in the order received.</span></th>
+                <td><code>(1, −1)</code><strong class="llm-score">0.000</strong></td><td class="llm-rank">Outside top results</td>
+              </tr>
+              <tr data-vector="1,1" data-edition="archived" data-filtered>
+                <th scope="row">Exercise Operations Guide v1 <small>Page 3 · superseded</small><span>The instructor reviews the exercise report.</span></th>
+                <td><code>(1, 1)</code><strong class="llm-score">1.000</strong></td><td class="llm-rank">Excluded by edition filter</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="llm-orchestration" class="llm-block" aria-labelledby="llm-orchestration-title">
+          <h3 id="llm-orchestration-title">Orchestration and harnesses</h3>
+          <dl class="llm-role-grid">
+            <div><dt>Orchestration</dt><dd>Coordinate the order and conditions for running retrieval, models and tools. If current evidence is insufficient, retry retrieval and withhold the answer until sufficient evidence is available.</dd></div>
+            <div><dt>Agent execution harness</dt><dd>The runtime that lets a model use tools and continue a task. It manages allowed tools, permissions, task state, execution limits, approvals and logs. Orchestration can run within it.</dd></div>
+            <div><dt>Evaluation harness</dt><dd>A framework for repeatable checks using the same questions, expected evidence and scoring rules. Check whether retrieval includes a current source, whether citations support the answer and whether the system abstains when evidence is insufficient.</dd></div>
+          </dl>
+          <p class="ai-diagram-note"><strong>Operational example</strong> Orchestration orders retrieval and generation. The execution harness enforces access to approved sources and tools, then logs document IDs, editions and the answer or abstention. After a model or index change, the evaluation harness repeats the questions to check retrieval, citation and abstention.</p>
+        </section>
+
+        <section id="llm-trends" class="llm-block" aria-labelledby="llm-trends-title">
+          <h3 id="llm-trends-title">Development trends</h3>
+          <dl class="llm-trends">
+            <div><dt>Hybrid retrieval and reranking</dt><dd>Use keyword search for clause numbers and product codes, and vector search for passages with similar meanings. Combine the candidates and rank them by how well they address the question.</dd></div>
+            <div><dt>Context engineering</dt><dd>Decide which parts of the question, recent task state, relevant documents and tool results to include in the model context and how long to retain them.</dd></div>
+            <div><dt>Tool and data integration with <span lang="en">MCP</span></dt><dd>The Model Context Protocol lets AI applications discover and use tools and resources served by external systems. The execution environment enforces permissions and approval requirements.</dd></div>
+            <div><dt>Execution traces and regression evaluation</dt><dd>Trace retrieved documents, tool calls and answer evidence. Rerun established evaluation questions after changes to the model, documents or search configuration.</dd></div>
+          </dl>
+        </section>
+
+        <nav class="ai-management-links llm-references" aria-label="LLM application references">
+          <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/crash-course/llm/transformers">Google introduction to LLMs</a>
+          <a class="auditor-inline-link" href="https://arxiv.org/abs/1706.03762">Original Transformer paper</a>
+          <a class="auditor-inline-link" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html">Cosine similarity</a>
+          <a class="auditor-inline-link" href="https://github.com/pgvector/pgvector">Vector search examples</a>
+          <a class="auditor-inline-link" href="https://proceedings.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html">Original RAG paper</a>
+          <a class="auditor-inline-link" href="https://doi.org/10.6028/NIST.AI.600-1">NIST generative AI risk management</a>
+          <a class="auditor-inline-link" href="https://www.anthropic.com/research/building-effective-agents">Agent workflows</a>
+          <a class="auditor-inline-link" href="https://developers.openai.com/blog/codex-as-a-platform">Execution harness example</a>
+          <a class="auditor-inline-link" href="https://github.com/EleutherAI/lm-evaluation-harness">Evaluation harness example</a>
+          <a class="auditor-inline-link" href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents">Context engineering</a>
+          <a class="auditor-inline-link" href="https://modelcontextprotocol.io/docs/learn/architecture">MCP architecture</a>
+        </nav>
+      </section>
+
+      <nav class="ai-management-links ml-references" aria-label="AI and machine learning references">
+        <a class="auditor-inline-link" href="../audit-practice/#ai-management">ISO/IEC 42001 essentials</a>
+        <a class="auditor-inline-link" href="https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks">IBM comparison of AI, ML and deep learning</a>
+        <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/intro-to-ml/what-is-ml">Google introduction to machine learning</a>
+        <a class="auditor-inline-link" href="https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets">Google guide to splitting datasets</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

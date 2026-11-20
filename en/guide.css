@@ -1,0 +1,24 @@
+.institute-guide { padding-block: 1.6rem 5rem; max-width: 68rem; }
+.institute-guide section { padding-block: clamp(1.5rem, 3.5vw, 3rem); border-bottom: 1px solid var(--line); }
+.institute-guide h2, .institute-guide h3 { line-height: 1.25; color: var(--navy); }
+.institute-guide h2 { margin: 0 0 .75rem; font-size: clamp(1.55rem, 3vw, 2.3rem); }
+.institute-guide p, .institute-guide li { max-width: 78ch; }
+.institute-guide a { text-decoration: underline; text-underline-offset: .2em; color: var(--navy-2); font-weight: 650; }
+.institute-guide summary { cursor: pointer; padding: .8rem 0; font-weight: 700; }
+.institute-guide details { border-top: 1px solid var(--line); }
+.institute-guide details p { margin-top: 0; }
+.institute-guide .profile-panel, .symbol-row { display: grid; grid-template-columns: minmax(6rem, 10rem) 1fr; align-items: start; gap: clamp(1rem, 3vw, 2.75rem); }
+.profile-panel img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.symbol-row img { width: 100%; height: auto; }
+.profile-facts { display: grid; grid-template-columns: minmax(10rem, .35fr) 1fr; gap: .65rem 1.5rem; }
+.profile-facts dt { font-weight: 700; }
+.profile-facts dd { margin: 0; }
+.history-table-wrap { margin: 1rem 0; overflow-x: auto; }
+.history-table caption { text-align: left; padding: .6rem 0; }
+.reader-entries span[lang] { margin-inline-start: .4rem; color: var(--muted); font-weight: 500; }
+.institute-guide [id] { scroll-margin-top: 6rem; }
+@media(max-width: 600px) {
+  .institute-guide .profile-panel, .symbol-row, .profile-facts { grid-template-columns: 1fr; }
+  .institute-guide .profile-panel img, .symbol-row img { max-width: 7rem; }
+  .profile-facts dd { margin-bottom: .65rem; }
+}

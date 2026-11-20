@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KCLI English audit exercises, quality tools and diagrams for ISO 9001, ISO/IEC 42001 and ISO 19011.">
+  <title>ISO audit practice and quality tools | KCLI</title>
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/en/audit-practice/">
+  <link rel="icon" href="../../assets/kcli-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/styles.css?v=language-20261120">
+  <link rel="stylesheet" href="../../css/swot.css">
+  <link rel="stylesheet" href="../../css/quality-tools.css">
+  <link rel="stylesheet" href="../../css/textbook-visuals.css">
+  <script defer src="../../js/app.js"></script>
+  <script defer src="./navigation.js"></script>
+  <style>
+    .practice-topics { display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; }
+    .practice-topics a { text-decoration:underline; text-underline-offset:.2em; font-weight:700; }
+    .guide-hero + .section { padding-top:clamp(40px,6vw,80px); }
+    .quality-grid > *, .audit-grid > *, .ai-audit-grid > * { min-width:0; }
+    .quality-cycle h4 span { color:var(--navy); }
+    .section-heading h2,.quality-pdca h4,.audit-grid dt { overflow-wrap:anywhere; white-space:normal; }
+    .quality-tool-table { overflow-wrap:anywhere; }
+    .section[id], main [id] { scroll-margin-top:6.5rem; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header home-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="../"><img class="brand-mark" src="../../assets/kcli-mark.svg" width="40" height="30" alt=""><span><strong>KCLI</strong><small>Korea Cyber Literacy Institute</small></span></a>
+    <a class="language-switch" href="../../#quality-management" hreflang="ko" lang="ko">한국어</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-close-label="Close menu"><span class="sr-only">Open menu</span><i></i><i></i></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="../">English home</a><a href="../iso-auditor-training/">ISO courses</a><a href="../clauses/">Clause index</a><a href="../iso-knowledge-graph/">Knowledge graph</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="guide-hero"><div class="container">
+    <h1>ISO audit practice and quality tools</h1>
+    <p>Work through quality management, organisational context and AI governance, then put the evidence together in an audit. The examples, data tables and coursebook diagrams below are in English.</p>
+    <nav class="practice-topics" aria-label="Topics"><a href="#quality-management">Quality management</a><a href="#swot-analysis">SWOT analysis</a><a href="#lean-six-sigma-tools">Seven quality tools</a><a href="#ai-management">AI management</a><a href="#iso-19011-guide">Audit practice</a></nav>
+  </div></div>
+<section id="quality-management" class="section quality-management" aria-labelledby="quality-management-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="quality-management-title">Quality management principles</h2>
+        <p>ISO 9001:2026 builds on the seven quality management principles in ISO 9000. Use the process approach to connect activities and the Plan–Do–Check–Act cycle to evaluate and improve performance.</p>
+      </div>
+      <nav class="quality-links" aria-label="Quality management topics">
+        <a class="auditor-inline-link" href="#iso-9001-visuals">Textbook diagrams</a>
+        <a class="auditor-inline-link" href="#quality-process">Process management</a>
+        <a class="auditor-inline-link" href="#quality-principles">Seven quality management principles</a>
+        <a class="auditor-inline-link" href="#quality-pdca">The PDCA cycle</a>
+        <a class="auditor-inline-link" href="#swot-analysis">SWOT analysis of organisational context</a>
+        <a class="auditor-inline-link" href="#lean-six-sigma-tools">Seven quality tools for Lean Six Sigma</a>
+      </nav>
+
+      <div class="quality-grid">
+        <section id="quality-process" class="quality-panel" aria-labelledby="quality-process-title">
+          <h3 id="quality-process-title">Process management</h3>
+          <p>Identify inputs, activities and outputs. Trace how the output from one activity serves the next. Set objectives, responsibilities, resources, operating criteria and performance indicators for each process.</p>
+          <h4>Example — receiving course applications</h4>
+          <dl class="quality-flow">
+            <div><dt>Inputs</dt><dd>Course applications and entry requirements</dd></div>
+            <div><dt>Activities</dt><dd>Check eligibility, register the application and notify the applicant</dd></div>
+            <div><dt>Outputs</dt><dd>Registration decision and a list for the training team</dd></div>
+          </dl>
+          <p><strong>Example indicators</strong> include time to complete registration and the number of missed applications.</p>
+          <h4>Risks and opportunities</h4>
+          <p>Check required fields before registration to reduce missed applications. An online form could also reduce duplicate data entry.</p>
+        </section>
+
+        <section id="quality-principles" class="quality-panel" aria-labelledby="quality-principles-title">
+          <h3 id="quality-principles-title">Seven quality management principles</h3>
+          <dl class="quality-principles">
+            <div><dt>Customer focus</dt><dd>Meet customer requirements, understand expectations and use feedback and complaints to improve work.</dd></div>
+            <div><dt>Leadership</dt><dd>Communicate quality objectives and provide the resources and authority people need to achieve them.</dd></div>
+            <div><dt>Engagement of people</dt><dd>Develop staff competence and enable people to raise and resolve quality problems where they work.</dd></div>
+            <div><dt>Process approach</dt><dd>Manage interacting processes as a system.</dd></div>
+            <div><dt>Improvement</dt><dd>Use performance results and feedback to address causes and check the effectiveness of changes.</dd></div>
+            <div><dt>Evidence-based decision making</dt><dd>Analyse reliable data and information when choosing whether and when to act.</dd></div>
+            <div><dt>Relationship management</dt><dd>Clarify requirements with suppliers, partners and other interested parties and review performance together.</dd></div>
+          </dl>
+        </section>
+      </div>
+
+      <section id="quality-pdca" class="quality-panel quality-pdca" aria-labelledby="quality-pdca-title">
+        <h3 id="quality-pdca-title">The PDCA cycle</h3>
+        <p>PDCA applies to an individual process and the whole quality management system. Organisational context in clause 4 informs the cycle. Leadership in clause 5 applies throughout.</p>
+        <ol class="quality-cycle" role="list">
+          <li><h4><span lang="en">Plan</span></h4><p class="quality-clause">Clause 6 · Planning</p><p>Set objectives, identify resources and plan responses to risks and opportunities.</p></li>
+          <li><h4><span lang="en">Do</span></h4><p class="quality-clause">Clauses 7–8 · Support and operation</p><p>Provide competent people and resources and carry out the planned processes.</p></li>
+          <li><h4><span lang="en">Check</span></h4><p class="quality-clause">Clause 9 · Performance evaluation</p><p>Compare results with objectives. Evaluate performance through internal audits and management review.</p></li>
+          <li><h4><span lang="en">Act</span></h4><p class="quality-clause">Clause 10 · Improvement</p><p>Identify causes, implement improvements, check their effectiveness and feed the results into the next plan.</p></li>
+        </ol>
+        <p class="quality-audit-note">When auditing a process under clause 4.4, examine operating criteria, performance records and evidence of effective improvement. Compare objective evidence with the applicable requirements.</p>
+      </section>
+
+      <section id="iso-9001-visuals" class="textbook-visuals" aria-labelledby="iso-9001-visuals-title">
+        <h3 id="iso-9001-visuals-title">ISO 9001 textbook diagrams</h3>
+        <p class="textbook-visuals-intro">English diagrams adapted from KCLI’s ISO 9001:2026 quality management systems coursebook, version 1.4.</p>
+        <div class="textbook-visuals-grid">
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the process approach diagram">
+              <img src="./visuals/iso-9001-process-approach.svg" width="960" height="540" loading="lazy" decoding="async" alt="Connections between sources, inputs, activities, outputs and recipients, with monitoring and measurement points." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 43 · Clauses 0.3.1 and 4.4</p>
+              <h4>Process approach</h4>
+              <p>Follow inputs from their source to the recipients of outputs and identify where to monitor or measure the process.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the PDCA and clauses diagram">
+              <img src="./visuals/iso-9001-pdca.svg" width="960" height="540" loading="lazy" decoding="async" alt="PDCA links planning, support and operation, performance evaluation and improvement. Leadership applies throughout." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 44 · Clauses 0.3.2 and 4–10</p>
+              <h4>PDCA and the standard’s clauses</h4>
+              <p>Organisational context informs the cycle of planning, operation, evaluation and improvement. Leadership applies throughout.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the risks and opportunities diagram">
+              <img src="./visuals/iso-9001-risks-and-opportunities.svg" width="960" height="540" loading="lazy" decoding="async" alt="Context and interested parties inform risks and opportunities, action planning, effectiveness evaluation and management review." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 45 · Clauses 6.1.1–6.1.3</p>
+              <h4>Actions addressing risks and opportunities</h4>
+              <p>Identify risks and opportunities in the organisation’s context and interested parties’ requirements. Plan and implement actions and then assess their effectiveness.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the nonconforming outputs and corrective action diagram">
+              <img src="./visuals/iso-9001-nonconformity-and-corrective-action.svg" width="960" height="540" loading="lazy" decoding="async" alt="Clause 8.7 controls nonconforming outputs. Clause 10.2 covers cause analysis, corrective action and effectiveness review." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 288 · Clauses 8.7 and 10.2</p>
+              <h4>Nonconforming outputs and corrective action</h4>
+              <p>Clause 8.7 addresses unintended use or delivery of nonconforming outputs. Clause 10.2 addresses the nonconformity, its causes and the effectiveness of corrective action.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <nav class="quality-links quality-resources" aria-label="ISO 9001 learning resources">
+        <a class="auditor-inline-link" href="../clauses/#iso-9001-clauses">ISO 9001:2026 clause index</a>
+        <a class="auditor-inline-link" href="../iso-auditor-training/#iso-9001">ISO 9001 auditor training</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/quality-management/principles">ISO guide to quality management principles</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/9001">ISO 9001:2026 publication</a>
+      </nav>
+    </div>
+  </section>
+<section id="swot-analysis" class="section swot" aria-labelledby="swot-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="swot-title">SWOT analysis of organisational context</h2>
+        <p>Identify how internal and external conditions affect an objective, then use the findings to decide what to do.</p>
+      </div>
+
+      <section class="swot-overview" aria-labelledby="swot-overview-title">
+        <h3 id="swot-overview-title">SWOT overview</h3>
+        <div>
+          <p>Assess internal <strong>strengths (S)</strong> and <strong>weaknesses (W)</strong> alongside external <strong>opportunities (O)</strong> and <strong>threats (T)</strong> in relation to your objective.</p>
+          <p>SWOT can help identify <strong>internal and external issues under ISO 9001 clause 4.1</strong>. Consider issues affecting intended quality management results when planning actions on risks and opportunities under clause 6.1.</p>
+        </div>
+      </section>
+
+      <div class="swot-grid">
+        <section aria-labelledby="swot-method-title">
+          <h3 id="swot-method-title">How to analyse a situation</h3>
+          <ol class="swot-steps">
+            <li><strong>Define the objective and scope</strong><p>State the decision and identify the organisation, process and period under review.</p></li>
+            <li><strong>Gather evidence</strong><p>Review performance and resources internally and customer needs, regulations and market trends externally. Record the source and date of each observation.</p></li>
+            <li><strong>Classify and prioritise</strong><p>Place each factor in a quadrant by its origin and effect. Compare impact and urgency. Mark assumptions for verification.</p></li>
+            <li><strong>Take action and review</strong><p>Assign an owner, due date and indicator to each priority action. Revisit evidence and actions as conditions change.</p></li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="swot-example-title">
+          <h3 id="swot-example-title">Worked example</h3>
+          <p class="swot-example-scope"><strong>A fictional auditor training provider</strong> is considering a tailored ISO 9001 audit workshop for corporate clients next quarter.</p>
+          <table class="swot-matrix">
+            <caption class="sr-only">Internal and external factors affecting the example training provider</caption>
+            <colgroup><col class="swot-origin"><col><col></colgroup>
+            <thead>
+              <tr><th scope="col">Category</th><th scope="col">Supports the objective</th><th scope="col">Constrains the objective</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Internal</th>
+                <td><strong>S · Strength</strong><p>Existing cases and exercises cover audit report writing.</p><small>Evidence · Workshop materials inventory</small></td>
+                <td><strong>W · Weakness</strong><p>Few instructors are available to cover the workshop if the lead instructor is absent.</p><small>Evidence · Instructor assignments</small></td>
+              </tr>
+              <tr>
+                <th scope="row">External</th>
+                <td><strong>O · Opportunity</strong><p>More companies are asking about customised audit workshops.</p><small>Evidence · Corporate enquiry records</small></td>
+                <td><strong>T · Threat</strong><p>Competing providers offer more low-cost online courses.</p><small>Evidence · Published schedules and tuition fees</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <section class="swot-response" aria-labelledby="swot-response-title">
+        <h3 id="swot-response-title">Turn findings into action</h3>
+        <p>This TOWS example pairs internal and external factors to develop possible actions.</p>
+        <dl class="swot-actions">
+          <div><dt><span lang="en">SO</span> Strength × Opportunity</dt><dd>Use existing materials to pilot a report-writing workshop tailored to one company.</dd></div>
+          <div><dt><span lang="en">ST</span> Strength × Threat</dt><dd>Describe the case exercises and report feedback participants will receive.</dd></div>
+          <div><dt><span lang="en">WO</span> Weakness × Opportunity</dt><dd>Recruit a partner instructor and prepare the workshop together.</dd></div>
+          <div><dt><span lang="en">WT</span> Weakness × Threat</dt><dd>Prioritise sessions with confirmed demand and substitute cover to reduce the risk of cancellation or low enrolment.</dd></div>
+        </dl>
+        <div class="swot-priority">
+          <h4>Priority action · Recruit a partner instructor (WO)</h4>
+          <p>The provider needs an assigned instructor before it can confirm the session date.</p>
+          <dl>
+            <div><dt>Owner</dt><dd>Training coordinator</dd></div>
+            <div><dt>Due</dt><dd>Before publishing the course announcement</dd></div>
+            <div><dt>Completion indicator</dt><dd>One co-instructor and one pilot date confirmed</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <nav class="quality-links swot-resources" aria-label="SWOT resources">
+        <a class="auditor-inline-link" href="../clauses/#iso-9001-clauses">ISO 9001 clause index</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/files/live/sites/isoorg/files/store/en/PUB100373.pdf">ISO 9001 implementation guidance</a>
+        <a class="auditor-inline-link" href="https://www.cipd.org/en/knowledge/factsheets/swot-analysis-factsheet">CIPD guide to SWOT analysis</a>
+        <a class="auditor-inline-link" href="https://doi.org/10.1016/0024-6301(82)90120-0">Original TOWS matrix paper</a>
+      </nav>
+    </div>
+  </section>
+<section id="lean-six-sigma-tools" class="section quality-tools" aria-labelledby="lean-six-sigma-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="lean-six-sigma-title">Lean Six Sigma <br> Seven basic quality tools</h2>
+        <p>Record defects, prioritise improvements and monitor changes in a process. Open a tool below to see how it applies to the same machining example.</p>
+      </div>
+
+      <div class="quality-tool-case">
+        <h3>Practice case · Inspection of machined parts</h3>
+        <p>The defect analysis covers 600 parts inspected on two lines. A separate sample of 60 diameter measurements forms 12 subgroups of five. All figures are fictional training data.</p>
+      </div>
+
+      <div class="quality-tool-list">
+        <details class="quality-tool" open>
+          <summary><strong>Pareto chart</strong><span>Which defects should we tackle first?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./visuals/pareto.svg" width="1040" height="630" loading="lazy" alt="Bars rank defects by frequency, and a line shows the cumulative percentage. Oversize diameter, burrs and scratches account for 87.5%.">
+              <figcaption>Bars show defect counts. The line shows the cumulative percentage.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Rank defects from most to least frequent and plot cumulative percentages to identify priorities. Consider safety and cost alongside frequency.</p>
+              <p class="quality-tool-reading">Oversize diameter, burrs and surface scratches account for 70 out of 80 defects, or <strong>87.5%</strong> of all recorded defects.</p>
+              <details class="quality-tool-data">
+                <summary>Calculation and source counts</summary>
+                <p>Cumulative percentage = defects counted up to a given rank ÷ total defects × 100</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">Defect counts and cumulative percentages for the Pareto chart</caption>
+                  <thead><tr><th scope="col">Defect type</th><th scope="col">Count</th><th scope="col">Cumulative percentage</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Oversize diameter</th><td>32</td><td>40%</td></tr>
+                    <tr><th scope="row">Burr</th><td>23</td><td>68.75%</td></tr>
+                    <tr><th scope="row">Surface scratch</th><td>15</td><td>87.5%</td></tr>
+                    <tr><th scope="row">Foreign material</th><td>8</td><td>97.5%</td></tr>
+                    <tr><th scope="row">Missing marking</th><td>2</td><td>100%</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Fishbone diagram</strong><span>What could cause this defect?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./visuals/fishbone.svg" width="1160" height="560" loading="lazy" alt="Possible causes of oversize diameter include tool wear, incorrect offsets, gauge zero error, misunderstanding offset criteria, material hardness variation and changes in shop temperature.">
+              <figcaption>Six categories organise possible causes of oversize diameter.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>A cause-and-effect diagram groups potential causes of an outcome. The 6M categories used here are people, machinery, materials, methods, measurement and environment.</p>
+              <p class="quality-tool-reading">To investigate tool wear, compare <strong>diameters measured before and after tool replacement</strong> with the tool-use history.</p>
+              <details class="quality-tool-data">
+                <summary>Potential causes by category</summary>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">Potential causes of oversize diameter</caption>
+                  <thead><tr><th scope="col">Category</th><th scope="col">Potential cause</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">People</th><td>Misunderstood offset criteria</td></tr>
+                    <tr><th scope="row">Machine</th><td>Tool wear</td></tr>
+                    <tr><th scope="row">Material</th><td>Variation in stock hardness</td></tr>
+                    <tr><th scope="row">Method</th><td>Incorrect offset setting</td></tr>
+                    <tr><th scope="row">Measurement</th><td>Gauge zero error</td></tr>
+                    <tr><th scope="row">Environment</th><td>Change in shop temperature</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Histogram</strong><span>Which interval contains the most observations?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./visuals/histogram.svg" width="1040" height="630" loading="lazy" alt="The 60 diameter measurements fall into six bins 0.02 mm wide. Frequencies are 5, 20, 19, 13, 2 and 1.">
+              <figcaption>Bin width 0.02 mm · 60 measurements</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Group continuous measurements into intervals and plot frequencies to examine the centre, spread and asymmetry of the distribution.</p>
+              <p class="quality-tool-reading"><strong>19.98 mm to below 20.00 mm</strong> is the most frequent interval, with 20 measurements.</p>
+              <details class="quality-tool-data">
+                <summary>Calculation and bin frequencies</summary>
+                <p>Relative frequency = number in the bin ÷ total observations. For an initial choice of bin count, consider √n or 1 + log₂(n).</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">Frequency by diameter interval</caption>
+                  <thead><tr><th scope="col">Diameter interval (mm)</th><th scope="col">Frequency</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">19.96 to &lt;19.98</th><td>5</td></tr>
+                    <tr><th scope="row">19.98 to &lt;20.00</th><td>20</td></tr>
+                    <tr><th scope="row">20.00 to &lt;20.02</th><td>19</td></tr>
+                    <tr><th scope="row">20.02 to &lt;20.04</th><td>13</td></tr>
+                    <tr><th scope="row">20.04 to &lt;20.06</th><td>2</td></tr>
+                    <tr><th scope="row">20.06 to 20.08 inclusive</th><td>1</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Scatter diagram</strong><span>Do the two variables vary together?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./visuals/scatter.svg" width="1040" height="630" loading="lazy" alt="Twelve machine-temperature and mean-diameter pairs trend upwards. Pearson’s correlation coefficient is approximately 0.84.">
+              <figcaption>Each point pairs a machine temperature with the mean diameter of five parts measured at the same time.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Plot pairs of observations for the same unit or time. Pearson’s correlation coefficient <var>r</var> summarises the direction and strength of a linear relationship.</p>
+              <p class="quality-tool-reading"><strong><var>r</var> ≈ 0.84</strong> indicates a positive linear association. Control other factors, such as tool wear, before attributing a change to temperature.</p>
+              <details class="quality-tool-data">
+                <summary>Correlation and observations</summary>
+                <p><var>r</var> is the sum of the products of deviations from the respective means divided by the product of the square roots of the two sums of squared deviations.</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">Machine temperature and mean diameter by subgroup</caption>
+                  <thead><tr><th scope="col">Subgroup</th><th scope="col">Temperature (°C)</th><th scope="col">Mean diameter (mm)</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">1</th><td>20</td><td>19.996</td></tr>
+                    <tr><th scope="row">2</th><td>22</td><td>20.001</td></tr>
+                    <tr><th scope="row">3</th><td>21</td><td>19.997</td></tr>
+                    <tr><th scope="row">4</th><td>24</td><td>20.005</td></tr>
+                    <tr><th scope="row">5</th><td>23</td><td>20.004</td></tr>
+                    <tr><th scope="row">6</th><td>21.5</td><td>19.996</td></tr>
+                    <tr><th scope="row">7</th><td>25</td><td>20.009</td></tr>
+                    <tr><th scope="row">8</th><td>22.5</td><td>19.999</td></tr>
+                    <tr><th scope="row">9</th><td>23.5</td><td>20.005</td></tr>
+                    <tr><th scope="row">10</th><td>24.5</td><td>20.008</td></tr>
+                    <tr><th scope="row">11</th><td>25.5</td><td>20.012</td></tr>
+                    <tr><th scope="row">12</th><td>27</td><td>20.046</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Check sheet</strong><span>How many defects of each type occurred?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <table class="quality-tool-table">
+                <caption class="sr-only">Check sheet by line and defect type</caption>
+                <thead><tr><th scope="col">Defect type</th><th scope="col">Line A</th><th scope="col">Line B</th><th scope="col">Total</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Oversize diameter</th><td>14</td><td>18</td><td>32</td></tr>
+                  <tr><th scope="row">Burr</th><td>8</td><td>15</td><td>23</td></tr>
+                  <tr><th scope="row">Surface scratch</th><td>5</td><td>10</td><td>15</td></tr>
+                  <tr><th scope="row">Foreign material</th><td>2</td><td>6</td><td>8</td></tr>
+                  <tr><th scope="row">Missing marking</th><td>1</td><td>1</td><td>2</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><th scope="row">Defective parts</th><td>30</td><td>50</td><td>80</td></tr>
+                  <tr><th scope="row">Parts inspected</th><td>200</td><td>400</td><td>600</td></tr>
+                </tfoot>
+              </table>
+              <figcaption>Each defective part contributes one primary defect. All entries are counts.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Agree on where and when to inspect and which defect types to record. If several inspectors collect data, agree on classification criteria first.</p>
+              <p class="quality-tool-reading">The number of parts with a recorded primary defect was <strong>30 on line A</strong> and <strong>50 on line B</strong>. Use these records for the Pareto chart and stratified comparison.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Control chart</strong><span>Is there a signal of process change?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <img src="./visuals/control.svg" width="1040" height="930" loading="lazy" alt="Mean and range charts for 12 subgroups. The mean diameter of the twelfth subgroup, 20.046 mm, exceeds its upper control limit. All ranges remain within their limits.">
+              <figcaption>Dotted lines mark centres and orange dashed lines mark control limits. Shading identifies the monitoring period. A diamond marks a point beyond a limit.</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Plot measurements in time order. The X̄ chart monitors subgroup means and the R chart monitors ranges. This example estimates limits from subgroups 1–10 and applies them to subgroups 11 and 12.</p>
+              <p class="quality-tool-reading">The twelfth mean is <strong>20.046 mm</strong>, above the upper control limit of 20.029 mm. All ranges lie within their limits. Control limits describe process variation. Product acceptance uses separate specification limits.</p>
+              <details class="quality-tool-data">
+                <summary>Control limits and calculations</summary>
+                <p>A subgroup range is its maximum minus its minimum. Across the first ten subgroups, the grand mean is 20.002 mm and the mean range R̄ is 0.0464 mm.</p>
+                <p>X̄ limits = centre line ± A₂R̄. The R chart uses D₃R̄ and D₄R̄. For subgroups of five, A₂ = 0.577, D₃ = 0 and D₄ = 2.115.</p>
+                <table class="quality-tool-table">
+                  <caption class="sr-only">Control limits and centre lines in millimetres</caption>
+                  <thead><tr><th scope="col">Control chart</th><th scope="col">Lower limit</th><th scope="col">Centre</th><th scope="col">Upper limit</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">X̄</th><td>19.975</td><td>20.002</td><td>20.029</td></tr>
+                    <tr><th scope="row">R</th><td>0.000</td><td>0.046</td><td>0.098</td></tr>
+                  </tbody>
+                </table>
+              </details>
+            </div>
+          </div>
+        </details>
+
+        <details class="quality-tool">
+          <summary><strong>Stratification</strong><span>Which line has the higher defect rate?</span></summary>
+          <div class="quality-tool-content">
+            <figure class="quality-tool-figure">
+              <div class="quality-tool-rate-chart">
+                <p class="quality-tool-rate-title">Defect rate by line (%)</p>
+                <div class="quality-tool-rate">
+                  <label for="quality-rate-a">Line A <strong>15.0%</strong></label>
+                  <meter id="quality-rate-a" min="0" max="20" value="15">15.0%</meter>
+                  <small>30 defective parts out of 200 inspected</small>
+                </div>
+                <div class="quality-tool-rate">
+                  <label for="quality-rate-b">Line B <strong>12.5%</strong></label>
+                  <meter id="quality-rate-b" min="0" max="20" value="12.5">12.5%</meter>
+                  <small>50 defective parts out of 400 inspected</small>
+                </div>
+                <div class="quality-tool-rate-scale" aria-hidden="true"><span>0%</span><span>10%</span><span>20%</span></div>
+              </div>
+              <figcaption>Defect rate (%) = defective parts ÷ inspected parts × 100</figcaption>
+            </figure>
+            <div class="quality-tool-copy">
+              <p>Compare groups sharing the same line, machine or shift. Where inspection volumes differ, use each group’s own inspected count as the denominator.</p>
+              <p class="quality-tool-reading">Line B has more defective parts. The defect rate on <strong>line A is 2.5 percentage points</strong> higher.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <nav class="quality-links quality-tool-references" aria-label="Quality tool references">
+        <a class="auditor-inline-link" href="https://asq.org/quality-resources/seven-basic-quality-tools">ASQ’s seven basic quality tools</a>
+        <a class="auditor-inline-link" href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm">NIST guide to X̄ and R control charts</a>
+      </nav>
+    </div>
+  </section>
+<section id="ai-management" class="section ai-management" aria-labelledby="ai-management-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="ai-management-title">ISO/IEC 42001 essentials</h2>
+        <p>ISO/IEC 42001:2023 sets requirements for establishing, operating and improving an artificial intelligence management system (AIMS) for organisations that develop, provide or use AI systems. A certification audit evaluates the management system within its defined scope.</p>
+      </div>
+
+      <section id="ai-concepts" aria-labelledby="ai-concepts-title">
+        <h3 id="ai-concepts-title">AI, AI systems and AI management systems</h3>
+        <table class="ai-concepts-table">
+          <caption class="sr-only">Comparison of AI, AI systems and AI management systems</caption>
+          <thead>
+            <tr><th scope="col">Category</th><th scope="col">Meaning and example</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Artificial intelligence<small lang="en">AI</small></th>
+              <td>The field that studies and develops methods and applications for implementing AI systems. <p><strong>Example</strong> A natural language processing technique that classifies enquiries by topic</p></td>
+            </tr>
+            <tr>
+              <th scope="row">AI system<small lang="en">AI system</small></th>
+              <td>A system designed to produce predictions, recommendations, content or decisions to meet human-defined objectives. <p><strong>Example</strong> An enquiry-routing service recommends a category and lets an agent review and change it</p></td>
+            </tr>
+            <tr>
+              <th scope="row">AI management system<small lang="en">AIMS</small></th>
+              <td>The policies, objectives and processes an organisation uses to develop, provide and use AI responsibly. <p><strong>Example</strong> The organisation sets operating criteria, assigns owners and manages the risks of misclassification and personal information processing</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ai-audit-focus" aria-labelledby="ai-audit-title">
+        <h3 id="ai-audit-title">What an auditor examines</h3>
+        <div class="ai-audit-grid">
+          <article>
+            <h4>Scope and responsibilities</h4>
+            <p class="ai-audit-clause">Clauses 4–5</p>
+            <p>Consider organisational roles and interested parties’ needs when defining the AIMS scope. Leadership establishes an AI policy and assigns roles, responsibilities and authority.</p>
+          </article>
+          <article>
+            <h4>AI risk assessment and treatment</h4>
+            <p class="ai-audit-clause">Clauses 6.1.2–6.1.3 and 8.2–8.3</p>
+            <p>Assess consequences and, where appropriate, likelihood. Assign treatment priorities and controls. For example, require a human review of the category assigned to an enquiry.</p>
+          </article>
+          <article>
+            <h4>AI system impact assessment</h4>
+            <p class="ai-audit-clause">Clauses 6.1.4 and 8.4</p>
+            <p>Consider how deployment, use and foreseeable misuse may affect individuals, groups and society. For example, check whether customers using one language wait longer for a response. Record the results and use them in risk assessment.</p>
+          </article>
+          <article>
+            <h4>Controls and the statement of applicability (SoA)</h4>
+            <p class="ai-audit-clause">Clause 6.1.3 and Annexes A–B</p>
+            <p>Compare necessary risk treatment controls with Annex A. Record necessary controls and reasons for inclusion or exclusion in the SoA. Consult Annex B for implementation guidance.</p>
+          </article>
+          <article>
+            <h4>Data and the AI lifecycle</h4>
+            <p class="ai-audit-clause">Clauses 7–8 and Annex A.6–A.7</p>
+            <p>Apply the selected controls to data provenance and quality, pre-deployment validation, operational monitoring, changes and retirement.</p>
+          </article>
+          <article>
+            <h4>Performance evaluation and improvement</h4>
+            <p class="ai-audit-clause">Clauses 9–10</p>
+            <p>Compare indicators against AI objectives. Evaluate effectiveness through internal audit and management review. Investigate nonconformities and verify the effectiveness of corrective action.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai-learning-resources" class="ai-learning-resources" aria-labelledby="ai-learning-resources-title">
+        <h3 id="ai-learning-resources-title">AI learning resources</h3>
+        <nav class="ai-management-links" aria-labelledby="ai-learning-resources-title">
+          <a class="auditor-inline-link" href="../ai-learning/">AI technology map</a>
+          <a class="auditor-inline-link" href="../ai-learning/#ai-history">Timeline of AI development</a>
+          <a class="auditor-inline-link" href="../ai-learning/#ai-system-architecture">AI, AI systems and AIMS</a>
+          <a class="auditor-inline-link" href="../ai-learning/#ml-technologies">AI, machine learning and deep learning</a>
+          <a class="auditor-inline-link" href="../ai-learning/#llm-architecture">LLM·Transformer</a>
+          <a class="auditor-inline-link" href="../ai-learning/#llm-rag">RAG and vector databases</a>
+          <a class="auditor-inline-link" href="../ai-learning/#llm-rag-lab">RAG practice lab</a>
+          <a class="auditor-inline-link" href="../ai-learning/#llm-orchestration">Orchestration and harnesses</a>
+        </nav>
+      </section>
+
+      <nav class="ai-management-links" aria-label="ISO/IEC 42001 training and references">
+        <a class="auditor-inline-link" href="../clauses/#iso-42001-clauses">ISO/IEC 42001 clause index</a>
+        <a class="auditor-inline-link" href="../iso-auditor-training/#iso-42001">KCLI three-day auditor course</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/42001">ISO/IEC 42001 publication</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/74296.html">ISO/IEC 22989 AI terminology and concepts</a>
+      </nav>
+    </div>
+  </section>
+<section id="iso-19011-guide" class="section audit-guide" aria-labelledby="iso-19011-guide-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="iso-19011-guide-title">ISO 19011 audit practice</h2>
+        <p>ISO 19011:2026 gives guidance on audit principles, managing audit programmes, conducting individual audits and evaluating auditor competence.</p>
+      </div>
+      <p>For the ISO 19011 course, 12 hours refers to recognised training time and can differ from video running time. Online and in-person learners need the credited hours, a written assessment, workshop training and a workshop assessment. The online route also includes a separate computer-based test alongside the common written assessment.</p>
+      <nav class="training-method-links audit-guide-links" aria-label="ISO 19011 topics">
+        <a class="auditor-inline-link" href="#iso-19011-visuals">Textbook diagrams</a>
+        <a class="auditor-inline-link" href="../iso-19011-classroom/#course-process" target="_top">Training and assessment process</a>
+        <a class="auditor-inline-link" href="../iso-19011-classroom/" target="_top">ISO 19011 course and assessment guide</a>
+        <a class="auditor-inline-link" href="#audit-glossary">Audit glossary</a>
+        <a class="auditor-inline-link" href="#audit-fundamentals">Auditor fundamentals</a>
+        <a class="auditor-inline-link" href="#audit-procedure">The audit process</a>
+        <a class="auditor-inline-link" href="#audit-findings">Conformity and nonconformity</a>
+      </nav>
+
+      <section id="iso-19011-visuals" class="textbook-visuals" aria-labelledby="iso-19011-visuals-title">
+        <h3 id="iso-19011-visuals-title">ISO 19011 textbook diagrams</h3>
+        <p class="textbook-visuals-intro">English diagrams adapted from KCLI’s ISO 19011:2026 auditor coursebook, version 1.4.</p>
+        <div class="textbook-visuals-grid">
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the audit programme diagram">
+              <img src="./visuals/iso-19011-audit-programme.svg" width="960" height="540" loading="lazy" decoding="async" alt="Programme objectives and a review of risks and opportunities lead into planning, implementation, monitoring, review and improvement." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 78 · Clause 5</p>
+              <h4>Managing an audit programme</h4>
+              <p>Review objectives, risks and opportunities, then establish, implement, monitor and improve the programme.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the six audit stages">
+              <img src="./visuals/iso-19011-audit-activities.svg" width="960" height="540" loading="lazy" decoding="async" alt="Clauses 6.2 to 6.7 cover initiation, preparation, conduct, reporting, completion and follow-up." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 150 · Clauses 6.2–6.7</p>
+              <h4>Six stages of an individual audit</h4>
+              <p>Follow the activities from initiation and preparation through conduct, reporting, completion and any follow-up.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the evidence-to-conclusion diagram">
+              <img src="./visuals/iso-19011-evidence-to-conclusion.svg" width="960" height="540" loading="lazy" decoding="async" alt="Sample information, verify evidence, compare it with criteria and review findings to reach audit conclusions." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 220 · Clauses 6.4.7–6.4.9</p>
+              <h4>From information to audit conclusions</h4>
+              <p>Compare verified evidence with audit criteria to develop findings. The team reviews the findings together before reaching its conclusions.</p>
+            </figcaption>
+          </figure>
+          <figure class="textbook-figure">
+            <button type="button" class="textbook-figure-image" aria-haspopup="dialog" aria-controls="textbook-preview" aria-label="Enlarge the auditor competence diagram">
+              <img src="./visuals/iso-19011-auditor-competence.svg" width="960" height="540" loading="lazy" decoding="async" alt="Identify the competence needed, define criteria, select methods, evaluate performance and use the results to develop auditors and select teams." draggable="false">
+              <span>Enlarge<b aria-hidden="true">＋</b></span>
+            </button>
+            <figcaption>
+              <p class="textbook-source">Coursebook slide 293 · Clause 7</p>
+              <h4>Evaluating auditor competence</h4>
+              <p>Choose evaluation criteria and methods that reflect the competence required. Use the results to form teams and develop auditors.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="audit-glossary" aria-labelledby="audit-glossary-title">
+        <h3 id="audit-glossary-title">Audit glossary</h3>
+        <div class="audit-grid">
+          <div class="audit-panel">
+            <h4>Types of audit and participants</h4>
+            <dl class="audit-glossary-terms">
+              <div>
+                <dt>Management system</dt>
+                <dd>An organisation’s interconnected roles and processes for establishing policies and objectives and achieving them.</dd>
+              </div>
+              <div>
+                <dt>Audit</dt>
+                <dd>A systematic, independent and documented process for evaluating evidence against criteria.</dd>
+              </div>
+              <div>
+                <dt>First-party audit</dt>
+                <dd>An internal audit of an organisation’s management system by the organisation or on its behalf.</dd>
+              </div>
+              <div>
+                <dt>Second-party audit</dt>
+                <dd>An audit by an interested party, or on its behalf. A customer auditing its supplier is a typical example.</dd>
+              </div>
+              <div>
+                <dt>Third-party audit</dt>
+                <dd>An audit by an external party independent of the auditee, such as a certification body auditing a management system.</dd>
+              </div>
+              <div>
+                <dt>Auditor and audit team leader</dt>
+                <dd>The auditor evaluates evidence within an assigned scope and records findings. The team leader coordinates the team, conclusions and reporting.</dd>
+              </div>
+              <div>
+                <dt>Auditee</dt>
+                <dd>The organisation, or part of an organisation, under audit.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="audit-panel">
+            <h4>Planning and evidence</h4>
+            <dl class="audit-glossary-terms">
+              <div>
+                <dt>Audit objectives</dt>
+                <dd>What the audit aims to establish, such as whether release inspection procedures are followed.</dd>
+              </div>
+              <div>
+                <dt>Audit scope</dt>
+                <dd>The boundaries of an individual audit, including the sites, functions, processes and period to be examined.</dd>
+              </div>
+              <div>
+                <dt>Audit criteria</dt>
+                <dd>Requirements against which audit evidence is compared. Examples include clauses in a standard and an organisation’s own procedures.</dd>
+              </div>
+              <div>
+                <dt>Audit programme and audit plan</dt>
+                <dd>An audit programme manages one or more audits over a period to meet a purpose. An audit plan specifies activities, timing and roles for one audit.</dd>
+              </div>
+              <div>
+                <dt>Documented information</dt>
+                <dd>Information an organisation must control, together with its medium. Examples include procedures and electronic inspection records.</dd>
+              </div>
+              <div>
+                <dt>Objective evidence and audit evidence</dt>
+                <dd>Objective evidence supports the existence or truth of something. Verifiable records, statements and observations relevant to the audit criteria can serve as audit evidence.</dd>
+              </div>
+              <div>
+                <dt>Sampling</dt>
+                <dd>Selecting some records or activities for examination. For example, choose release inspection records from different dates and shifts.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="audit-panel">
+            <h4>Findings and follow-up</h4>
+            <dl class="audit-glossary-terms">
+              <div>
+                <dt>Audit findings</dt>
+                <dd>Results of evaluating the evidence against the criteria, including conformity and nonconformity findings.</dd>
+              </div>
+              <div>
+                <dt>Audit conclusions</dt>
+                <dd>The team’s overall judgement after considering audit objectives and findings.</dd>
+              </div>
+              <div>
+                <dt>Conformity and nonconformity</dt>
+                <dd>Conformity means a requirement is fulfilled. Record a nonconformity when evidence shows a specific requirement has not been fulfilled.</dd>
+              </div>
+              <div>
+                <dt>Major and minor nonconformity</dt>
+                <dd>A major nonconformity affects the management system’s ability to achieve its intended results. A minor nonconformity leaves that ability intact.</dd>
+              </div>
+              <div>
+                <dt>Opportunity for improvement</dt>
+                <dd>An area where system operation or effectiveness could improve. The certification scheme determines whether auditors may record such opportunities.</dd>
+              </div>
+              <div>
+                <dt>Correction</dt>
+                <dd>An action to resolve a detected nonconformity, such as reworking a nonconforming product.</dd>
+              </div>
+              <div>
+                <dt>Corrective action</dt>
+                <dd>An action to eliminate a cause of a nonconformity and prevent recurrence. Check the effectiveness of the action after implementation.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="audit-panel">
+            <h4>Management system certification</h4>
+            <dl class="audit-glossary-terms">
+              <div>
+                <dt>Certification and accreditation</dt>
+                <dd>A certification body formally confirms that an organisation’s management system meets requirements. An accreditation body evaluates a certification body’s competence for a specified scope.</dd>
+              </div>
+              <div>
+                <dt>Scope of certification</dt>
+                <dd>The boundaries covered by the certificate, including the certified sites, activities, products or services.</dd>
+              </div>
+              <div>
+                <dt>Stage 1 audit</dt>
+                <dd>The initial certification review of scope, documented information and site conditions to evaluate readiness for stage 2.</dd>
+              </div>
+              <div>
+                <dt>Stage 2 audit</dt>
+                <dd>An evaluation of implementation and effectiveness using interviews, on-site observation and operational records.</dd>
+              </div>
+              <div>
+                <dt>Certification decision</dt>
+                <dd>Personnel independent of the audit review the results and decide whether to grant or renew certification.</dd>
+              </div>
+              <div>
+                <dt>Surveillance audit</dt>
+                <dd>A periodic audit during the certification cycle to assess continued compliance with management system requirements.</dd>
+              </div>
+              <div>
+                <dt>Recertification audit</dt>
+                <dd>An audit before expiry to evaluate the continued conformity and effectiveness of the system and provide evidence for the renewal decision.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="audit-highlight">
+          <h4>Case study · Missing release inspection approval</h4>
+          <p>This fictional manufacturing case is a training example.</p>
+          <dl class="audit-rows">
+            <div><dt>Audit criteria</dt><dd>The company’s procedure requires a designated reviewer to approve the electronic inspection record before shipment.</dd></div>
+            <div><dt>Audit evidence</dt><dd>Comparison of sampled shipment and inspection records found one inspection record without approval at the time of shipment.</dd></div>
+            <div><dt>Nonconformity</dt><dd>The sampled shipment failed to meet the requirement for inspection record approval before release.</dd></div>
+            <div><dt>Correction</dt><dd>The company rechecked the inspection results and conformity of the shipped product and recorded its disposition.</dd></div>
+            <div><dt>Corrective action</dt><dd>The release process lacked a control for checking approval status. The company changed the system to allow only approved releases and tested that it blocked unapproved shipments.</dd></div>
+          </dl>
+        </div>
+        <nav class="training-method-links audit-guide-links" aria-label="Audit glossary references">
+          <a class="auditor-inline-link" href="https://www.iso.org/standard/19011">ISO 19011:2026 auditing guidance</a>
+          <a class="auditor-inline-link" href="https://www.iso.org/standard/61651.html">ISO/IEC 17021-1:2015 requirements for certification bodies</a>
+          <a class="auditor-inline-link" href="https://www.iso.org/standard/9000">ISO 9000:2026 quality management vocabulary</a>
+          <a class="auditor-inline-link" href="../institute/#certification-system">Certification system and organisational roles</a>
+        </nav>
+      </section>
+
+      <section id="audit-fundamentals" aria-labelledby="audit-fundamentals-title">
+        <h3 id="audit-fundamentals-title">Auditor fundamentals</h3>
+        <div class="audit-grid">
+          <article class="audit-panel">
+            <h4>Seven audit principles <span class="audit-clause">Clause 4</span></h4>
+            <p>Apply integrity, fair presentation, due professional care, confidentiality, independence, evidence-based auditing and risk-based auditing. Identify conflicts of interest and base judgements on verifiable evidence.</p>
+          </article>
+          <article class="audit-panel">
+            <h4>Auditor competence and evaluation <span class="audit-clause">Clause 7</span></h4>
+            <p>Understand the applicable standard and subject area. Collect and verify evidence through interviews, observation and records. Build competence through training and audit experience and assess it by combining methods such as record review and witnessing an audit.</p>
+          </article>
+        </div>
+        <p>The team leader assigns work and coordinates conclusions and reporting. Auditors examine evidence in their assigned areas and record findings.</p>
+      </section>
+
+      <section id="audit-procedure" aria-labelledby="audit-procedure-title">
+        <h3 id="audit-procedure-title">The audit process</h3>
+        <p>An audit programme under clause 5 coordinates objectives, schedules and resources over time. For each audit, establish objectives, scope and criteria and use the steps in clause 6.</p>
+        <ol class="audit-grid audit-steps" role="list">
+          <li class="audit-panel"><h4><span class="audit-clause">6.2</span> Initiate the audit</h4><p>Contact the auditee to confirm objectives, scope and criteria. Check whether information and resources are available and whether the audit is feasible.</p></li>
+          <li class="audit-panel"><h4><span class="audit-clause">6.3</span> Prepare audit activities</h4><p>Review documented information, consider risks and determine the activities, schedule, methods and team responsibilities.</p></li>
+          <li class="audit-panel"><h4><span class="audit-clause">6.4</span> Conduct audit activities</h4><p>Hold the opening meeting. Gather and verify evidence through interviews, observation and records. Compare evidence with criteria, agree on findings and conclusions and explain them at the closing meeting.</p></li>
+          <li class="audit-panel"><h4><span class="audit-clause">6.5</span> Prepare and distribute the report</h4><p>Document objectives, scope, criteria, evidence, findings and conclusions. State sampling limitations and unresolved differences, then send the report to the designated recipients.</p></li>
+          <li class="audit-panel"><h4><span class="audit-clause">6.6</span> Complete the audit</h4><p>Confirm the planned or agreed activities are complete. Manage records and confidential information under the agreed procedures.</p></li>
+          <li class="audit-panel"><h4><span class="audit-clause">6.7</span> Follow up</h4><p>Where applicable, verify that the auditee has completed corrections and corrective actions and that those actions are effective.</p></li>
+        </ol>
+        <div class="audit-highlight">
+          <h4>Stages of an initial certification audit <span class="audit-clause">ISO/IEC 17021-1</span></h4>
+          <dl class="audit-rows">
+            <div><dt>Stage 1</dt><dd>Review scope, documented information and site conditions and assess readiness for stage 2.</dd></div>
+            <div><dt>Stage 2</dt><dd>Assess how the organisation implements requirements and how effectively its management system operates. Use interviews, observation and records.</dd></div>
+          </dl>
+          <p>Personnel or a committee independent of the audit make the certification decision.</p>
+        </div>
+      </section>
+
+      <section id="audit-findings" aria-labelledby="audit-findings-title">
+        <h3 id="audit-findings-title">Conformity and nonconformity</h3>
+        <p>Compare verified audit evidence with the criteria to develop findings such as conformity or nonconformity (6.4.7–6.4.8). The team reviews its objectives and all findings to arrive at conclusions (6.4.9).</p>
+        <div class="audit-highlight">
+          <h4>Case study · Calibration status</h4>
+          <p><strong>The audit criterion</strong> is the organisation’s procedure requiring the calibration status of measuring equipment in use to be identifiable.</p>
+          <dl class="audit-rows">
+            <div><dt>Conformity</dt><dd>The requirements are fulfilled. The label and calibration register both confirmed the status of micrometer M-07.</dd></div>
+            <div><dt>Nonconformity</dt><dd>Micrometer M-12 was in use without an identifiable status label or an entry in the calibration register. Its status could not be established.</dd></div>
+          </dl>
+          <p>Document the applicable requirement, what was found and where, and why the evidence shows that the requirement was not fulfilled.</p>
+        </div>
+        <div class="audit-grid audit-findings-notes">
+          <article class="audit-panel">
+            <h4>Major and minor nonconformity</h4>
+            <p>Under ISO/IEC 17021-1, a major nonconformity affects the system’s ability to achieve its intended results. With a minor nonconformity, the system retains that ability.</p>
+          </article>
+          <article class="audit-panel">
+            <h4>Correction and corrective action</h4>
+            <p>Verifying calibration and updating the equipment label and register is a correction. If a missing pre-use check caused the omission, revise that procedure and verify whether recurrence has been prevented.</p>
+          </article>
+        </div>
+      </section>
+
+      <nav class="training-method-links audit-guide-links" aria-label="ISO 19011 learning resources">
+        <a class="auditor-inline-link" href="../clauses/#iso-19011-clauses">ISO 19011:2026 clause index</a>
+        <a class="auditor-inline-link" href="../iso-auditor-training/">KCLI auditor training guide</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/19011">ISO 19011 publication</a>
+        <a class="auditor-inline-link" href="https://www.iso.org/standard/61651.html">ISO/IEC 17021-1 publication</a>
+      </nav>
+    </div>
+  </section>
+</main>
+<dialog id="textbook-preview" class="textbook-preview" aria-labelledby="textbook-preview-title">
+  <form method="dialog" class="textbook-preview-header"><h2 id="textbook-preview-title">Coursebook diagram</h2><button class="textbook-preview-close" autofocus>Close</button></form>
+  <div class="textbook-preview-media"></div>
+</dialog>
+<footer class="site-footer"><div class="container footer-top"><a class="brand" href="../"><strong>KCLI</strong></a><nav aria-label="Footer navigation"><a href="../">English home</a><a href="../#course-inquiries">Contact KCLI</a></nav></div></footer>
+</body></html>

@@ -1,4 +1,5 @@
 document.documentElement.classList.add('js');
+const isEnglish = document.documentElement.lang.startsWith('en');
 
 // Leave domain-forwarding frames before opening the cookie-based LMS.
 document.querySelectorAll('a[href]').forEach((link) => {
@@ -12,7 +13,7 @@ const forwardedHosts = new Set(['kcli.ai.kr', 'www.kcli.ai.kr']);
 const framed = window.self !== window.top;
 const insecureAlias = location.protocol === 'http:' && forwardedHosts.has(location.hostname);
 if (framed || insecureAlias) {
-  const english = document.documentElement.lang.startsWith('en');
+  const english = isEnglish;
   const officialHome = 'https://roknnaoms-hub.github.io/kcli-homepage/';
   const canonical = document.querySelector('link[rel="canonical"]')?.href;
   const destination = new URL(canonical?.startsWith(officialHome) ? canonical : officialHome);
@@ -38,7 +39,7 @@ if (framed || insecureAlias) {
   notice.append(message);
   [
     [destination.href, english ? 'Open secure KCLI website' : '보안 홈페이지 열기'],
-    ['https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom', english ? 'Student sign in' : '수강생 로그인']
+    ['https://kcli-iso19011-records.roknaoms.chatgpt.site/classroom' + (english ? '?lang=en' : ''), english ? 'Student sign in' : '수강생 로그인']
   ].forEach(([href, label]) => {
     const link = document.createElement('a');
     link.href = href;
@@ -134,24 +135,37 @@ const inquiryType = document.getElementById('inquiry-type');
 const inquiryMail = document.getElementById('inquiry-mail');
 if (inquiryType) {
   const selectedCourse = new URLSearchParams(location.search).get('course');
-  if (Array.from(inquiryType.options).some((option) => option.dataset.standard && option.value === selectedCourse)) {
+  if (Array.from(inquiryType.options).some((option) => option.value === selectedCourse)) {
     inquiryType.value = selectedCourse;
   }
 }
-const inquiryPrompts = {
+const inquiryPrompts = isEnglish ? {
+  organization: ['Group training enquiry', 'Organisation: \nTraining goals: \nExpected group size: \nPreferred dates and format: '],
+  knowledge: ['AI and knowledge partnership enquiry', 'Organisation: \nPartnership topic: \nProject needs: \nPreferred dates: '],
+  regional: ['Southeast Asia ISO training enquiry', 'Organisation or individual: \nISO standard: \nExpected group size: \nPreferred dates and format: \nTeaching language: ']
+} : {
   organization: ['기업·기관 교육 협력 문의', '기관명: \n희망 교육 주제: \n참여 대상·인원: \n희망 일정·방식: \n기대 결과: '],
   knowledge: ['AI·지식정보 분야 협력 문의', '기관명: \n협력 주제: \n현재 업무 현안: \n희망 일정: \n문의사항: ']
 };
 function updateInquiry() {
   if (!inquiryType || !inquiryMail) return;
   const standard = inquiryType.selectedOptions[0]?.dataset.standard;
-  const [subject, body] = inquiryPrompts[inquiryType.value] ?? [
+  const [subject, body] = inquiryPrompts[inquiryType.value] ?? (isEnglish ? [
+    (standard || 'ISO auditor') + ' training enquiry',
+    'Standard: ' + (standard || '') + '\nCurrent role or experience: \nPreferred dates: \nTeaching language: \nQuestions: '
+  ] : [
     `${standard ?? 'ISO 심사원'} 교육 문의`,
     `관심 규격: ${standard ?? ''}\n현재 업무 또는 경력: \n희망 일정: \n문의사항: `
-  ];
-  inquiryMail.href = 'mailto:roknaoms@naver.com?subject=' + encodeURIComponent('[KCLI] ' + subject) + '&body=' + encodeURIComponent(body);
+  ]);
+  const country = document.getElementById('enquiry-country')?.value;
+  const timezone = document.getElementById('enquiry-timezone')?.value.trim();
+  const region = isEnglish ? [country && 'Country or region: ' + country, timezone && 'Time zone: ' + timezone].filter(Boolean) : [];
+  const draft = [...region, body].join('\n');
+  inquiryMail.href = 'mailto:roknaoms@naver.com?subject=' + encodeURIComponent('[KCLI] ' + subject) + '&body=' + encodeURIComponent(draft);
 }
 inquiryType?.addEventListener('change', updateInquiry);
+document.getElementById('enquiry-country')?.addEventListener('change', updateInquiry);
+document.getElementById('enquiry-timezone')?.addEventListener('input', updateInquiry);
 document.querySelectorAll('a[data-course]').forEach((link) => {
   link.addEventListener('click', () => {
     if (!inquiryType) return;
@@ -171,7 +185,7 @@ if (textbookPreview) {
       const thumbnail = button.querySelector('img');
       const image = new Image();
       image.src = thumbnail?.src ?? button.dataset.previewSrc;
-      image.alt = thumbnail?.alt ?? `${heading} 4~10항 도표`;
+      image.alt = thumbnail?.alt ?? (isEnglish ? heading + ', clauses 4–10' : `${heading} 4~10항 도표`);
       image.draggable = false;
       title.textContent = heading;
       media.replaceChildren(image);
@@ -189,9 +203,9 @@ if (copyEmail) {
     const status = document.getElementById('inquiry-status');
     try {
       await navigator.clipboard.writeText('roknaoms@naver.com');
-      status.textContent = '이메일 주소를 복사했습니다: roknaoms@naver.com';
+      status.textContent = isEnglish ? 'Email address copied: roknaoms@naver.com' : '이메일 주소를 복사했습니다: roknaoms@naver.com';
     } catch {
-      status.textContent = '자동 복사를 사용할 수 없습니다. 주소를 직접 복사해 주세요: roknaoms@naver.com';
+      status.textContent = isEnglish ? 'Copy the email address manually: roknaoms@naver.com' : '자동 복사를 사용할 수 없습니다. 주소를 직접 복사해 주세요: roknaoms@naver.com';
     }
   });
 }

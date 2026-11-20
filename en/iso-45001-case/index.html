@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ISA6rP7rmEgF9nlub+fLgjeTDK7gbyyDKLAmyPKS1V8='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>ISO 45001 audit case study | A shipyard near miss | KCLI</title>
+  <meta name="description" content="Work through a fictional near miss between a materials vehicle and a pedestrian. Examine worker participation, risk assessment and the evidence of effective corrective action.">
+  <link rel="canonical" href="https://roknnaoms-hub.github.io/kcli-homepage/en/iso-45001-case/">
+  <link rel="alternate" hreflang="x-default" href="https://roknnaoms-hub.github.io/kcli-homepage/iso-45001-case/"><link rel="alternate" hreflang="ko" href="https://roknnaoms-hub.github.io/kcli-homepage/iso-45001-case/"><link rel="alternate" hreflang="en" href="https://roknnaoms-hub.github.io/kcli-homepage/en/iso-45001-case/"><meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Korea Cyber Literacy Institute">
+  <meta property="og:title" content="ISO 45001 audit case study | Following up a shipyard near miss">
+  <meta property="og:description" content="A signed training register is on file. Did the next shift actually face less risk? Trace the evidence from a near-miss report to verification of corrective action.">
+  <meta property="og:url" content="https://roknnaoms-hub.github.io/kcli-homepage/en/iso-45001-case/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/kcli-mark.svg">
+  <style>
+:root {
+  --navy: #071d38;
+  --ink: #102a43;
+  --line: #d9dfe1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 1rem/1.65 system-ui, "Malgun Gothic", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+a { color: inherit; text-underline-offset: .2em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #1688ad; outline-offset: 3px; }
+.container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  z-index: 1;
+  padding: 8px 16px;
+  background: #f1c75b;
+  transform: translateY(-150%);
+}
+.skip-link:focus { transform: none; }
+.site-header { background: #f6f5f0; border-bottom: 1px solid var(--line); }
+.header-inner, .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-block: 15px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand span { display: grid; line-height: 1.3; }
+.brand strong { font-size: 1.25rem; letter-spacing: .12em; }
+.brand small { font-size: .72rem; }
+.site-nav, .footer-top nav, .guide-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-nav a:hover, .brand:hover { text-decoration: underline; }
+.guide-hero {
+  padding-block: clamp(30px, 6vw, 72px);
+  background: #f6f5f0;
+}
+.guide-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: .85rem;
+}
+.guide-breadcrumb li + li::before { content: "/"; margin-right: 10px; color: #597485; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.22; letter-spacing: -.045em; }
+.guide-hero p { margin: 16px 0 24px; color: #465c6b; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--navy);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button.primary { background: var(--navy); color: white; }
+.button:hover { text-decoration: underline; }
+.guide-content { padding-block: clamp(36px, 6vw, 72px); }
+.guide-content h2 { margin: 0 0 12px; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.4; }
+.site-footer { padding-block: 20px; background: var(--navy); color: white; }
+.footer-top p { margin: 0; font-size: .9rem; }
+@media (max-width: 640px) {
+  .header-inner { gap: 4px; }
+  .site-nav { width: 100%; gap: 2px 12px; }
+}
+
+.case-cover {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 86px);
+}
+
+.case-cover h1 {
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.case-cover .case-record {
+  margin: 0;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid var(--line);
+  border-top: 4px solid #527764;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.case-record .record-label {
+  margin: 0 0 5px;
+  color: #466853;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.case-record h2 {
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+}
+
+.case-record dl {
+  margin: 0;
+}
+
+.case-record dl > div {
+  display: grid;
+  grid-template-columns: 5em minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.case-record dt {
+  color: #4c5f6c;
+}
+
+.case-record dd {
+  margin: 0;
+}
+
+.case-content {
+  max-width: 880px;
+}
+
+.case-content section + section {
+  margin-top: clamp(34px, 6vw, 62px);
+}
+
+.case-content p {
+  color: #40586a;
+  line-height: 1.8;
+}
+
+.evidence-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid #adbdc4;
+}
+
+.evidence-list li {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.4fr);
+  gap: 24px;
+  padding-block: 18px;
+}
+
+.evidence-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.evidence-list h3,
+.evidence-list p {
+  margin: 0;
+}
+
+.evidence-list h3 {
+  font-size: 1.08rem;
+}
+
+.evidence-list small {
+  color: #486951;
+}
+
+.case-exercise {
+  padding: clamp(20px, 4vw, 34px);
+  border-left: 4px solid #527764;
+  background: #f1f5f1;
+}
+
+.case-exercise summary {
+  padding-block: 8px;
+  color: var(--navy);
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.sample-answer {
+  padding-top: 4px;
+  border-top: 1px solid #c5d3c8;
+}
+
+.sample-answer strong {
+  display: block;
+  color: var(--ink);
+}
+
+.sample-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.case-references ul {
+  padding-left: 1.2em;
+}
+
+.case-references li + li {
+  margin-top: 6px;
+}
+
+.case-references .guide-actions {
+  margin-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .case-cover,
+  .evidence-list li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .evidence-list li {
+    gap: 6px;
+  }
+}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "ISO 45001 audit case study | Following up a shipyard near miss",
+  "url": "https://roknnaoms-hub.github.io/kcli-homepage/en/iso-45001-case/",
+  "inLanguage": "en",
+  "learningResourceType": "Audit case study",
+  "teaches": "How to compare a near-miss report with workplace evidence to evaluate the effectiveness of corrective action.",
+  "about": {
+    "@type": "DefinedTerm",
+    "name": "ISO 45001:2018",
+    "url": "https://www.iso.org/standard/45001"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "@id": "https://roknnaoms-hub.github.io/kcli-homepage/#kcli",
+    "name": "Korea Cyber Literacy Institute"
+  },
+  "dateModified": "2026-11-20"
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Korea Cyber Literacy Institute home">
+      <img class="brand-mark" src="../../assets/kcli-mark.svg" width="40" height="30" alt="">
+      <span><strong>KCLI</strong><small>Korea Cyber Literacy Institute</small></span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="../iso-auditor-training/#iso-45001">ISO 45001 course</a>
+      <a href="../clauses/#iso-45001-clauses">Standard clauses</a>
+      <a href="#exercise">Audit exercise</a>
+      <a class="nav-cta" href="../?course=iso-45001#contact">Training enquiries</a>
+    <a href="../../iso-45001-case/" lang="ko" hreflang="ko" aria-label="Korean version · 한국어">한국어</a></nav>
+  </div>
+</header>
+<main id="main" class="safety-case">
+  <div class="guide-hero">
+    <div class="container case-cover">
+      <div>
+        <nav class="guide-breadcrumb" aria-label="Breadcrumb">
+          <ol><li><a href="../">KCLI home</a></li><li aria-current="page">ISO 45001 audit case study</li></ol>
+        </nav>
+        <h1>A shipyard near miss.<br>Can the action be closed?</h1>
+        <p>At a shift change, a worker and a materials vehicle met in the same passage. No one was injured. Read the report in the safety information system and decide whether the risk to the next shift has been reduced.</p>
+        <div class="guide-actions"><a class="button primary" href="#evidence">Examine the audit evidence <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <section class="case-record" aria-labelledby="record-title">
+        <p class="record-label">Fictional KCLI training case</p>
+        <h2 id="record-title">Near-miss report</h2>
+        <dl>
+          <div><dt>Incident ID</dt><dd>NM-017</dd></div>
+          <div><dt>Location</dt><dd>Intersection of the materials delivery route and pedestrian walkway</dd></div>
+          <div><dt>Status</dt><dd><strong>Training delivered · action marked complete</strong></dd></div>
+          <div><dt>Attachment</dt><dd>Day shift safety training attendance register</dd></div>
+        </dl>
+      </section>
+    </div>
+  </div>
+
+  <div class="container guide-content case-content">
+    <section id="evidence" aria-labelledby="evidence-title">
+      <h2 id="evidence-title">What evidence can you trace using one incident ID?</h2>
+      <p>An ISO 45001 audit examines the organisation’s occupational health and safety management system. In this exercise, use the safety information system to link one incident report to the risk assessment, action records and site observations.</p>
+      <ol class="evidence-list">
+        <li>
+          <div><h3>Incident report and worker input</h3><small>Clauses 5.4 and 10.2</small></div>
+          <p>Ask the driver and the pedestrian separately where they were and what each could see. Compare the locations they identify with the reported time to establish which activities overlapped.</p>
+        </li>
+        <li>
+          <div><h3>Risk assessment and choice of controls</h3><small>Clauses 6.1.2 and 8.1.2</small></div>
+          <p>Check whether the risk assessment and route plan account for a potential collision at shift change. Find out whether rerouting or physical separation was considered and how workers’ views influenced the choice of control.</p>
+        </li>
+        <li>
+          <div><h3>Implementation and records</h3><small>Clauses 7.5 and 10.2</small></div>
+          <p>Identify the person responsible and the due date. If the action was to change a route, use the incident ID to trace the revised layout, installation records and communication to each shift.</p>
+        </li>
+        <li>
+          <div><h3>Effectiveness and closure</h3><small>Clauses 9.1.1 and 10.2</small></div>
+          <p>Observe the routes vehicles and workers take at day and night shift changes. Record your observations and worker interviews. If risk remains, revisit the risk assessment and action plan.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="exercise" class="case-exercise" aria-labelledby="exercise-title">
+      <h2 id="exercise-title">What would you record as the auditor?</h2>
+      <p>The day shift attendance register is the only attachment. Write one sentence stating what the evidence establishes and one identifying what you still need to check.</p>
+      <details>
+        <summary>Show a sample audit note</summary>
+        <div class="sample-answer">
+          <p><strong>Verified facts</strong> The register confirms attendance at day shift safety training. It provides insufficient evidence to determine whether the collision risk at shift change has decreased.</p>
+          <p><strong>Further checks</strong> Compare the actual routes on both shifts and the driver and pedestrian interviews with the risk assessment. Use the findings to assess effectiveness and decide whether the evidence supports closure.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="case-references" aria-labelledby="references-title">
+      <h2 id="references-title">Standards and further reading</h2>
+      <ul>
+        <li><a class="auditor-inline-link" href="https://www.iso.org/standard/45001">ISO 45001:2018 occupational health and safety management systems</a></li>
+        <li><a class="auditor-inline-link" href="https://moel.go.kr/news/enews/report/enewsView.do?news_seq=19924">Korean Ministry of Employment and Labour · workplace design separating vehicle routes and walkways (Korean)</a></li>
+        <li><a class="auditor-inline-link" href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html">US National Institute for Occupational Safety and Health (NIOSH) · hierarchy of controls</a></li>
+      </ul>
+      <div class="guide-actions">
+        <a class="button primary" href="../?course=iso-45001#contact">Enquire about ISO 45001 training</a>
+        <a class="button outline" href="../clauses/#iso-45001-clauses">ISO 45001 clause list</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <a class="brand" href="../"><img class="brand-mark" src="../../assets/kcli-mark.svg" width="40" height="30" alt=""><span><strong>KCLI</strong><small>Korea Cyber Literacy Institute</small></span></a>
+    <p>ISO management system auditor training<br>Gasan Digital Industrial Complex, Seoul</p>
+    <nav aria-label="Footer navigation"><a href="../">Home</a><a href="../iso-auditor-training/">Compare courses</a></nav>
+  </div>
+</footer>
+<script>if (window.self !== window.top) import("../../js/app.js?v=secure-20261118");</script>
+</body>
+</html>
