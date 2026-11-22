@@ -5,6 +5,7 @@ const topicPages = {
   'training-method': 'institute', business: 'institute', 'certification-system': 'institute',
   records: 'institute', iqcs: 'institute', 'iqcs-designation': 'institute', faq: 'institute',
   'management-strategy': 'reading', humanities: 'reading',
+  'iso-9001-concession': 'audit-practice', 'iso-9001-performance': 'audit-practice',
   'quality-management': 'audit-practice', 'swot-analysis': 'audit-practice',
   'lean-six-sigma-tools': 'audit-practice', 'ai-management': 'audit-practice', 'iso-19011-guide': 'audit-practice',
   'iso-clauses': 'clauses', 'auditor-registration': 'iqcs-auditor-registration'
