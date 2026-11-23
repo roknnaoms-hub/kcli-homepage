@@ -40,3 +40,36 @@ if (homeLanguageLink) {
   matchHomepageLanguage();
   window.addEventListener('hashchange', matchHomepageLanguage);
 }
+
+// The Korean course notes have their own page; the English notes live in Audit practice.
+const englishHome = document.documentElement.lang === 'en';
+const lessonPath = englishHome ? './audit-practice/' : './iso-9001-learning/';
+const qualityLessons = [
+  { id: 'iso-9001-competence', clause: '7.2', label: englishHome ? '7.2 Competence' : '7.2 역량' },
+  { id: 'turtle-diagram', clause: '4.4', label: englishHome ? '4.4 Turtle diagram' : '4.4 터틀 다이어그램' }
+];
+const learningLinks = document.querySelector(englishHome ? '#learning .iso-path .path-links' : '#learning-hub .iso-path .path-links');
+const qualityLinks = document.querySelector('#quality-management .quality-links');
+function addQualityLessonLink(container, lesson, className) {
+  if (!container) return;
+  const link = document.createElement('a');
+  link.href = lessonPath + '#' + lesson.id;
+  link.textContent = lesson.label;
+  if (className) link.className = className;
+  container.append(link);
+}
+const clauseRows = document.querySelectorAll('#iso-9001-clauses tr');
+for (const lesson of qualityLessons) {
+  addQualityLessonLink(learningLinks, lesson);
+  addQualityLessonLink(qualityLinks, lesson, 'auditor-inline-link');
+  for (const row of clauseRows) {
+    if (row.querySelector('th[scope="row"]')?.textContent.trim() !== lesson.clause) continue;
+    const cell = row.querySelector('td');
+    if (cell && !cell.querySelector('a')) {
+      const link = document.createElement('a');
+      link.href = lessonPath + '#' + lesson.id;
+      link.textContent = cell.textContent;
+      cell.replaceChildren(link);
+    }
+  }
+}

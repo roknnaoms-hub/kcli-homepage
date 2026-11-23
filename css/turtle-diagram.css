@@ -1,0 +1,80 @@
+.turtle-figure {
+  margin: 1.5rem 0;
+}
+.turtle-figure figcaption {
+  margin-bottom: .75rem;
+  font-weight: 700;
+}
+.turtle-map {
+  --gap: clamp(1.2rem, 2.4vw, 2rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas: "resources . people" "input process output" "method . measure";
+  gap: .75rem var(--gap);
+  margin: 0;
+}
+.turtle-map > div {
+  position: relative;
+  padding: .85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: #f6f8fa;
+}
+.turtle-map dt { margin-bottom: .3rem; }
+.turtle-resources { grid-area: resources; }
+.turtle-people { grid-area: people; }
+.turtle-method { grid-area: method; }
+.turtle-measure { grid-area: measure; }
+.turtle-input { grid-area: input; }
+.turtle-output { grid-area: output; }
+.turtle-map .turtle-process {
+  grid-area: process;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.turtle-map .turtle-process dt, .turtle-map .turtle-process dd { color: #fff; }
+.turtle-map .turtle-input, .turtle-map .turtle-output { background: #eaf2f6; }
+.turtle-process::before, .turtle-process::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  width: var(--gap);
+  color: var(--navy-2);
+  text-align: center;
+  transform: translateY(-50%);
+}
+.turtle-process::before { right: 100%; }
+.turtle-process::after { left: 100%; }
+.competence-poster { margin-top: 1rem; }
+.competence-poster summary {
+  width: fit-content;
+  padding: .5rem 0;
+  color: var(--navy-2);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+  cursor: pointer;
+}
+.competence-poster img { display: block; width: min(100%, 44rem); height: auto; margin-top: .75rem; }
+@media (max-width: 700px) {
+  .turtle-map {
+    grid-template-columns: 1fr;
+    grid-template-areas: "input" "process" "output" "resources" "people" "method" "measure";
+    gap: .5rem;
+  }
+  .turtle-map .turtle-process { margin-block: .65rem; }
+  .turtle-process::before, .turtle-process::after {
+    content: "↓";
+    left: 50%;
+    right: auto;
+    width: auto;
+    line-height: 1.15rem;
+    transform: translateX(-50%);
+  }
+  .turtle-process::before { top: auto; bottom: 100%; }
+  .turtle-process::after { top: 100%; }
+}
+
+.lesson-page h1 { margin: 0 0 1rem; font-size: clamp(1.65rem, 4vw, 2.75rem); line-height: 1.25; }
+.lesson-page .quality-panel h2 { margin: 0 0 .75rem; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.3; }
+.lesson-page .quality-panel h3 { margin: 1.25rem 0 .5rem; font-size: 1rem; }

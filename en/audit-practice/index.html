@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../css/styles.css?v=language-20261120">
   <link rel="stylesheet" href="../../css/swot.css">
   <link rel="stylesheet" href="../../css/quality-tools.css">
+  <link rel="stylesheet" href="../../css/turtle-diagram.css">
   <link rel="stylesheet" href="../../css/textbook-visuals.css">
   <script defer src="../../js/app.js"></script>
   <script defer src="./navigation.js"></script>
@@ -52,6 +53,8 @@
         <a class="auditor-inline-link" href="#iso-9001-visuals">Textbook diagrams</a>
         <a class="auditor-inline-link" href="#quality-process">Process management</a>
         <a class="auditor-inline-link" href="#quality-principles">Seven quality management principles</a>
+        <a class="auditor-inline-link" href="#iso-9001-competence">7.2 Competence</a>
+        <a class="auditor-inline-link" href="#turtle-diagram">4.4 Turtle diagram</a>
         <a class="auditor-inline-link" href="#iso-9001-concession">8.7 Concession example</a>
         <a class="auditor-inline-link" href="#iso-9001-performance">9.1 Performance evaluation example</a>
         <a class="auditor-inline-link" href="#quality-pdca">The PDCA cycle</a>
@@ -88,6 +91,25 @@
         </section>
       </div>
 
+      <section id="turtle-diagram" class="quality-panel quality-pdca" aria-labelledby="turtle-diagram-title">
+        <h3 id="turtle-diagram-title">4.4 The process approach with a turtle diagram</h3>
+        <p>The process approach traces how work turns inputs into outputs and how the next process uses them. A turtle diagram is one way to describe a process under ISO 9001:2026 clause 4.4. Read across its body to follow the work, then use the four corners to examine resources, responsibilities, methods and performance.</p>
+        <figure class="turtle-figure">
+          <figcaption>Example · Customer order review</figcaption>
+          <dl class="turtle-map">
+            <div class="turtle-input"><dt>Inputs</dt><dd>The customer’s order, specification, quantity and requested delivery date.</dd></div>
+            <div class="turtle-process"><dt>Process · Order review</dt><dd>Compare requirements with stock and production capacity, then agree on delivery terms with the customer.</dd></div>
+            <div class="turtle-output"><dt>Outputs and handover</dt><dd>Send the confirmation to the customer and the agreed specification, quantity and date to production planning.</dd></div>
+            <div class="turtle-resources"><dt>With what? · Resources</dt><dd>Order management system, stock records and production schedule.</dd></div>
+            <div class="turtle-people"><dt>Who? · Responsibilities</dt><dd>Sales owns the review. Production planning confirms whether the delivery date is feasible.</dd></div>
+            <div class="turtle-method"><dt>How? · Method and criteria</dt><dd>Clarify ambiguous specifications or dates with the customer before confirming the order.</dd></div>
+            <div class="turtle-measure"><dt>How well? · Indicator</dt><dd>Share of orders confirmed in a given period that later needed correction because a requirement was missed.</dd></div>
+          </dl>
+        </figure>
+        <p class="quality-audit-note"><strong>Follow one order.</strong> Compare the date on the customer’s confirmation with the date in the production plan. If they differ, trace where each date came from. Change the handover so both teams use the same approved order, then check subsequent orders for the same error.</p>
+        <p class="quality-links quality-resources"><a class="auditor-inline-link" href="https://www.iso.org/files/live/sites/isoorg/files/store/en/PUB100373.pdf">ISO guidance on the process approach</a> · <a class="auditor-inline-link" href="https://www.nqa.com/en-ca/resources/knowledge-hub/how-to-process-audit-effectively">NQA guide to process auditing</a></p>
+      </section>
+
       <section id="quality-pdca" class="quality-panel quality-pdca" aria-labelledby="quality-pdca-title">
         <h3 id="quality-pdca-title">The PDCA cycle</h3>
         <p>PDCA applies to an individual process and the whole quality management system. Organisational context in clause 4 informs the cycle. Leadership in clause 5 applies throughout.</p>
@@ -98,6 +120,20 @@
           <li><h4><span lang="en">Act</span></h4><p class="quality-clause">Clause 10 · Improvement</p><p>Identify causes, implement improvements, check their effectiveness and feed the results into the next plan.</p></li>
         </ol>
         <p class="quality-audit-note">When auditing a process under clause 4.4, examine operating criteria, performance records and evidence of effective improvement. Compare objective evidence with the applicable requirements.</p>
+      </section>
+
+      <section id="iso-9001-competence" class="quality-panel quality-pdca" aria-labelledby="iso-9001-competence-title">
+        <h3 id="iso-9001-competence-title">7.2 Competence</h3>
+        <p>Competence is the ability to apply knowledge and skills to achieve an intended result. Clause 7.2 covers people working under the organisation’s control whose work affects the performance of its quality management system.</p>
+        <dl class="quality-principles">
+          <div><dt>Define the task</dt><dd>Describe what the person must be able to do and what acceptable performance looks like.</dd></div>
+          <div><dt>Establish competence</dt><dd>Use relevant education, training or experience to establish that the person can carry out the task.</dd></div>
+          <div><dt>Close gaps and evaluate the action</dt><dd>Where needed, give guided practice, arrange mentoring or reassign work. Check whether the action achieved the required performance.</dd></div>
+          <div><dt>Keep evidence available</dt><dd>Make suitable documented information available as evidence of competence, such as an assessment identifying the task, criteria and result.</dd></div>
+        </dl>
+        <h4>Example · Dimensional inspector</h4>
+        <p>After practice, the inspector measures a part, reads the tolerance on the drawing and decides whether the part conforms. An assessor observes the technique and checks the decision against the specification. The practical assessment records both results.</p>
+        <p class="quality-audit-note"><strong>Audit question</strong> · What evidence shows that this inspector can measure the part and decide independently whether it conforms?</p>
       </section>
 
       <section id="iso-9001-concession" class="quality-panel quality-pdca" aria-labelledby="iso-9001-concession-title">
