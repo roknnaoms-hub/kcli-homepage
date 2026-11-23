@@ -10,8 +10,14 @@ const topicPages = {
   'lean-six-sigma-tools': 'audit-practice', 'ai-management': 'audit-practice', 'iso-19011-guide': 'audit-practice',
   'iso-clauses': 'clauses', 'auditor-registration': 'iqcs-auditor-registration'
 };
-const homeSections = { 'learning-hub': 'learning', contact: 'contact', education: 'course-options', approach: 'approach' };
-function matchEnglishTopic() {
+const homeSections = { 'quality-goals': 'quality-goals', 'learning-hub': 'learning', contact: 'contact', education: 'course-options', approach: 'approach' };
+function matchHomepageLanguage() {
+  if (document.documentElement.lang === 'en') {
+    const korean = new URL('../', location.href);
+    if (location.hash === '#quality-goals') korean.hash = 'quality-goals';
+    homeLanguageLink.href = korean.href;
+    return;
+  }
   const destination = new URL('./en/', location.href);
   const course = new URLSearchParams(location.search).get('course');
   if (course) destination.searchParams.set('course', course);
@@ -31,6 +37,6 @@ function matchEnglishTopic() {
   homeLanguageLink.href = destination.href;
 }
 if (homeLanguageLink) {
-  matchEnglishTopic();
-  window.addEventListener('hashchange', matchEnglishTopic);
+  matchHomepageLanguage();
+  window.addEventListener('hashchange', matchHomepageLanguage);
 }
