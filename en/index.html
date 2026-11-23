@@ -22,9 +22,10 @@
   <meta property="og:image:alt" content="Two people reviewing audit documents together">
   <meta name="theme-color" content="#f6f5f0">
   <link rel="icon" type="image/svg+xml" href="../assets/kcli-mark.svg">
-  <link rel="stylesheet" href="../css/styles.css?v=language-20261120">
+  <link rel="stylesheet" href="../css/styles.css?v=quality-goals-1">
   <link rel="stylesheet" href="./home.css?v=global2">
-  <script src="../js/app.js?v=global2" defer></script>
+  <script src="../js/app.js?v=quality-goals-1" defer></script>
+  <script src="../js/home-language.js?v=quality-goals-1" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -66,6 +67,7 @@
       <details class="nav-group">
         <summary>Learning resources</summary>
         <div class="nav-group-links">
+          <a href="#quality-goals">Goal-setting and quality practice</a>
           <a href="./clauses/">Browse ISO clauses</a><a href="./iso-knowledge-graph/">ISO knowledge graph</a>
           <a href="./audit-practice/">Audit practice and quality tools</a><a href="./iso-45001-case/">Safety audit case</a>
           <a href="./reading/#management-strategy">Management strategy</a><a href="./reading/#humanities">Humanities</a>
@@ -84,6 +86,7 @@
       <div>
         <p class="hero-identity">Seoul, Republic of Korea</p>
         <h1 id="hero-title">ISO auditor<br><span>training in Seoul</span></h1>
+        <p class="hero-theme"><a href="#quality-goals">Setting goals and managing quality in the AI era</a></p>
         <p class="hero-lead">At the Korea Cyber Literacy Institute, you learn to turn an ISO requirement into an audit question, weigh the evidence and explain your findings in an audit report.</p>
         <div class="hero-actions">
           <a class="button primary" href="#course-options">Explore ISO courses</a>
@@ -146,6 +149,60 @@
       <h3>After training</h3>
       <p>Once you pass your course, you can apply separately to IQCS for auditor registration. IQCS reviews your evidence against the requirements for the standard and grade you select.</p>
       <a class="auditor-inline-link" href="./iqcs-auditor-registration/">Auditor grades, registration documents and fees</a>
+    </div>
+  </section>
+
+  <section id="quality-goals" class="learning-hub quality-goals" aria-labelledby="quality-goals-title">
+    <div class="container">
+      <h2 id="quality-goals-title">Setting goals and managing quality in the AI era</h2>
+      <p class="goals-intro">Choose a result you want to improve at work. Decide which records would show progress, then use those records to check the measures and explanations an AI tool suggests.</p>
+      <div class="learning-layout">
+        <article class="iso-path">
+          <h3>Exercise · Check an AI attendance recommendation</h3>
+          <p>In this fictional class, the training and reporting deadlines have passed. Only learner A is marked as having completed the course. An AI tool recommends a make-up session for B and C.</p>
+          <ul>
+            <li>A attended and is listed in the completion register.</li>
+            <li>B attended but has no entry in the register.</li>
+            <li>C was absent and has no entry in the register.</li>
+          </ul>
+          <p>Who needs a make-up session? How would you measure course completion and the quality of the register separately?</p>
+          <details>
+            <summary>See a worked answer</summary>
+            <p>Offer C a make-up session. Check B against the attendance sheet and correct the register. Two of the three learners completed the course. Of those two, only one had a completion record entered on time.</p>
+            <p>For the next class, aim to record every confirmed completion by the reporting deadline. Assign someone to compare the two records at that deadline and report whether the goal was met.</p>
+          </details>
+        </article>
+        <div class="related-paths">
+          <section>
+            <h3>Public officials</h3>
+            <div><p>Review a fictional public enquiries register. Identify on-time replies and cases reopened because the answer was incomplete. Choose measures for both timeliness and response quality, then use one case to explain your assessment.</p>
+              <div class="path-links"><a href="./audit-practice/#iso-9001-performance">ISO 9001 performance evaluation example</a></div>
+            </div>
+          </section>
+          <section>
+            <h3>Active-duty service members</h3>
+            <div><p>Use the attendance exercise to distinguish missed training from missing entries. Decide who will reconcile the records and when. Turn that decision into a checklist for the next class.</p>
+              <div class="path-links"><a href="./audit-practice/#quality-pdca">Plan an improvement with PDCA</a></div>
+            </div>
+          </section>
+          <section>
+            <h3>Transitioning service members and veterans</h3>
+            <div><p>Choose a task you carried out, such as coordinating training or improving an inspection checklist. Write a one-page account for a civilian quality role covering your responsibility, the criteria you used, your action and the result you verified.</p>
+              <div class="path-links"><a href="./audit-practice/#iso-19011-guide">Working with audit evidence and records</a></div>
+            </div>
+          </section>
+          <section>
+            <h3>Private-sector professionals and jobseekers</h3>
+            <div><p>Group sample customer enquiries by the reason for repeat contact. Choose one change to address the most frequent cause, then define measures for both response time and repeat enquiries.</p>
+              <div class="path-links"><a href="./audit-practice/#lean-six-sigma-tools">Pareto charts and quality tools</a></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="path-links goals-actions">
+        <a href="./ai-learning/#llm-rag-lab">Check the evidence retrieved by AI</a>
+        <a href="#contact" data-course="quality-goals">Discuss an exercise for your role</a>
+      </div>
     </div>
   </section>
 
@@ -218,6 +275,7 @@
           <label for="inquiry-type">Enquiry topic</label>
           <select id="inquiry-type">
             <option value="course">General ISO training</option>
+            <option value="quality-goals">Goal-setting and quality practice</option>
             <option value="regional">Southeast Asia training</option>
             <optgroup label="Course">
               <option value="iso-9001" data-standard="ISO 9001">ISO 9001 training</option>

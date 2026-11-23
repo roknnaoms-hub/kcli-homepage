@@ -917,6 +917,18 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   line-height: 1.22;
   letter-spacing: -.045em;
 }
+/* The homepage workshop uses the existing learning-resource layout. */
+.hero-theme { margin: .85rem 0 0; font-weight: 700; color: var(--navy-2); }
+.hero-theme a { text-decoration: underline; text-underline-offset: .22em; }
+.quality-goals { background: #eef3f4; }
+.quality-goals .goals-intro { max-width: 70ch; margin: 0 0 1.5rem; }
+.quality-goals .iso-path { align-self: start; }
+.quality-goals .iso-path ul { margin: .75rem 0; padding-inline-start: 1.3rem; }
+.quality-goals details { border-top: 1px solid #53677b; }
+.quality-goals summary { padding-block: .75rem; font-weight: 700; color: #f1d68e; cursor: pointer; }
+.quality-goals details p { margin: .35rem 0 .85rem; }
+.quality-goals .goals-actions { margin-top: 1.4rem; }
+
 .learning-layout { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.4fr); gap: clamp(24px, 4vw, 56px); }
 .iso-path { padding: clamp(22px, 3.2vw, 42px); color: white; background: var(--navy); border-radius: 12px; }
 .learning-layout h3, .featured-book h3 { margin: 0; font-size: 1.22rem; line-height: 1.45; letter-spacing: -.035em; }

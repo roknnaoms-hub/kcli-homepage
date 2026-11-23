@@ -140,10 +140,12 @@ if (inquiryType) {
   }
 }
 const inquiryPrompts = isEnglish ? {
+  'quality-goals': ['Goal-setting and quality practice', 'What work do you do?\nWhat would you like to improve?\nPreferred dates: '],
   organization: ['Group training enquiry', 'Organisation: \nTraining goals: \nExpected group size: \nPreferred dates and format: '],
   knowledge: ['AI and knowledge partnership enquiry', 'Organisation: \nPartnership topic: \nProject needs: \nPreferred dates: '],
   regional: ['Southeast Asia ISO training enquiry', 'Organisation or individual: \nISO standard: \nExpected group size: \nPreferred dates and format: \nTeaching language: ']
 } : {
+  'quality-goals': ['목표 수립·품질관리 실습 상담', '어떤 업무를 맡으셨습니까?\n무엇을 개선하고 싶으십니까?\n희망 일정: '],
   organization: ['기업·기관 교육 협력 문의', '기관명: \n희망 교육 주제: \n참여 대상·인원: \n희망 일정·방식: \n기대 결과: '],
   knowledge: ['AI·지식정보 분야 협력 문의', '기관명: \n협력 주제: \n현재 업무 현안: \n희망 일정: \n문의사항: ']
 };
