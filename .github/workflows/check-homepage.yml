@@ -1,0 +1,16 @@
+name: KCLI homepage checks
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop, main]
+permissions:
+  contents: read
+jobs:
+  homepage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check-release.py
+      - name: Check browser JavaScript syntax
+        run: git ls-files -z '*.js' | xargs -0 -r -n 1 node --check
