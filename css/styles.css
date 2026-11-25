@@ -1017,3 +1017,7 @@ summary.iso-chapter-title:hover, details[open] > summary.iso-chapter-title { bac
   .home-header .brand-mark { width: 34px; height: auto; }
   .home-header .language-switch { padding-inline: 0; }
 }
+
+@media (max-width: 360px) {
+  .home-header:lang(ko) .header-inner { width: calc(100% - 1rem); }
+}
