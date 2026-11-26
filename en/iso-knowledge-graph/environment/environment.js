@@ -1,6 +1,5 @@
 'use strict';
-const byId = id => document.getElementById(id);
-const verbs = {
+export const verbs = {
   addresses:'addresses recurrence of', bounds:'defines the boundary of', canBecome:'can become', canChange:'can cause',
   checkedFor:'is checked for', checks:'checks fulfilment of', conducts:'conducts', dataFor:'provides data on',
   describes:'describes the state of', enhances:'enhances', establishes:'establishes', evidences:'provides evidence of',
@@ -16,8 +15,8 @@ const text = (tag, value, cls) => {
   if (cls) el.className = cls;
   return el;
 };
-function start(){
-  const {terms,edges}=JSON.parse(byId('displayData').textContent);
+export function mountTerms(root, {terms, edges}) {
+  const byId = id => root.getElementById(id);
   const usage=new Map(Object.entries(terms));
   const label=(id,lang='en')=>terms[id][lang];
   const ordered = [...usage.keys()].sort((a,b)=>label(a).localeCompare(label(b),'en'));
@@ -70,5 +69,5 @@ function start(){
   sel.onchange=()=>{current=sel.value;page=0;render();};
   byId('next').onclick=()=>{page++;render();};byId('prev').onclick=()=>{page--;render();};
   fill();render();
+  return (id) => jump(usage.has(id) ? id : 'ems');
 }
-start();
