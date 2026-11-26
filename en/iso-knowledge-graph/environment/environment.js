@@ -16,31 +16,14 @@ const text = (tag, value, cls) => {
   if (cls) el.className = cls;
   return el;
 };
-async function start(){
-  const res = await fetch('../../../iso-knowledge-graph/terms/KCLI_ISO_Ontology.jsonld');
-  if (!res.ok) throw new Error('Ontology unavailable');
-  const records = (await res.json())['@graph'];
-  const all = new Map(records.map(r=>[r['@id'],r]));
-  const usage = new Map(records.filter(r=>r['@id'].startsWith('k:usage:e:')).map(r=>['term:'+r['@id'].split(':').pop(),r]));
-  const edges = records.filter(r=>r['@type']==='rdf:Statement' && r['k:interpretation'].some(v=>v['k:standard']['@id']==='k:standard:e'));
-  function label(id,lang='en'){
-    const value=(lang==='en' && usage.get(id)['k:englishLabel']?.['@value']) || all.get(id)['skos:prefLabel'].find(v=>v['@language']===lang)['@value'];
-    return lang==='en'?value[0].toUpperCase()+value.slice(1):value;
-  }
+function start(){
+  const {terms,edges}=JSON.parse(byId('displayData').textContent);
+  const usage=new Map(Object.entries(terms));
+  const label=(id,lang='en')=>terms[id][lang];
   const ordered = [...usage.keys()].sort((a,b)=>label(a).localeCompare(label(b),'en'));
   const sel = byId('terms'), query=byId('query');
-  let current = 'term:ems', page = 0;
-  byId('summary').textContent = usage.size+' terms and '+edges.length+' directed relationships, including all '+[...usage.values()].filter(u=>u['k:definitionClause']).length+' definitions in Clause 3.';
-  function refs(items){
-    const groups = new Map();
-    for(const ref of items){
-      const r=all.get(ref['@id']), book=r['dct:isPartOf']['@id'];
-      if(!['k:book:E','k:book:EF'].includes(book))continue;
-      if(!groups.has(book))groups.set(book,new Set());
-      groups.get(book).add(r['k:page']);
-    }
-    return [...groups].map(([book,pages])=>(book==='k:book:E'?'KCLI training slides ':'ISO 14001:2026 PDF pages ')+[...pages].sort((a,b)=>a-b).join(', ')).join(' · ');
-  }
+  let current = 'ems', page = 0;
+  byId('summary').textContent = usage.size+' terms and '+edges.length+' directed relationships, including all '+[...usage.values()].filter(u=>u.term).length+' definitions in Clause 3.';
   function jump(id){
     current=id;page=0;query.value='';fill();render();
   }
@@ -48,8 +31,8 @@ async function start(){
     const value=query.value.trim().toLowerCase();
     const ids=ordered.filter(id=>{
       const u=usage.get(id);
-      if(/^\d+(\.\d+)*\.?$/.test(value))return [u['k:definitionClause'],...u['k:relatedClause']].some(c=>c===value||c.startsWith(value.replace(/\.$/,'')+'.'));
-      return [label(id),label(id,'ko'),all.get(id)['k:searchTerms']].some(v=>v.toLowerCase().includes(value));
+      if(/^\d+(\.\d+)*\.?$/.test(value))return [u.term,...u.clauses].some(c=>c===value||c.startsWith(value.replace(/\.$/,'')+'.'));
+      return [label(id),label(id,'ko'),u.aliases].some(v=>v.toLowerCase().includes(value));
     });
     sel.replaceChildren(...ids.map(id=>new Option(label(id),id)));
     if(!ids.includes(current))current=ids[0];
@@ -59,17 +42,17 @@ async function start(){
   }
   function render(){
     if(!current)return;
-    const u=usage.get(current), cl=u['k:definitionClause'];
+    const u=usage.get(current), cl=u.term;
     byId('clause').textContent=cl?'Definition '+cl:'Application term';
     byId('title').textContent=label(current);byId('ko').textContent=label(current,'ko');
-    byId('desc').textContent=u['k:englishNote']['@value'];
-    byId('related').textContent='Related clauses · '+u['k:relatedClause'].join(', ');
-    byId('refs').textContent=refs(u['prov:wasDerivedFrom']);
+    byId('desc').textContent=u.desc;
+    byId('related').textContent='Related clauses · '+u.clauses.join(', ');
+    byId('refs').textContent=u.refs;
     const map=byId('map'),list=byId('links');
     map.replaceChildren(text('strong',label(current),'root'));list.replaceChildren();
-    const connections=edges.filter(e=>[e['rdf:subject']['@id'],e['rdf:object']['@id']].includes(current));
+    const connections=edges.filter(e=>[e.s,e.t].includes(current));
     connections.forEach((e,i)=>{
-      const s=e['rdf:subject']['@id'],t=e['rdf:object']['@id'],out=s===current,id=out?t:s,verb=verbs[e['rdf:predicate']['@id'].slice(4)];
+      const s=e.s,t=e.t,out=s===current,id=out?t:s,verb=verbs[e.k];
       function node(){const b=text('button',label(id));b.type='button';b.onclick=()=>jump(id);return b;}
       if(Math.floor(i/5)===page){
         const row=text('div','','branch');
@@ -78,7 +61,7 @@ async function start(){
       }
       const li=text('li','');
       if(out)li.append(label(s)+' → '+verb+' → ',node());else li.append(node(),' → '+verb+' → '+label(t));
-      li.append(text('small',refs(e['prov:wasDerivedFrom'])));list.append(li);
+      li.append(text('small',e.refs));list.append(li);
     });
     byId('range').textContent=(page*5+1)+'–'+Math.min(page*5+5,connections.length)+' of '+connections.length;
     byId('prev').disabled=page===0;byId('next').disabled=(page+1)*5>=connections.length;
@@ -88,4 +71,4 @@ async function start(){
   byId('next').onclick=()=>{page++;render();};byId('prev').onclick=()=>{page--;render();};
   fill();render();
 }
-start().catch(()=>{byId('status').textContent='The ontology could not be loaded. Reload this page to try again.';});
+start();
