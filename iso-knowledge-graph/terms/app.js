@@ -1,15 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id);
-const raw=$('ontology').textContent, records=JSON.parse(raw)['@graph'], rec=new Map(records.map(x=>[x['@id'],x]));
-const of=r=>rec.get(r['@id']), tail=r=>r['@id'].split(':').pop(), typed=t=>records.filter(r=>r['@type']===t);
-const UI=JSON.parse($('presentation').textContent);
-const standard=Object.fromEntries(typed('skos:ConceptScheme').map(r=>[tail(r),{name:r['dct:title'],topic:r['rdfs:label'],url:r['rdfs:seeAlso']['@id']}]));
-function context(r){
- const u=of(r);return {std:tail(u['k:standard']),englishLabel:u['k:englishLabel']?.['@value'],term:u['k:definitionClause'],clauses:u['k:relatedClause']||[],meaning:u['skos:scopeNote'],refs:u['prov:wasDerivedFrom']};
-}
-const D={routes:UI.routes,types:Object.fromEntries(typed('skos:Collection').map(r=>[tail(r),[r['rdfs:label'],r['k:color']]])),pred:Object.fromEntries(typed('owl:ObjectProperty').filter(r=>r['@id'].startsWith('rel:')).map(r=>[tail(r),r['rdfs:label']])),
- nodes:typed('skos:Concept').map(r=>{const id=tail(r),label=lang=>r['skos:prefLabel'].find(v=>v['@language']===lang)['@value'];return {id,ko:label('ko'),en:label('en'),cat:tail(r['k:category']),q:r['k:question'],questionScope:tail(r['k:questionScope']),aliases:r['k:searchTerms'],uses:r['k:context'].map(context),pos:UI.positions[id]};}),
- edges:typed('rdf:Statement').map(r=>({s:tail(r['rdf:subject']),k:tail(r['rdf:predicate']),t:tail(r['rdf:object']),notes:Object.fromEntries(r['k:interpretation'].map(v=>[tail(v['k:standard']),v['rdfs:comment']])),refs:r['prov:wasDerivedFrom']}))};
+const D=JSON.parse($('displayData').textContent);
+const {standard,books,sources}=D;
 const st={id:'ms',std:'all',view:'graph',mode:'local',page:0,route:5};
 const byId=new Map(D.nodes.map(n=>[n.id,n])),collator=new Intl.Collator('ko',{numeric:true});
 const adjacent=new Map(D.nodes.map(n=>[n.id,D.edges.filter(e=>e.s===n.id||e.t===n.id)]));
@@ -35,8 +27,8 @@ function clauseText(u){return [(u.term?'정의 '+u.term:''),u.clauses.length?'�
 function compact(n){const all=activeUses(n);if(!all.length)return '';if(!isStandard()&&all.length>1)return all.map(u=>mini[u.std]).join(' · ');const u=all[0];return mini[u.std]+(u.term||u.clauses[0]?' § '+(u.term||u.clauses[0]):'');}
 function refGroups(refs,showTitles=false){
  const map=new Map();
- for(const r of refs){const v=of(r),doc=of(v['dct:isPartOf']);if(!map.has(doc))map.set(doc,[]);map.get(doc).push(v);}
- return [...map].map(([book,pages])=>esc(book['rdfs:label'])+' · '+(book['k:unit']==='슬라이드'?'슬라이드 ':'PDF ')+pages.map(v=>v['k:page']).sort((a,b)=>a-b).join(', ')+(book['k:unit']==='쪽'?'쪽':'')+(showTitles&&book['k:unit']==='슬라이드'?'<ul>'+pages.map(v=>'<li>'+v['k:page']+' · '+esc(v['dct:title'])+'</li>').join('')+'</ul>':'')).join('<br>');
+ for(const r of refs){const v=sources[r],doc=books[v.book];if(!map.has(doc))map.set(doc,[]);map.get(doc).push(v);}
+ return [...map].map(([book,pages])=>esc(book.label)+' · '+(book.unit==='슬라이드'?'슬라이드 ':'PDF ')+pages.map(v=>v.page).sort((a,b)=>a-b).join(', ')+(book.unit==='쪽'?'쪽':'')+(showTitles&&book.unit==='슬라이드'?'<ul>'+pages.map(v=>'<li>'+v.page+' · '+esc(v.title)+'</li>').join('')+'</ul>':'')).join('<br>');
 }
 const anchors={all:'ms',q:'qms',e:'ems',u:'audit',i:'aims',common:'audit'};
 function english(n){return activeUses(n).find(u=>u.std===st.std)?.englishLabel||n.en;}
@@ -75,7 +67,7 @@ function updateDetails(){
  $('detail').innerHTML='<div class="eyebrow">'+kind(n.cat)+'<span>·</span><span>'+n.uses.length+'개 표준에서 사용</span></div><h2>'+esc(n.ko)+'</h2><p class="eng" lang="en">'+esc(english(n))+'</p>'+rows.map(usage).join('')+'<div class="question"><strong>심사 질문 예시 · '+mini[n.questionScope]+'</strong><p>'+esc(n.q)+'</p></div>';
  $('relationCount').textContent=links.length+'개 관계';
  $('relations').innerHTML=links.map(e=>{
-  const t=other(e,n.id), evidence=Object.entries(e.notes).filter(([s])=>!isStandard()||st.std===s).map(([s,note])=>'<p class="subtle"><b>'+standard[s].name+'</b></p><p>'+esc(note)+'</p><div class="subtle">'+refGroups(e.refs.filter(r=>tail(of(of(r)['dct:isPartOf'])['dct:relation'])===s))+'</div>').join('');
+  const t=other(e,n.id), evidence=Object.entries(e.notes).filter(([s])=>!isStandard()||st.std===s).map(([s,note])=>'<p class="subtle"><b>'+standard[s].name+'</b></p><p>'+esc(note)+'</p><div class="subtle">'+refGroups(e.refs.filter(r=>books[sources[r].book].std===s))+'</div>').join('');
   return '<details class="relitem"><summary>'+esc(byId.get(e.s).ko)+' → <strong>'+esc(D.pred[e.k])+'</strong> → '+esc(byId.get(e.t).ko)+'</summary><div class="relnote">'+evidence+'<button class="textbtn" data-go="'+t.id+'">'+esc(t.ko)+' 탐색</button></div></details>';
  }).join('')||'<p class="subtle">현재 범위에 직접 연결된 용어가 없습니다. 통합 보기에서 전체 관계를 확인하세요.</p>';
 }
@@ -225,7 +217,6 @@ document.addEventListener('keydown',e=>{
  if(e.target.matches('.clicknode')&&(e.key==='Enter'||e.key===' ')){e.preventDefault();choose(e.target.dataset.id,{clear:st.mode==='local'});$('localMode').focus();}
 });
 let lastWidth=0;new ResizeObserver(entries=>{const w=Math.round(entries[0].contentRect.width);if(w&&lastWidth!==w){lastWidth=w;if(st.view==='graph'&&st.mode==='local')focusMap();}}).observe($('graphScroll'));
-$('sourcebooks').innerHTML=typed('dct:BibliographicResource').map(b=>'<li>'+esc(b['rdfs:label'])+' · '+esc(b['dct:title'])+'</li>').join('');
-$('export').onclick=()=>{const url=URL.createObjectURL(new Blob([raw],{type:'application/ld+json'}));const a=document.createElement('a');a.href=url;a.download='KCLI_ISO_Ontology.jsonld';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);};
+$('sourcebooks').innerHTML=Object.values(books).map(b=>'<li>'+esc(b.label)+' · '+esc(b.title)+'</li>').join('');
 if(new URLSearchParams(location.search).get('standard')==='14001'){st.std='e';st.id='ems';st.route=7;}
 buttonNames();render();
