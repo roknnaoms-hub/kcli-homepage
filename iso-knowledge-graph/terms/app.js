@@ -1,6 +1,6 @@
 'use strict';
-const $=id=>document.getElementById(id);
-const D=JSON.parse($('displayData').textContent);
+export function mountTerms(root, D) {
+const $=id=>root.getElementById(id);
 const {standard,books,sources}=D;
 const st={id:'ms',std:'all',view:'graph',mode:'local',page:0,route:5};
 const byId=new Map(D.nodes.map(n=>[n.id,n])),collator=new Intl.Collator('ko',{numeric:true});
@@ -159,11 +159,11 @@ function choose(id,opts={}){
  if(!eligible(n)){st.std='all';chapterMenu();}
  if(!matches(n)||opts.clear){$('query').value='';if(!matches(n)){$('chapter').value='';$('type').value='';}}
  st.id=id;st.page=0;st.view='graph';$('matches').hidden=true;render();$('live').textContent=n.ko+' 선택, 직접 관계 '+linksFor(id).length+'개';
- if(opts.scroll)document.querySelector('.graphcard').scrollIntoView({block:'start'});
+ if(opts.scroll)root.querySelector('.graphcard').scrollIntoView({block:'start'});
 }
 function resetFilters(){$('query').value='';$('chapter').value='';$('type').value='';$('matches').hidden=true;}
 function render(){
- document.querySelectorAll('[data-standard]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.standard===st.std)));
+ root.querySelectorAll('[data-standard]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.standard===st.std)));
  const found=subset(),has=found.length>0,isGraph=st.view==='graph',filtered=Boolean($('query').value||$('chapter').value||$('type').value);
  if(has&&!found.some(n=>n.id===st.id)){st.id=found[0].id;st.page=0;}
  $('filterbar').hidden=!filtered;$('filterCount').textContent='조건에 맞는 용어 '+found.length+'개';$('clearQ').hidden=!$('query').value;
@@ -200,7 +200,7 @@ $('prevPage').onclick=()=>{if(st.page>0){st.page--;focusMap();}};
 $('nextPage').onclick=()=>{if((st.page+1)*6<linksFor(st.id).length){st.page++;focusMap();}};
 $('jump').onclick=()=>$('detailcard').scrollIntoView({block:'start'});
 $('guide').onclick=()=>$('info').showModal();$('closeInfo').onclick=()=>$('info').close();
-document.addEventListener('click',e=>{
+root.addEventListener('click',e=>{
  const scopeBtn=e.target.closest('[data-standard]');
  if(scopeBtn){st.std=scopeBtn.dataset.standard;st.id=anchors[st.std];st.route=({u:3,i:4,q:0,e:7,common:6,all:5})[st.std];st.page=0;chapterMenu();resetFilters();render();return;}
  const el=e.target.closest('[data-id],[data-pick],[data-go],[data-route]');
@@ -211,12 +211,19 @@ document.addEventListener('click',e=>{
  }
  if(!e.target.closest('.search'))$('matches').hidden=true;
 });
-document.addEventListener('focusin',e=>{if(!e.target.closest('.search'))$('matches').hidden=true;});
-document.addEventListener('keydown',e=>{
+root.addEventListener('focusin',e=>{if(!e.target.closest('.search'))$('matches').hidden=true;});
+root.addEventListener('keydown',e=>{
  if(e.key==='Escape')$('matches').hidden=true;
  if(e.target.matches('.clicknode')&&(e.key==='Enter'||e.key===' ')){e.preventDefault();choose(e.target.dataset.id,{clear:st.mode==='local'});$('localMode').focus();}
 });
 let lastWidth=0;new ResizeObserver(entries=>{const w=Math.round(entries[0].contentRect.width);if(w&&lastWidth!==w){lastWidth=w;if(st.view==='graph'&&st.mode==='local')focusMap();}}).observe($('graphScroll'));
 $('sourcebooks').innerHTML=Object.values(books).map(b=>'<li>'+esc(b.label)+' · '+esc(b.title)+'</li>').join('');
-if(new URLSearchParams(location.search).get('standard')==='14001'){st.std='e';st.id='ems';st.route=7;}
 buttonNames();render();
+return (id, scope = 'all') => {
+  st.std = scope;
+  st.mode = 'local';
+  chapterMenu();
+  resetFilters();
+  choose(id || anchors[scope]);
+};
+}

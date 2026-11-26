@@ -1,6 +1,19 @@
+import { integrateTerms, attachTermView } from '../../iso-knowledge-graph/integrate-terms.js';
+import { mountTerms, verbs } from './environment/environment.js?v=20261126-1';
 'use strict';
 const $ = id => document.getElementById(id);
 const model = JSON.parse($('model').textContent);
+const termData = JSON.parse($('displayData').textContent);
+integrateTerms(model, termData, verbs);
+let selectTerm;
+function openTermDetails(id, scope) {
+ setTab('terms');
+ if (!selectTerm) {
+  const root = attachTermView($('termsTemplate'), $('termsView'));
+  selectTerm = mountTerms(root, termData);
+ }
+ if (id || scope) selectTerm(id, scope);
+}
 const {nodes, edges, types, kinds, scenes, sources, basis} = model;
 const values = Object.values(nodes);
 const symbols = {Standard:'▣', Clause:'§', Term:'●', Example:'◇'};
@@ -21,14 +34,15 @@ function nice(n){
  return n.label;
 }
 function norm(v){return v.toLowerCase().normalize('NFKC').replace(/[\s/·_-]+/g,'')}
-const lookup=new Map(values.map(n=>[n.id,norm([nice(n),n.en,n.abbr||'',n.title||'',n.group||'',n.kind==='Standard'?n.label.replace(/ISO\/(IEC|UNDP)/,'ISO'):'',n.kind==='Clause'?nodes[n.owner].label:''].join(' '))]));
+const lookup=new Map(values.map(n=>[n.id,norm([nice(n),n.en,n.keywords||'',n.abbr||'',n.title||'',n.group||'',n.kind==='Standard'?n.label.replace(/ISO\/(IEC|UNDP)/,'ISO'):'',n.kind==='Clause'?nodes[n.owner].label:''].join(' '))]));
 function matches(n,raw){
  const terms=raw.trim().toLowerCase().split(/\s+/).filter(Boolean);
  return terms.every(t=>lookup.get(n.id).includes(norm(t)));
 }
 function setTab(t){
+ $('termsView').hidden=t!=='terms';
  state.tab=t; $('mapView').hidden=t!=='map'; $('graphView').hidden=t!=='graph';$('dictView').hidden=t!=='dict';
- for (const [id,val] of [['graphTab','graph'],['dictTab','dict'],['mapTab','map']]){
+ for (const [id,val] of [['graphTab','graph'],['dictTab','dict'],['mapTab','map'],['termsTab','terms']]){
   $(id).classList.toggle('on',val===t); $(id).setAttribute('aria-pressed',String(val===t));
  }
  $('hits').hidden=true;
@@ -65,6 +79,13 @@ function detail(){
  if(n.kind==='Standard')wrap.append(el('p',n.title+' · '+n.group,'tagline'));
  if(n.abbr)wrap.append(el('p',n.abbr,'english'));
  wrap.append(el('p',n.desc,'explain'));
+ const scope = {s14001:'e'}[n.id];
+ if (n.termId || scope) {
+  wrap.append(btn('Term details and source locations', () => {
+   openTermDetails(n.termId, scope);
+   $('termsView').scrollIntoView({block:'start'});
+  }, 'inspect-action'));
+ }
  if(n.amend)wrap.append(el('p',n.amend,'tagline'));
  if(n.kind==='Example')wrap.append(el('p','Illustrative case developed for training.','tagline'));
  if(state.anchor!==n.id)wrap.append(btn('Explore all connections',()=>returnToGraph(n.id),'inspect-action'));
@@ -137,13 +158,15 @@ function draw(){
   const anc=nodes[state.anchor],nx=w*(compact?.20:.22),ox=w*(compact?.80:.78);
   const bw=Math.min(compact?w*.34:174,w*.35),ow=Math.min(compact?w*.35:186,w*.36);
   place(anc.id,nx,h/2,bw);
+  const endpoints = new Map();
   for(const [idx,e] of visible.entries()){
    const forward=anc.id===e.s,other=forward?e.o:e.s,oy=visible.length===1?h/2:64+(h-128)*idx/(visible.length-1);
    place(other,ox,oy,ow);
+   endpoints.set(e, xy[other]);
   }
   const a=xy[anc.id];
   for(const e of visible){
-   const forward=anc.id===e.s,b=xy[forward?e.o:e.s];
+   const forward=anc.id===e.s,b=endpoints.get(e);
    const x1=a.x+a.w/2+4,x2=b.x-b.w/2-4,dx=x2-x1,mid=(x1+x2)/2;
    const bend=x1+dx*.47;
    wire('M '+x1+' '+a.y+' C '+bend+' '+a.y+' '+(x1+dx*.16)+' '+b.y+' '+mid+' '+b.y+' L '+x2+' '+b.y,types[e.p][0],compact?(x1+x2)/2:x1+dx*.55,compact?b.y-25:b.y-12,!forward);
@@ -176,6 +199,7 @@ function renderCatalog(){
  }
  if(!found.length){const td=el('td','No matching items. Try a different search.');td.colSpan=3;const tr=el('tr');tr.append(td);list.append(tr)}
 }
+$('termsTab').onclick=()=>openTermDetails();
 $('mapTab').onclick=()=>setTab('map');
 for(const b of $('mapView').querySelectorAll('[data-target]'))b.addEventListener('click',()=>returnToGraph(b.dataset.target));
 $('graphTab').onclick=()=>setTab('graph');$('dictTab').onclick=()=>setTab('dict');
@@ -203,4 +227,7 @@ $('prev').onclick=()=>{if(state.page>0){state.page--; state.selected=state.ancho
 $('next').onclick=()=>{if((state.page+1)*pageSize<neighbors.get(state.anchor).length){state.page++;state.selected=state.anchor;draw();detail()}};
 $('footCount').textContent=Object.entries(kinds).map(([k,v])=>v+' '+values.filter(n=>n.kind===k).length).join('  ·  ')+'  |  Relationships: '+edges.length;
 let observedWidth=0;new ResizeObserver(entries=>{const width=entries[0].contentRect.width;if(width!==observedWidth){observedWidth=width;draw()}}).observe($('stage'));
-chooseScene('audit');
+explore('qms');
+const params = new URLSearchParams(location.search);
+if (params.get('standard') === '14001') openTermDetails('ems','e');
+else if (params.get('view') === 'terms') openTermDetails();
